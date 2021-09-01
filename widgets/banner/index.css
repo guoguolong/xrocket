@@ -1,0 +1,1 @@
+.banner{background:#000;overflow:hidden}.banner img{opacity:0;transform:scale(1.2);transition:all 2s;width:100%}.banner img.loaded{opacity:1;transform:scale(1)}

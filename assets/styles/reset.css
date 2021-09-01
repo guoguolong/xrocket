@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@200;300;400;500&display=swap');
+
+html {
+  font-family: "Comfortaa","PingFang SC","Microsoft YaHei","Helvetica","Arial",Heiti SC,sans-serif;
+  font-size: 14px;
+}
+
+html,
+body {
+  background: #FFF;
+  min-height: 100vh;
+  position: relative;  
+}
+
+body .root {
+  min-height: 200px;
+  margin-top:  84px;
+  padding-bottom: 295px;
+}
+
+
+}
+ul {
+  list-style-type: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
