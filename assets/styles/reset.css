@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@200;300;400;500&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Comfortaa","PingFang SC","Microsoft YaHei","Helvetica","Arial",Heiti SC,sans-serif;
   font-size: 14px;
@@ -14,22 +20,39 @@ body {
 
 body .root {
   min-height: 200px;
-  margin-top:  84px;
-  padding-bottom: 295px;
+  margin-top: 50px;
 }
 
-
-}
 ul {
   list-style-type: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
+}
+
+select {
+  appearance:none;
+  background: url(/assets/images/down-arrow.svg) no-repeat scroll right center transparent;
+  background-size: 20px 14px;
+}
+
+select, input {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  padding: 10px 28px 10px 14px;
+  border: 1px solid #e7e7e7;
+  cursor: pointer;          
+  color: #999;
+  border-radius: 4px;
+}
+
+button, .button {
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+  background: black;
+  color: white;
 }

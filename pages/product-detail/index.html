@@ -11,22 +11,45 @@
 <body>
   <widget name="header"></widget>
   <div class="root">
-    <div id="detail" class="detail">
-      <div class="item">
+    <div class="detail">
+      <div class="basic-info">
         <div class="media">
-          <img class="main-pic" src="/data/images/placeholder.png" />
+          <img class="large" src="/data/images/placeholder.png" />
         </div>
-        <div class="name"></div>
-        <div class="price">
-          <label>价格：</label>
-          <span></span>
-        </div>
-        <div class="qty">
-          <label>购买数量：</label>
-          <input value="1" />
+        <div class="summary">
+            <div class="row-basic">
+            <div class="name"></div>
+            <div class="price">
+              <label>$</label>
+              <span></span>
+            </div>
+          </div>
+          <div class="row-form">
+            <div class="form-item spec spec-color">
+              <select>
+                <option value="black">Color: Black</option>
+              </select>
+            </div>
+            <div class="form-item spec spec-size">
+              <select>
+                <option value="xl">Size: XL</option>
+                <option value="xl">Size: XL</option>
+                <option value="xl">Size: XL</option>
+                <option value="xl">Size: XL</option>
+                <option value="xl">Size: XL</option>
+              </select>
+            </div>
+            <div class="form-item qty">
+              <input value="1" />
+            </div>
+          </div>
+          <div class="row-actions">
+            <button class="add-to-cart"><span>ADD TO CART</span></button>
+          </div>
         </div>
       </div>
-      <button class="action-add-to-cart">加入购物车</button>
+      <div class="more-info">
+      </div>
     </div>
   </div>
   <widget name="footer"></widget>

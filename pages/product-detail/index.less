@@ -1,18 +1,87 @@
-.detail img {
-  width: 400px;
+@gray1: #e7e7e7;
+
+.detail {
+  margin: 0 auto;
+  max-width: 1330px;
+
+  .basic-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    .media {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .summary {
+      padding: 20px 0 20px 50px;
+      width: 500px;
+
+      .row-basic {
+        padding-bottom: 30px;
+        border-bottom: 1px solid @gray1;
+        margin-bottom: 80px;
+        text-align: left;
+        .name {
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 35px;
+          margin-bottom: 15px;
+        }
+        .price {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .row-form {
+        .form-item {
+          margin-bottom: 10px;
+        }
+      }
+      .row-actions {
+        .add-to-cart {
+          position: relative;
+          z-index: 1;
+          transition: color .45s cubic-bezier(.785, .135, .15, .86),border .45s cubic-bezier(.785, .135, .15, .86);
+          background-color: transparent;
+          span {
+            position: relative;
+            z-index: 1;
+          }
+          &:hover {
+            color: #000;
+            z-index: 1;
+            transition: color .45s cubic-bezier(.785, .135, .15, .86),border .45s cubic-bezier(.785, .135, .15, .86);
+          }
+          &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            // transform: scale(1, 1);
+            transform-origin: right center;
+            z-index: 1;
+
+            transition: transform .45s cubic-bezier(.785, .135, .15, .86);
+            background-color: #000;
+          }
+          &:hover::before{
+            // transform-origin: right center;
+            transform: scale(0, 1);
+            // transition: transform .45s cubic-bezier(.785, .135, .15, .86);
+            // background-color: #000;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+  .more-info {
+
+  }
 }
 
-input {
-  border-radius: 4px;
-  border: 1px solid #BBB;
-  height: 30px;
-  line-height: 30px;
-  padding: 5px;
-}
-
-button {
-  padding: 8px;
-  border-width: 0;
-  background: #2343CC;
-  color: #FFF;
-}

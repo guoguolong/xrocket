@@ -44,7 +44,7 @@ function renderProducts(catId, subCatId) {
     products = JSON.parse(localStorage.getItem("products"));
   } catch (e) {
     console.log(e)
-    $id('products').innerHTML = "病毒入侵，躲进地堡";
+    $id('products').innerHTML = '<div class="empty">病毒入侵，躲进地堡</div>';
   }
 
   var htmlProducts = [];

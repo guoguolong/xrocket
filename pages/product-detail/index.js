@@ -1,4 +1,5 @@
 var prodId = parseInt(queryParse(window.location.search).id);
+
 var prod;
 var products = [];
 try {
@@ -13,17 +14,23 @@ try {
   }
   // console.log('prod:::', prod)
   if (prod) {
-    $$id('.name')[0].innerHTML = prod.name;
-    $$id('.price span')[0].innerHTML = prod.price;
-    // $$id('.main-pic')[0].setAttribute('src', `/data/images/${prod.image}`);
+    $('.name').innerHTML = prod.name;
+    $('.price span').innerHTML = prod.price;
+    $('.large').setAttribute('src', `${prod.baseUrl}/${prod.images[0]}`);
+
+    if (prod.sizeChart) {
+      $('.more-info').innerHTML = JSON.stringify(prod.sizeChart);
+    } if (prod.description) {
+      $('.more-info').innerHTML = JSON.stringify(prod.description);
+    }
   }
 } catch (e) {
   console.log(e)
   htmlProduct = '火星闹饥荒，本商品已经被抢购一空';
-  document.getElementById('detail').innerHTML = htmlProduct;
+  $('.detail').innerHTML = htmlProduct;
 }
 
-$$id('.action-add-to-cart')[0].onclick = function () {
+$('.action-add-to-cart').onclick = function () {
   if (prod) {
     var cart = [];
     try {
@@ -32,7 +39,7 @@ $$id('.action-add-to-cart')[0].onclick = function () {
     } catch (e) {
       console.og('cart e:', e)
     }
-    var qty = parseInt($$id('.qty input')[0].value || 0)
+    var qty = parseInt($('.qty input').value || 0)
     var hasThisProduct = false;
     for (var i = 0; i < cart.length; i++) {
       if (cart[i].id === prodId) {

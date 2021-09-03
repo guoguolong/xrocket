@@ -37,7 +37,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 0
+    "id": 1
   },
   "f9-long-sleeve-t-shirt": {
     "key": "f9-long-sleeve-t-shirt",
@@ -77,7 +77,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 2
   },
   "f9-t-shirt-black-2x": {
     "key": "f9-t-shirt-black-2x",
@@ -125,7 +125,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 3
   },
   "fh-long-sleeve-t-shirt": {
     "key": "fh-long-sleeve-t-shirt",
@@ -165,7 +165,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 4
   },
   "fh-t-shirt-black-2x": {
     "key": "fh-t-shirt-black-2x",
@@ -210,7 +210,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 4
+    "id": 5
   },
   "men-s-falcon-1-t-shirt": {
     "key": "men-s-falcon-1-t-shirt",
@@ -252,7 +252,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 5
+    "id": 6
   },
   "men-s-spacex-dragon-t-shirt": {
     "key": "men-s-spacex-dragon-t-shirt",
@@ -294,7 +294,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 6
+    "id": 7
   },
   "men-s-starman-t-shirt": {
     "key": "men-s-starman-t-shirt",
@@ -336,7 +336,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 7
+    "id": 8
   },
   "mens-crew-1-mission-patch-t-shirt": {
     "key": "mens-crew-1-mission-patch-t-shirt",
@@ -378,7 +378,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 8
+    "id": 9
   },
   "mens-demo-2-astronaut-t-shirt": {
     "key": "mens-demo-2-astronaut-t-shirt",
@@ -420,7 +420,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 9
+    "id": 10
   },
   "mens-demo-2-mission-patch-t-shirt": {
     "key": "mens-demo-2-mission-patch-t-shirt",
@@ -462,7 +462,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 10
+    "id": 11
   },
   "nuke-mars-t-shirt": {
     "key": "nuke-mars-t-shirt",
@@ -504,7 +504,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 11
+    "id": 12
   },
   "occupy-mars-t-shirt": {
     "key": "occupy-mars-t-shirt",
@@ -547,7 +547,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 12
+    "id": 13
   },
   "spacex-t-shirt-black-2x": {
     "key": "spacex-t-shirt-black-2x",
@@ -592,7 +592,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 13
+    "id": 14
   },
   "spacex-tshirt-mens-dragon-schematic": {
     "key": "spacex-tshirt-mens-dragon-schematic",
@@ -637,7 +637,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 14
+    "id": 15
   },
   "dragpn-hoodie": {
     "key": "dragpn-hoodie",
@@ -679,7 +679,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 0
+    "id": 38
   },
   "f9-hoodie": {
     "key": "f9-hoodie",
@@ -721,7 +721,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 39
   },
   "fh-hoodie": {
     "key": "fh-hoodie",
@@ -763,7 +763,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 40
   },
   "mens-bomber-jacket": {
     "key": "mens-bomber-jacket",
@@ -806,7 +806,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 19
   },
   "occupy-mars-hoodie": {
     "key": "occupy-mars-hoodie",
@@ -848,7 +848,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 41
   },
   "spacex-black-hoodie-2x": {
     "key": "spacex-black-hoodie-2x",
@@ -893,7 +893,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 4
+    "id": 42
   },
   "spacex-black-zipper-hoodie-2x": {
     "key": "spacex-black-zipper-hoodie-2x",
@@ -937,7 +937,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 5
+    "id": 43
   },
   "spacex-moto-jacket": {
     "key": "spacex-moto-jacket",
@@ -984,7 +984,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 6
+    "id": 44
   },
   "spacex-starship-crew-sweatshirt": {
     "key": "spacex-starship-crew-sweatshirt",
@@ -1028,7 +1028,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 7
+    "id": 45
   },
   "spacex-sweatshirt": {
     "key": "spacex-sweatshirt",
@@ -1073,7 +1073,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 8
+    "id": 46
   },
   "starman-pullover-hoodie": {
     "key": "starman-pullover-hoodie",
@@ -1115,7 +1115,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 9
+    "id": 47
   },
   "spacex-front-logo-t-shirt-1": {
     "key": "spacex-front-logo-t-shirt-1",
@@ -1157,7 +1157,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 0
+    "id": 27
   },
   "spacex-women-s-f9-t-shirt": {
     "key": "spacex-women-s-f9-t-shirt",
@@ -1196,7 +1196,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 28
   },
   "women-s-dragon-ii-schematic-t-shirt": {
     "key": "women-s-dragon-ii-schematic-t-shirt",
@@ -1238,7 +1238,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 29
   },
   "women-s-dragon-t-shirt": {
     "key": "women-s-dragon-t-shirt",
@@ -1277,7 +1277,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 30
   },
   "women-s-falcon-1-t-shirt-5xl": {
     "key": "women-s-falcon-1-t-shirt-5xl",
@@ -1316,7 +1316,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 4
+    "id": 31
   },
   "women-s-fh-t-shirt": {
     "key": "women-s-fh-t-shirt",
@@ -1355,7 +1355,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 5
+    "id": 32
   },
   "women-s-occupy-mars-t-shirt-1": {
     "key": "women-s-occupy-mars-t-shirt-1",
@@ -1394,7 +1394,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 6
+    "id": 33
   },
   "women-s-starman-t-shirt": {
     "key": "women-s-starman-t-shirt",
@@ -1433,7 +1433,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 7
+    "id": 34
   },
   "womens-crew-1-mission-patch-t-shirt": {
     "key": "womens-crew-1-mission-patch-t-shirt",
@@ -1472,7 +1472,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 8
+    "id": 35
   },
   "womens-demo-2-astronaut-t-shirt": {
     "key": "womens-demo-2-astronaut-t-shirt",
@@ -1511,7 +1511,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 9
+    "id": 36
   },
   "womens-demo-2-mission-patch-t-shirt": {
     "key": "womens-demo-2-mission-patch-t-shirt",
@@ -1550,7 +1550,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 10
+    "id": 37
   },
   "womens-bomber-jacket": {
     "key": "womens-bomber-jacket",
@@ -1601,7 +1601,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 10
+    "id": 48
   },
   "children-s-occupy-mars-shirts-black-large": {
     "key": "children-s-occupy-mars-shirts-black-large",
@@ -1638,7 +1638,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 0
+    "id": 49
   },
   "children-s-spacex-t-shirt-aa-white-large-1": {
     "key": "children-s-spacex-t-shirt-aa-white-large-1",
@@ -1685,7 +1685,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 50
   },
   "kid-s-dragon-t-shirt": {
     "key": "kid-s-dragon-t-shirt",
@@ -1722,7 +1722,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 51
   },
   "kid-s-f9-t-shirt": {
     "key": "kid-s-f9-t-shirt",
@@ -1762,7 +1762,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 52
   },
   "kid-s-falcon-1-t-shirt": {
     "key": "kid-s-falcon-1-t-shirt",
@@ -1799,7 +1799,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 4
+    "id": 53
   },
   "kid-s-fh-t-shirt-black-large": {
     "key": "kid-s-fh-t-shirt-black-large",
@@ -1839,7 +1839,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 5
+    "id": 54
   },
   "kid-s-starman-t-shirt": {
     "key": "kid-s-starman-t-shirt",
@@ -1876,7 +1876,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 6
+    "id": 55
   },
   "kids-demo-2-astronaut-t-shirt": {
     "key": "kids-demo-2-astronaut-t-shirt",
@@ -1913,7 +1913,7 @@ module.exports = {
     "colors": [
       "black"
     ],
-    "id": 7
+    "id": 56
   },
   "spacex-onesie-black-12m": {
     "key": "spacex-onesie-black-12m",
@@ -1949,7 +1949,7 @@ module.exports = {
         "Width": "15.5\",17\",18.5\""
       }
     ],
-    "id": 8
+    "id": 57
   },
   "spacex-spacesuit-onesie": {
     "key": "spacex-spacesuit-onesie",
@@ -1999,7 +1999,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 61
   },
   "spacex-tshirt-youth-dragon-schematic": {
     "key": "spacex-tshirt-youth-dragon-schematic",
@@ -2036,7 +2036,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 10
+    "id": 59
   },
   "kid-s-starman-hoodie": {
     "key": "kid-s-starman-hoodie",
@@ -2073,7 +2073,7 @@ module.exports = {
     "colors": [
       "black"
     ],
-    "id": 0
+    "id": 60
   },
   "spacex-youth-hoodie": {
     "key": "spacex-youth-hoodie",
@@ -2114,7 +2114,7 @@ module.exports = {
     "colors": [
       "charcoal"
     ],
-    "id": 2
+    "id": 62
   },
   "spacex-youth-zipper-hoodie": {
     "key": "spacex-youth-zipper-hoodie",
@@ -2151,7 +2151,7 @@ module.exports = {
     "colors": [
       "black"
     ],
-    "id": 3
+    "id": 63
   },
   "dragon-cap": {
     "key": "dragon-cap",
@@ -2176,7 +2176,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 0
+    "id": 64
   },
   "drone-ship-luggage-tags": {
     "key": "drone-ship-luggage-tags",
@@ -2191,7 +2191,7 @@ module.exports = {
     "name": "DRONE SHIP LUGGAGE TAGS",
     "description": "Luggage tags come in a (2) pack.\n\n(2) pack includes: Of Course I Still Love You and Just Read the Instructions",
     "price": 20,
-    "id": 1
+    "id": 65
   },
   "falcon-9-baseball-cap": {
     "key": "falcon-9-baseball-cap",
@@ -2216,7 +2216,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 66
   },
   "mission-patch-collection-2": {
     "key": "mission-patch-collection-2",
@@ -2229,7 +2229,7 @@ module.exports = {
     "name": "MISSION PATCH COLLECTION 2",
     "description": "Mission Patch Collection 2 contains:\n\n- Thaicom\n- CRS-3\n- Orbcomm\n- AsiaSat8\n- AsiaSat6\n- CRS-4",
     "price": 121,
-    "id": 3
+    "id": 67
   },
   "mission-patch-collection-3": {
     "key": "mission-patch-collection-3",
@@ -2242,7 +2242,7 @@ module.exports = {
     "name": "MISSION PATCH COLLECTION 3",
     "description": "Mission Patch Collection 3 contains:\n\n- CRS-5\n- DSCOVR\n- ABS/Eutelsat-1\n- CRS-6\n- Thales",
     "price": 45,
-    "id": 4
+    "id": 68
   },
   "mission-patch-collection-4": {
     "key": "mission-patch-collection-4",
@@ -2255,7 +2255,7 @@ module.exports = {
     "name": "MISSION PATCH COLLECTION 4",
     "description": "Mission Patch Collection 4 contains:\n\n- Orbcomm-2\n- Jason-3\n- SES-9\n- CRS-8\n- JCSAT-14\n- Thaicom-8\n- ABS/Eutelsat-2\n- CRS-9\n- JCSAT-16\n- F9 Landing Patch",
     "price": 70,
-    "id": 5
+    "id": 69
   },
   "mission-patch-collection-5": {
     "key": "mission-patch-collection-5",
@@ -2268,7 +2268,7 @@ module.exports = {
     "name": "MISSION PATCH COLLECTION 5",
     "description": "Mission Patch Collection 5 contains:\n\n- Iridium-1\n- CRS-10\n- EchoStar 23\n- SES-10\n- NROL-76\n- Inmarsat-5 F4\n- CRS-11\n- BulgariaSat-1\n- Iridium-2\n- Intelsat-35\n- CRS-12\n- Formosat-5\n- OTV-5",
     "price": 85,
-    "id": 6
+    "id": 70
   },
   "occupy-mars-heat-sensitive-terraforming-mug-new": {
     "key": "occupy-mars-heat-sensitive-terraforming-mug-new",
@@ -2283,7 +2283,7 @@ module.exports = {
     "name": "OCCUPY MARS \"HEAT SENSITIVE\" TERRAFORMING MUG",
     "description": "<strong>SIZE</strong>: 15 oz.\n\nNot microwave safe\nNot dishwasher safe",
     "price": 20,
-    "id": 7
+    "id": 71
   },
   "remove-before-flight-key-chains": {
     "key": "remove-before-flight-key-chains",
@@ -2306,7 +2306,7 @@ module.exports = {
     "specs": [
       "vehicle"
     ],
-    "id": 8
+    "id": 72
   },
   "remove-before-flight-key-chains-1": {
     "key": "remove-before-flight-key-chains-1",
@@ -2320,7 +2320,7 @@ module.exports = {
     "name": "REMOVE BEFORE FLIGHT KEY CHAINS",
     "description": "Key chains come in a (2) pack.\n\n(2) pack includes: \n\n(1) Front: Starship Vehicle, Back: Remove Before Flight\n\n(1) Front: SpaceX logo, Back: Remove Before Flight",
     "price": 15,
-    "id": 9
+    "id": 73
   },
   "spacex-back-pack": {
     "key": "spacex-back-pack",
@@ -2340,7 +2340,7 @@ module.exports = {
     "description": "- Nylon canvas with matte canvas contrast\n- Interior padded storage compartment for a 15\" laptop\n- Two-way water resistant zippers\n- Interior zipped pockets\n- Briefcase handle\n- Stash pockets on each side of the bag\n- 12\" W x 18\" H x 6\" D",
     "name": "SPACEX BACK PACK",
     "price": 75,
-    "id": 10
+    "id": 74
   },
   "spacex-baseball-cap": {
     "key": "spacex-baseball-cap",
@@ -2366,7 +2366,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 11
+    "id": 75
   },
   "spacex-crew-1-mission-patch": {
     "key": "spacex-crew-1-mission-patch",
@@ -2379,7 +2379,7 @@ module.exports = {
     "name": "SPACEX CREW-1 MISSION PATCH",
     "description": "SpaceX Crew-1 Mission Patch",
     "price": 15,
-    "id": 12
+    "id": 76
   },
   "spacex-duffel": {
     "key": "spacex-duffel",
@@ -2400,7 +2400,7 @@ module.exports = {
     "name": "SPACEX DUFFEL",
     "description": "- Nylon canvas with matte canvas contrast\n- Water resistant zippers with faux leather pullers\n- Removable padded shoulder strap\n- Self carrying handle with matte black snaps\n- Exterior zipped pocket with trolley sleeve\n- Stash pockets on each side of the bag\n- 22\" L x 14\" H x 9\" W",
     "price": 100,
-    "id": 13
+    "id": 77
   },
   "spacex-schematic-sticker-pack": {
     "key": "spacex-schematic-sticker-pack",
@@ -2414,7 +2414,7 @@ module.exports = {
     "name": "SPACEX SCHEMATIC STICKER PACK",
     "description": "SpaceX Schematic Sticker Pack",
     "price": 15,
-    "id": 14
+    "id": 78
   },
   "spacex-x-baseball-cap-l-xl-black": {
     "key": "spacex-x-baseball-cap-l-xl-black",
@@ -2440,7 +2440,7 @@ module.exports = {
       "colors",
       "sizes"
     ],
-    "id": 15
+    "id": 79
   },
   "starship-poster-pack": {
     "key": "starship-poster-pack",
@@ -2457,7 +2457,7 @@ module.exports = {
     "name": "STARSHIP POSTER PACK",
     "description": "Posters come in a (3) pack\n\n18\" x 24\"\n\nGloss finish\n",
     "price": 30,
-    "id": 16
+    "id": 80
   },
   "x-adjustable-cap": {
     "key": "x-adjustable-cap",
@@ -2472,6 +2472,6 @@ module.exports = {
     "name": "X ADJUSTABLE CAP",
     "description": "One size fits most",
     "price": 25,
-    "id": 17
+    "id": 81
   }
 }

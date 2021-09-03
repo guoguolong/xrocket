@@ -5,12 +5,13 @@ const glob = require('glob');
 const categories = require(`${DATA_DIR}/source/categories`);
 const products = require(`${DATA_DIR}/source/products`);
 
+let globalPrdId = 0;
 function fillProducts(prodFiles, products, c, subC) {
-  prodFiles.forEach((prdFolder, id) => {
+  prodFiles.forEach((prdFolder) => {
     const prdKey = prdFolder.split('/').pop();
     const imageFiles = glob.sync(`${prdFolder}/*.png`);
     const images = imageFiles.map(imgFile => imgFile.split('/').pop())
-    products[prdKey].id = id;
+    products[prdKey].id = ++globalPrdId;
     products[prdKey] = products[prdKey] || {};
     products[prdKey].key = prdKey;
     let names = prdKey.split('-');
