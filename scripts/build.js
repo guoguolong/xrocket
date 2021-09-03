@@ -179,15 +179,41 @@ function addBuiltBadge(nodeKey) {
     return fmt; 
   }
 
-  const headerFilename = `${DIST_DIR}/widgets/header/index.html`;
-  let dom = new JSDOM(fs.readFileSync(headerFilename, 'utf-8'));
-  dom.window.document.querySelector(nodeKey).innerHTML = 'built@' + dateFtt('MM-dd hh:mm:ss', new Date());
-  fs.writeFileSync(headerFilename, beautify(dom.serialize(), { format: 'html' }));  
+  // // 更新头文件
+  const now = dateFtt('hh:mm:ss MM/dd', new Date());
+  const builtAt = 'built@' + now;
 
-  const indexFilename = `${DIST_DIR}/index.html`;
-  dom = new JSDOM(fs.readFileSync(indexFilename, 'utf-8'));
-  dom.window.document.querySelector(nodeKey).innerHTML = 'built@' + dateFtt('MM-dd hh:mm:ss', new Date());
-  fs.writeFileSync(indexFilename, beautify(dom.serialize(), { format: 'html' }));  
+  // const headerFilename = `${DIST_DIR}/widgets/header/index.html`;
+  // let dom = new JSDOM(fs.readFileSync(headerFilename, 'utf-8'));
+  // dom.window.document.querySelector(nodeKey).innerHTML = builtAt;
+  // fs.writeFileSync(headerFilename, beautify(dom.serialize(), { format: 'html' }));  
+
+  // // 更新首页文件
+  // const indexFilename = `${DIST_DIR}/index.html`;
+  // dom = new JSDOM(fs.readFileSync(indexFilename, 'utf-8'));
+
+  // let titleEle = dom.window.document.querySelector('title');
+  // if (titleEle) {
+  //   titleEle.innerHTML += '@' + now;
+  // }
+
+  // dom.window.document.querySelector(nodeKey).innerHTML = 'built@' + dateFtt('MM-dd hh:mm:ss', new Date());
+  // fs.writeFileSync(indexFilename, beautify(dom.serialize(), { format: 'html' }));  
+
+  const htmlFiles = glob.sync(`${DIST_DIR}/**/*.html`, options);
+  htmlFiles.forEach(htmlFile => {
+    // console.log(htmlFile)
+    dom = new JSDOM(fs.readFileSync(htmlFile, 'utf-8'));
+    if (dom.window.document.querySelector('title')) {
+      console.log('hmtl: ', htmlFile);
+      dom.window.document.querySelector('title').innerHTML += '@' + now;
+    }
+    if (dom.window.document.querySelector(nodeKey)) {
+      dom.window.document.querySelector(nodeKey).innerHTML = builtAt;
+      fs.writeFileSync(htmlFile, beautify(dom.serialize(), { format: 'html' }));  
+    }
+    fs.writeFileSync(htmlFile, beautify(dom.serialize(), { format: 'html' }));
+  });
 }
 
 (async () => {
