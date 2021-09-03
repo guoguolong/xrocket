@@ -7,7 +7,7 @@ const options = {};
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-const APP_DIR = `${__dirname}`;
+const APP_DIR = `${__dirname}/..`;
 const DIST_DIR = `${APP_DIR}/dist`;
 
 function initDist() {
@@ -93,7 +93,9 @@ async function postProccessCss(filename) {
     plugins: [
       autoprefixer
     ]
-  })]).process(css);
+  })]).process(css, {
+    from: undefined
+  });
 
   fs.writeFileSync(filename, beautify(result.css, { format: 'css' }))
 }

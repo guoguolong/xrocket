@@ -1,9 +1,9 @@
 const BASE_DIR = `${__dirname}/..`;
-
+const DATA_DIR = `${BASE_DIR}/data`;
 const fs = require('fs');
 const glob = require('glob');
-const categories = require(`${BASE_DIR}/data/source/categories`);
-const products = require(`${BASE_DIR}/data/source/products`);
+const categories = require(`${DATA_DIR}/source/categories`);
+const products = require(`${DATA_DIR}/source/products`);
 
 function fillProducts(prodFiles, products, c, subC) {
   prodFiles.forEach((prdFolder, id) => {
@@ -103,17 +103,17 @@ function fillProducts(prodFiles, products, c, subC) {
 categories.forEach(c => {
   if (c.children && c.children.length > 0) {
     c.children.forEach(subC => {
-      const files = glob.sync(`${BASE_DIR}/data/catalog/${c.name.toLowerCase()}/${subC.name.toLowerCase()}/*`)
+      const files = glob.sync(`${DATA_DIR}/catalog/${c.name.toLowerCase()}/${subC.name.toLowerCase()}/*`)
       fillProducts(files, products, c, subC);
     });
   } else {
-    const files = glob.sync(`${BASE_DIR}/data/catalog/${c.name.toLowerCase()}/*`);
+    const files = glob.sync(`${DATA_DIR}/catalog/${c.name.toLowerCase()}/*`);
     fillProducts(files, products, c);
   }
 })
 
-console.log(JSON.stringify(products, null, 2));
+// console.log(JSON.stringify(products, null, 2));
 
-fs.writeFileSync(`${BASE_DIR}/data/source/products.js`, 'module.exports = ' + JSON.stringify(products, null, 2))
-fs.writeFileSync(`${BASE_DIR}/data/products.js`, 'var products = ' + JSON.stringify(Object.values(products), null, 2))
-fs.writeFileSync(`${BASE_DIR}/data/categories.js`, 'var categories = ' + JSON.stringify(categories, null, 2))
+fs.writeFileSync(`${DATA_DIR}/source/products.js`, 'module.exports = ' + JSON.stringify(products, null, 2))
+fs.writeFileSync(`${DATA_DIR}/products.js`, 'var products = ' + JSON.stringify(Object.values(products), null, 2))
+fs.writeFileSync(`${DATA_DIR}/categories.js`, 'var categories = ' + JSON.stringify(categories, null, 2))

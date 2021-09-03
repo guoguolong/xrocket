@@ -2,7 +2,7 @@ const fs = require('fs');
 const glob = require('glob');
 const beautify = require('beautify');
 
-const APP_DIR = `${__dirname}`;
+const APP_DIR = `${__dirname}/..`;
 
 function parseCssLines(css, lines) {
     css = beautify(css, {format: 'css'});
