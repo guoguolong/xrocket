@@ -2,6 +2,7 @@
 
 header {
   position: fixed;
+  z-index: 100;
   height: @header-height;
   top: 0;
   width: 100%;
@@ -12,6 +13,22 @@ header {
   background: @theme-main-color;
   color: white;
   font-size: 15px;
+
+  .built {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 60px;
+    padding-bottom: 10px;
+    color: #555;
+    font-size: 12px;
+    font-style:italic;
+    font-weight: bold;
+    &:hover {
+      color: #F1F1F1;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -34,6 +51,9 @@ header {
     }
 
     .logo-wrapper {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
       width: 150px;
       margin-right: 38PX;
 

@@ -3,12 +3,14 @@ const path = require("path");
 const fsExtra = require("fs-extra");
 const glob = require("glob");
 const less = require("less");
-const options = {};
 const jsdom = require("jsdom");
+const beautify = require('beautify');
+const HtmlParser = require('./build/html-parser');
 const { JSDOM } = jsdom;
 
 const APP_DIR = `${__dirname}/..`;
 const DIST_DIR = `${APP_DIR}/dist`;
+const options = {};
 
 function initDist() {
   // fsExtra.removeSync(DIST_DIR)
@@ -100,68 +102,101 @@ async function postProccessCss(filename) {
   fs.writeFileSync(filename, beautify(result.css, { format: 'css' }))
 }
 
-(async () => {
-  initDist();
-
-  await processLess();
-
+async function mergeWidgets() {
   const htmlFiles = glob.sync(`${DIST_DIR}/pages/**/*.html`, options);
   htmlFiles.forEach(htmlFile => {
     try {
-      const dom = new JSDOM(fs.readFileSync(htmlFile, 'utf-8'));
-      let firstLinkEle = dom.window.document.querySelectorAll('link')?.[1];
 
-      let firstScriptEle;
-      const scripts = dom.window.document.querySelectorAll('script');
-      scripts.forEach(script => {
-        if (script.getAttribute('src') === 'index.js') {
-          firstScriptEle = script;
-        }
-      })
+      const mainHtmlParser = HtmlParser(htmlFile, true);
 
-      const widgetEles = dom.window.document.querySelectorAll("widget");
-      widgetEles?.forEach(ele => {
+      let mainEmbedLink = mainHtmlParser.data.link.embed['index.css'];
+      let mainEmbedScript = mainHtmlParser.data.script.embed['index.js'];
+
+      const widgetEles = mainHtmlParser.data.dom.window.document.querySelectorAll("widget");
+
+      widgetEles?.forEach((ele) => {
         const widgetName = ele.getAttribute('name');
+        const widgetHtmlParser = HtmlParser(`${DIST_DIR}/widgets/${widgetName}/index.html`);
+
         const widgetInfo = readWidgetInfo(widgetName);
-        // 处理 html
-        ele.outerHTML = widgetInfo.dom.window.document.querySelector(`.${widgetName}`).outerHTML;
+        
+        // 合并 html
+        ele.outerHTML = widgetHtmlParser.data.dom.window.document.querySelector(`.${widgetName}`).outerHTML;
 
         // 处理 css
-        if (firstLinkEle) {
-          const href = firstLinkEle.getAttribute('href');
-          const firstCssFilename = `${path.dirname(htmlFile)}/${href}`;
-          let firstCssContent = fs.readFileSync(firstCssFilename, 'utf-8');
-          widgetInfo.css.forEach(css => {
-            if (css.type === 'content') {
-              firstCssContent = css.content + '\n' + firstCssContent;
-            } else {
-              firstLinkEle.parentElement.insertBefore(css.content, firstLinkEle);
-            }
-          })
-          fs.writeFileSync(firstCssFilename, firstCssContent)
-        }
+        Object.entries(widgetHtmlParser.data.link.embed).forEach(([filename, info]) => {
+          mainEmbedLink.content = info.content + '\n' + mainEmbedLink.content;
+        });
+
+        Object.entries(widgetHtmlParser.data.link.links).forEach(([filename, info]) => {
+          mainHtmlParser.data.link.links[filename] = info;
+        });
 
         // 处理 js
-        if (firstScriptEle) {
-          const scriptName = firstScriptEle.getAttribute('src');
-          const firstFilename = `${path.dirname(htmlFile)}/${scriptName}`;
-          let firstContent = fs.readFileSync(firstFilename, 'utf-8');
-          widgetInfo.script.forEach(item => {
-            if (item.type === 'content') {
-              firstContent = item.content + '\n' + firstContent;
-            } else {
-              firstScriptEle.parentElement.insertBefore(item.content, firstScriptEle);
-            }
-          })
-          fs.writeFileSync(firstFilename, firstContent)
-        }
+        Object.entries(widgetHtmlParser.data.script.embed).forEach(([filename, info]) => {
+          mainEmbedScript.content = info.content + '\n' + mainEmbedScript.content;
+        });
+
+        Object.entries(widgetHtmlParser.data.script.links).forEach(([filename, info]) => {
+          mainHtmlParser.data.script.links[filename] = info;
+        });
       })
 
-      fs.writeFileSync(htmlFile, dom.serialize());
+      // 将更新后的 css 回写.
+      fs.writeFileSync(`${path.dirname(htmlFile)}/${mainEmbedLink.node.getAttribute('href')}`,
+        beautify(mainEmbedLink.content, { format: 'css' }));
+        
+      // 将更新后的 js 回写.
+      fs.writeFileSync(`${path.dirname(htmlFile)}/${mainEmbedScript.node.getAttribute('src')}`, 
+        beautify(mainEmbedScript.content, { format: 'js' }));
+
+      // 回写 link 和 script 到 html文件.
+      mainHtmlParser.updateLinkScriptToDom();
+      fs.writeFileSync(htmlFile, beautify(mainHtmlParser.data.dom.serialize(), { format: 'html' }));
     } catch (e) {
       console.log(e);
     }
   });
+}
+
+
+function addBuiltBadge(nodeKey) {
+  function dateFtt(fmt, date)  {
+    var o = { 
+      "M+" : date.getMonth() + 1, //月份 
+      "d+" : date.getDate(),      //日 
+      "h+" : date.getHours(),     //小时 
+      "m+" : date.getMinutes(),   //分 
+      "s+" : date.getSeconds(),   //秒 
+      "q+" : Math.floor((date.getMonth()+3)/3), //季度 
+      "S" : date.getMilliseconds()    //毫秒 
+    }; 
+    if(/(y+)/.test(fmt))
+      fmt = fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+    for(var k in o) 
+      if(new RegExp("("+ k +")").test(fmt)) 
+    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
+    return fmt; 
+  }
+
+  const headerFilename = `${DIST_DIR}/widgets/header/index.html`;
+  let dom = new JSDOM(fs.readFileSync(headerFilename, 'utf-8'));
+  dom.window.document.querySelector(nodeKey).innerHTML = 'built@' + dateFtt('MM-dd hh:mm:ss', new Date());
+  fs.writeFileSync(headerFilename, beautify(dom.serialize(), { format: 'html' }));  
+
+  const indexFilename = `${DIST_DIR}/index.html`;
+  dom = new JSDOM(fs.readFileSync(indexFilename, 'utf-8'));
+  dom.window.document.querySelector(nodeKey).innerHTML = 'built@' + dateFtt('MM-dd hh:mm:ss', new Date());
+  fs.writeFileSync(indexFilename, beautify(dom.serialize(), { format: 'html' }));  
+}
+
+(async () => {
+  initDist();
+
+  addBuiltBadge('.built');
+
+  await processLess();
+  await mergeWidgets();
 
   // 后处理 css， tdiy.
   const cssFiles = glob.sync(`${DIST_DIR}/pages/**/*.css`, options);

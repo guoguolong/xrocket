@@ -1,5 +1,5 @@
 {
-  "name": "mars-shop",
+  "name": "x-rocket",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,16 +19,21 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "debug": "http-server . -p 8081 -o /",
+    "prod": "http-server dist -p 8082 -o /",
+    "all": "npm run build && npm run prod",
+    "report": "node scripts/analysis.js",
+    "gen-sample-data": "node scripts/gen-sample-data.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guoguolong/mars-shop.git"
+    "url": "git+https://github.com/guoguolong/xrocket.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/guoguolong/mars-shop/issues"
+    "url": "https://github.com/guoguolong/xrocket/issues"
   },
-  "homepage": "https://github.com/guoguolong/mars-shop#readme"
+  "homepage": "https://github.com/guoguolong/xrocket#readme"
 }
