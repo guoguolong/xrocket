@@ -27,5 +27,43 @@ function checkUserLogin() {
   }
 }
 
+function toggleSearchBar() {
+  var searchBar = $('.search-bar');
+  var openCtrl = $('.link-search');
+  var closeCtrl = $('.search-bar .action-close');
+  var maskname = '#modalbox';
+
+  function activate() {
+    searchBar.style.display = 'flex';
+    $('body').style.overflow = 'hidden';
+  }
+
+  function deactivate() {
+    searchBar.style.display = 'none';
+    $('body').style.overflow = 'auto';     
+  }
+
+  openCtrl.onclick = function() {
+    activate();
+  }
+
+  closeCtrl.onclick = function() {
+    deactivate();
+  }
+
+  if (window.location.hash === maskname) {
+    activate();
+  }
+}
+
+$('.search-input').onkeydown = function (e) {
+  var evt = window.event || e; 
+  var keyword = e.target.value.trim();
+  if (evt.keyCode == 13 && keyword){
+    window.location.href= `/pages/products/index.html?keyword=${keyword}`;
+  }
+}
+
 renderMenu();
 checkUserLogin();
+toggleSearchBar();

@@ -1,68 +1,93 @@
-h1 {
-  margin-bottom: 50px;
-  text-align: center;
-}
+.products-page {
+  h1 {
+    text-align: center;
+  }
 
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-
-  padding: 0 50px;
-  margin-left: -20px;
-
-  .item-wrapper {
-    cursor: pointer;
-    width: 25%;
-    padding-left: 20px;
-    margin-bottom: 40px;
-
-    .item {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      background: #FFF;
-      height: 100%;
-      transition: all 0.5s;
-
-      .media {
-        position: relative;
-        img {
-          width: 100%;
-          object-fit: cover;
-          transition: opacity 0.3s ease-in-out;
-          &.top {
-            position:absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            &:hover {
-              opacity:0;
-            }
-          }
-        }
-      }
-
-      .title {
-        margin-top: 20px;
-        text-align: center;
-      }
-
-      .price {
-        margin-top: 8px;
-      }
+  h3.keyword-highlight {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    span {
+      color: red;
     }
   }
 
-  .empty {
-    font-size: 16px;
-    padding: 40px;
-    flex: 1;
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    padding: 0 50px;
+    margin-top: 50px;
+    margin-left: -20px;
+
+    .item-wrapper {
+      cursor: pointer;
+      width: 25%;
+      padding-left: 20px;
+      margin-bottom: 40px;
+
+      .item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background: #FFF;
+        height: 100%;
+        transition: all 0.5s;
+
+        .media {
+          position: relative;
+          img {
+            width: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+            &.top {
+              position:absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              &:hover {
+                opacity:0;
+              }
+            }
+          }
+        }
+
+        .title {
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        .price {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .empty {
+      font-size: 16px;
+      padding: 40px;
+      flex: 1;
+      text-align: center;
+      background: #FAFAFA;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+  }
+  .actions {
     text-align: center;
-    background: #FAFAFA;
-    margin-left: 20PX;
-    font-weight: 300;
+    .more-action {
+      width: 400px;
+      &:hover {
+        background: white;
+        color: black;
+        font-weight: bold;
+      }
+    }
   }
 }
 

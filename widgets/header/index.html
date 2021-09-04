@@ -3,21 +3,32 @@
 <title>Header</title>
 <header class="header">
   <div class="header-inner">
-    <div class="left-part">
-      <div class="logo-wrapper">
-        <a href="/pages/home/index.html"><img src="/assets/images/logo-w.svg" /></a>
+    <div class="nav-bar">
+      <div class="left-part">
+        <div class="logo-wrapper">
+          <a href="/pages/home/index.html"><img src="/assets/images/logo-w.svg" /></a>
+        </div>
+        <div class="menu">
+        </div>
       </div>
-      <div class="menu">
+      <div class="right-part">
+        <div class="item link-login"><a href="/pages/login/index.html">ACCOUNT</a></div>
+        <div class="item link-logout"><a href="/pages/login/index.html">LOGOUT</a></div>
+        <div class="item link-search"><a href="#modalbox">SEARCH</a></div>
+        <div class="item link-cart"><a href="/pages/cart/index.html">CART <span class="qty">(0)</span></a></div>
+        <div class="item link-userinfo"></div>
       </div>
     </div>
-    <div class="right-part">
-      <div class="item link-login"><a href="/pages/login/index.html">ACCOUNT</a></div>
-      <div class="item link-cart"><a href="/pages/cart/index.html">CART <span class="qty">(0)</span></a></div>
-      <div class="item link-userinfo"></div>
-      <div class="item link-logout"><a href="/pages/login/index.html">LOGOUT</a></div>
+    <div class="search-bar">
+      <div class="input-icon-wrapper" />
+        <img src="/assets/images/close.svg" />
+        <input placeholder="SEARCH..." class="search-input"/>        
+      </div>
+      <a href="#"><img class="action-close" src="/assets/images/close.svg" /></a>
     </div>
     <div class="built"></div>
-  </div>
+  </div><!-- header-inner -->
+  <div id="modalbox"></div>
 </header>
 <script type="text/javascript" src="/assets/js/common.js"></script>
 <script type="text/javascript" src="/widgets/header/index.js"></script>
