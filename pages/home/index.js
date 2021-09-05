@@ -28,19 +28,19 @@ function getCookie(cname) {
 
 /***************** MAIN ***********************/
 
-var username = window.sessionStorage.getItem('token');
-if (username) {
-  $('.link-login').style.display = 'none';
-  $('.link-userinfo').style.display = 'block';
-  $('.link-logout').style.display = 'block';
-  $('.link-userinfo').innerHTML = '欢迎' + window.sessionStorage.getItem('token');
-} else {
-  $('.link-login').style.display = 'block';
-  $('.link-userinfo').style.display = 'none';
-  $('.link-logout').style.display = 'none';
-}
+// var username = window.sessionStorage.getItem('token');
+// if (username) {
+//   $('.link-login').style.display = 'none';
+//   $('.link-userinfo').style.display = 'block';
+//   $('.link-logout').style.display = 'block';
+//   $('.link-userinfo').innerHTML = '欢迎' + window.sessionStorage.getItem('token');
+// } else {
+//   $('.link-login').style.display = 'block';
+//   $('.link-userinfo').style.display = 'none';
+//   $('.link-logout').style.display = 'none';
+// }
 
-$('.link-logout').onclick = function () {
-  window.sessionStorage.removeItem('token');
-  window.location.href = 'index.html'
-}
+// $('.link-logout').onclick = function () {
+//   window.sessionStorage.removeItem('token');
+//   window.location.href = 'index.html'
+// }

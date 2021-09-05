@@ -1,24 +1,33 @@
-function login() {
-  var username = $id('username').value;
-  var password = $id('password').value;
-  var users = window.localStorage.getItem('users');
-  users = JSON.parse(users);
-  console.log('username, password:', username, password)
-  var isLogin = false;
-  for (var i = 0; i < users.length; i++) {
-    if (users[i].username === username && users[i].password === password) {
-      isLogin = true;
-      break;
+function pageLogin() {
+  function login() {
+    var email = $('.email').value;
+    var password = $('.password').value;
+    var users = window.localStorage.getItem('users');
+    users = JSON.parse(users);
+
+    var userLogined = false;
+    for (var i = 0; i < users.length; i++) {
+      if (users[i].email === email && users[i].password === password) {
+        userLogined = users[i];
+        break;
+      }
+    }
+
+    if (userLogined) {
+      $('.errmsg').className = 'errmsg';
+      $('.errmsg').innerHTML = '';
+
+      window.sessionStorage.setItem('user', JSON.stringify({
+        email: userLogined.email,
+        nickname: userLogined.nickname,
+      }));
+      window.location.href = '/pages/home/index.html';
+    } else {
+      $('.errmsg').className = 'errmsg errmsg-highlight';
+      $('.errmsg').innerHTML = 'Wrong email or password, try again.'
     }
   }
-
-  if (isLogin) {
-    window.sessionStorage.setItem('token', username);
-    window.location.href = '../home/index.html';
-  } else {
-    alert('用户名密码错误')
-  }
+  $('.action-login').onclick = login;
 }
 
-$('.action-login').onclick = login;
-
+pageLogin();
