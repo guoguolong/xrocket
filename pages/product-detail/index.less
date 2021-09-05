@@ -1,4 +1,4 @@
-@gray1: #e7e7e7;
+@import "../../assets/styles/variables.less";
 
 .detail {
   margin: 0 auto;
@@ -20,8 +20,7 @@
 
       .row-basic {
         padding-bottom: 30px;
-        border-bottom: 1px solid @gray1;
-        margin-bottom: 80px;
+        border-bottom: 1px solid @theme-main-gray2;
         text-align: left;
         .name {
           font-size: 20px;
@@ -34,54 +33,42 @@
           font-weight: bold;
         }
       }
+      .row-description {
+        margin-top: 30px;
+        line-height: 2;
+      }
       .row-form {
+        margin-top: 80px;
         .form-item {
           margin-bottom: 10px;
         }
       }
-      .row-actions {
-        .add-to-cart {
-          position: relative;
-          z-index: 1;
-          transition: color .45s cubic-bezier(.785, .135, .15, .86),border .45s cubic-bezier(.785, .135, .15, .86);
-          background-color: transparent;
-          span {
-            position: relative;
-            z-index: 1;
-          }
-          &:hover {
-            color: #000;
-            z-index: 1;
-            transition: color .45s cubic-bezier(.785, .135, .15, .86),border .45s cubic-bezier(.785, .135, .15, .86);
-          }
-          &::before {
-            position: absolute;
-            content: '';
-            display: block;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            // transform: scale(1, 1);
-            transform-origin: right center;
-            z-index: 1;
-
-            transition: transform .45s cubic-bezier(.785, .135, .15, .86);
-            background-color: #000;
-          }
-          &:hover::before{
-            // transform-origin: right center;
-            transform: scale(0, 1);
-            // transition: transform .45s cubic-bezier(.785, .135, .15, .86);
-            // background-color: #000;
-            z-index: 1;
-          }
-        }
+      .errmsg-highlight {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: italic;
+        text-align: center;
+        color: red;
       }
     }
   }
   .more-info {
-
+    .size-chart-title {
+      margin: 50px 0 30px 0;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    table.size-chart {
+      width: 100%;
+      max-width: 800px;
+      td {
+        width: 17%;
+        border-bottom: 1px solid @theme-main-gray2;
+        padding: 20px 0;
+        color: @theme-main-gray;
+      }
+    }
   }
 }
 
