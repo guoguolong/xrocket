@@ -1,13 +1,91 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@main-gray: #e7e7e7;
 
-img {
-  width: 100px;
-}
+.cart-page {
+  padding: 0 80px;
+  text-align: center;
+  .cart {
+    margin: 0 200px 20px 200px;
+    .title {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    table {
+      width: 100%;
+      margin: 0 auto;
+      thead {
+        th {
+          padding-bottom: 10px;
+          border-bottom: 1px solid @main-gray;
+        }
+        th:last-child, td:last-child{
+          text-align: right;
+        }
+      }
 
-.item {
-  display: flex;
+      tbody tr.item {
+        td {
+          padding-top: 25px;
+          &.product-info {
+            display: flex;
+            align-items: center;
+            .picture {
+              margin-right: 25px;
+              img {
+                width: 120px;
+              }
+            }
+            .name, .price, .specs {
+              text-align: left;
+              line-height: 2;
+              font-weight: bold;
+              font-size: 13px;
+            }
+          }
+          .qty {
+            margin-bottom: 10px;
+            input {
+              width: 80px;
+              height: auto;
+              padding: 11px 10px;
+              border-radius: 0;
+              text-align: center;
+            }
+          }
+          .link {
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            letter-spacing: 2px;
+            color: #666;
+            &:hover {
+              text-decoration: none;
+              transition: all 1s;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    .amount-wrapper {
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid @main-gray;
+      text-align: right;
+      .label, .amount {
+        font-weight: bold;
+        line-height: 1.8;
+      }
+      .hint {
+        margin-top: 20px;
+        margin-bottom: 16px;
+        font-weight: 200;
+        font-size: 13px;
+      }
+      .action-order {
+        width: 200px;
+      }
+    }
+  }
 }

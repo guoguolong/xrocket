@@ -82,21 +82,14 @@ function pageProductDetail() {
       var hasThisProduct = false;
       for (var i = 0; i < cart.length; i++) {
         if (cart[i].id === currProd.id) {
+          var sku = currProd.id;
           if (currProd.specs) {
-            var specNum = 0;
             for(var j = 0; j < currProd.specs.length; j++) {
-              var specName = currProd.specs[j];
-              if (cart[i][specName] == $(`.spec-${specName} select`).value) {
-                specNum ++;
-              }
+              sku += $(`.spec-${currProd.specs[j]} select`).value;
             }
-            if (specNum === currProd.specs.length) {
-              hasThisProduct = true;
-            }
-          } else {
+          } 
+          if (sku === cart[i].sku) {
             hasThisProduct = true;
-          }
-          if (hasThisProduct) {
             cart[i].qty += qty;
             break;
           }
@@ -106,28 +99,21 @@ function pageProductDetail() {
       if (!hasThisProduct) {
         var prod = {
           id: currProd.id,
+          sku: currProd.id,
           name: currProd.name,
           price: currProd.price,
           image: currProd.images[0],
           baseUrl: currProd.baseUrl,
           qty: qty,
-          specs: []
+          specs: currProd.specs || [],
         }
-
         if (currProd.specs) {
           for(var i = 0; i < currProd.specs.length; i++) {
             var specName = currProd.specs[i];
             prod[specName] = $(`.spec-${specName} select`).value;
+            prod.sku += prod[specName];
           }
         }
-
-        // if (currProd.specs) {
-        //   for(var i = 0; i < currProd.specs.length; i++) {
-        //     var specName = currProd.specs[i];
-        //     var specNameLabel = (specName[0].toUpperCase() + specName.slice(1)).replace(/s$/, '');
-        //     prod.specs.push(`${specNameLabel}: ${$(`.spec-${specName} select`).value.toUpperCase()}`);
-        //   }
-        // }
         cart.push(prod);
       }
 

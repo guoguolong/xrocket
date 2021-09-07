@@ -65,6 +65,13 @@ function widgetHeader() {
       window.location.href= `/pages/products/index.html?keyword=${keyword}`;
     }
   }
+  var cart = [];
+  try {
+    cart = JSON.parse(window.sessionStorage.getItem("cart"));
+  } catch (e) {
+  }
+  $('header .qty .value').innerHTML = cart.length;
+  $('header .link-cart').className = 'cart-hightlight';
 
   renderMenu();
   checkUserLogin();

@@ -10,8 +10,30 @@
 
 <body>
   <widget name="header"></widget>
-  <div class="root">
+  <div class="root cart-page">
     <div class="cart">
+      <div class="title">CART</div>
+      <table>
+        <thead>
+          <tr>
+            <th>PRODUCT</th>
+            <th>QUANTITY</th>
+            <th>SUB TOTAL</th>
+          </tr>
+         </thead>
+         <tbody class="cart-items">
+         </tbody>
+      </table>
+      <div class="amount-wrapper">
+        <div class="label">TOTAL:</div>
+        <div class="amount"><span>$</span> <span class="value"></span></div>
+        <div class="hint">Shipping & taxes calculated at checkout</div>
+        <div class="actions">
+          <button class="action-order anim-button">
+            <span>PLACE ORDER</span>
+          </button>
+        </div>
+      </div>      
     </div>
   </div>
   <widget name="footer"></widget>
