@@ -74,8 +74,7 @@ function pageProductDetail() {
 
       var cart = [];
       try {
-        cart = JSON.parse(window.sessionStorage.getItem("cart"));
-        cart = cart || [];
+        cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
       } catch (e) {
         console.og('Cart Exception:', e)
       }

@@ -1,3 +1,12 @@
+function updateCartIndicator() {
+  var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];  
+  $('header .qty .value').innerHTML = cart.length;
+  if (cart.length > 0)
+    $('header .link-cart a').className = 'cart-hightlight';
+  else
+    $('header .link-cart a').className = '';        
+}  
+
 function widgetHeader() {
   function renderMenu() {
     var html = '';
@@ -65,14 +74,8 @@ function widgetHeader() {
       window.location.href= `/pages/products/index.html?keyword=${keyword}`;
     }
   }
-  var cart = [];
-  try {
-    cart = JSON.parse(window.sessionStorage.getItem("cart"));
-  } catch (e) {
-  }
-  $('header .qty .value').innerHTML = cart.length;
-  $('header .link-cart').className = 'cart-hightlight';
 
+  updateCartIndicator();
   renderMenu();
   checkUserLogin();
   toggleSearchBar();
