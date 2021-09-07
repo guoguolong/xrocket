@@ -3,9 +3,14 @@ function pageCart() {
   function renderCart() {
     var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
     if (cart.length <= 0) {
-      $('.cart').innerHTML = "Cart is empty.";
+      $('.cart-page .empty').className = 'empty';
+      $('.cart-page .cart').className = 'cart hide';
       return;
     }
+
+    $('.cart-page .empty').className = 'empty hide';
+    $('.cart-page .cart').className = 'cart';
+
     var htmlCart = [];
     var amount = 0;
     for (var i = 0; i < cart.length; i++) {
