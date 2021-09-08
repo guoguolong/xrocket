@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>XRocket - Place Order</title>
+  <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div class="root order-place-page">
+    <div class="main">
+      <div class="main-header">
+        <div class="logo">
+          <img src="/assets/images/logo-b.svg" />
+        </div>
+        <div class="breadcrumb">
+          Cart > Information > Shipping > Payment
+        </div>
+      </div>
+      <div class="main-content">
+        <section class="section section-shipping-address">
+          <div class="section-title">Shipping Address</div>
+          <div class="shipping-address-form">
+            <div class="row row-name">
+              <div><input type="text" name="firstName" placeholder="First Name"/></div>
+              <div><input type="text" name="lastName" placeholder="Last Name" /></div>
+            </div>
+            <div class="row">
+              <input type="text" name="address" placeholder="Address" />
+            </div>
+            <div class="row">
+              <input type="text" name="address" placeholder="Apartment, suite, etc.(optional)" />
+            </div>
+            <div class="row">
+              <input type="text" name="city" placeholder="City" />
+            </div>
+            <div class="row row-region">
+              <div><select name="country" placeholder="Country/region"></select></div>
+              <div><select type="" name="state" placeholder="State"></select></div>       
+              <div><select type="" name="zipcode" placeholder="Zip Code"></select></div>
+            </div>
+            <div class="row">
+              <input type="" name="phone" placeholder="Phone" />
+            </div>
+          </div>
+          <div class="shpping-address-footer">
+            <div><a href="/pages/cart/index.html">< Return to cart</a></div>
+            <div>
+              <button><span>Continue to shipping</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-shipping-method">
+          <div class="section-title">Shipping Method</div>
+          <div class="shipping-opitons">
+            <div class="shpping-option">
+              <input id="shipping-method" type="radio" checed/>
+              <label for="shipping-method">
+                Shipping - UPS Home Delivery®
+              </label>
+            </div>
+            <div class="shpping-price">$38.11</div>
+          </div>
+        </section>
+      </div>
+      <div class="main-footer">
+        <a href="">Privacy policy</a>
+        <a href="">Terms of service</a>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="product-wrapper">
+        <table class="product-table">
+          <tr>
+            <td>
+              <div class="product-image-wrapper">
+                <img  src="/assets/images/logo-b.svg" />
+              </div>
+            </td>
+            <td>
+              <div>Women's Occupy Mars T-Shirt</div>
+              <div>Black / S</div>
+            </td>
+            <td>
+              $30.00
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="subtotal-lines">
+        <div class="line">
+          <div>Subtotal</div>
+          <div>$ 30.00</div>
+        </div>
+        <div class="line">
+          <div>Shipping + Handling</div>
+          <div>$ 38.00</div>
+        </div>
+      </div>
+      <div class="total">
+        <div>Total</div>
+        <div><span class="currency">USD</span> $68.11</div>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="/assets/js/common.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

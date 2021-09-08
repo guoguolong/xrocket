@@ -50,7 +50,7 @@ function pageCart() {
     $('.cart-items').innerHTML = htmlCart.join('');
   }
 
-  $('.cart-items').addEventListener('click', function(e) {
+  $('.cart-items').onclick =  function(e) {
     var sku = e.target.dataset.sku;
     if (sku) {
       var cart = [];
@@ -71,7 +71,11 @@ function pageCart() {
       renderCart();
       if (updateCartIndicator) updateCartIndicator();
     }
-  });
+  };
+
+  $('.action-order').onclick = function () {
+    window.location.href = '/pages/order-place/index.html'
+  }
 
   renderCart();
 }

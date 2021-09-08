@@ -48,8 +48,7 @@ function pageProductDetail() {
       }
     } catch (e) {
       console.log(e)
-      htmlProduct = '火星闹饥荒，本商品已经被抢购一空';
-      $('.detail').innerHTML = htmlProduct;
+      $('.detail').innerHTML = '火星闹饥荒，本商品已经被抢购一空';
     }
     return prod;
   }
