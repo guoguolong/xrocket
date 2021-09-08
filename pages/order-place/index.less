@@ -30,49 +30,130 @@ body .root {
       }
     }
     .main-content {
+      .round-dialog { 
+        border: 1px solid #e6e6e6;
+        border-radius: 6px;
+      }
+
+      .section-order-info {
+        .info-line {
+          display: flex;
+          gap: 20px;
+          padding: 20px 20px;
+          label {
+            color: #737373;
+          }
+          .value {
+            flex: 1;
+          }
+          .action {
+            cursor: pointer;
+            text-decoration: underline;
+            letter-spacing: 1px;
+          }
+        }
+        .info-line + .info-line {
+          border-top: 1px solid #e6e6e6;
+        }
+      }
       .section {
         margin-top: 24px;
         margin-bottom: 20px;
-        .section-title {
+        .section-header {
           margin-bottom: 24px;
-          font-size: 16px;
-          font-weight: bold;
-        }
-        .row {
-          margin-bottom: 15px;
-          &.row-region, &.row-name {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            &>div {
-              flex: 1;
-            }
+          .section-title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .hint {
+            font-size: 13px;
+            padding-top: 8px;
+            color: #666;
           }
         }
-        &.section-shipping-address {
-          .shpping-address-footer {
+        .section-content {
+          .form-item {
+            &.form-item-region, &.form-item-name {
+              display: flex;
+              justify-content: space-between;
+              gap: 15px;
+              &>div {
+                flex: 1;
+              }
+            }
+          }
+          .form-item + .form-item {
+            margin-top: 15px;
+          }
+          .option-wrapper {
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            button {
-              width: 200px;
+
+            .option {
+              label {
+                padding-left: 6px;
+              }
             }
+          }
+          .option-wrapper + .option-wrapper {
+              border-top: 1px solid #d9d9d9;
           }
         }
-        &.section-shipping-method {
-          .shipping-opitons {
-            border: 1px solid #e7e7e7;
-            border-radius: 4px;
-            padding: 18px;
+
+        &.section-credit-card {
+          .card-header {
             display: flex;
             justify-content: space-between;
-            .shpping-option {
-              flex: 1;
+            align-items: center;
+            padding: 10px 20px;
+            .title {
+              font-weight: bold;
+            }
+            ul {
               display: flex;
+              gap: 4px;
+              img {
+                width: 38px;
+              }
             }
           }
-        } // section-shipping-method
+          .credit-card-form-wrapper {
+            border: 1px solid #d9d9d9;
+            background: white;
+            border-radius: 6px;
+            .credit-card-form {
+              border-top: 1px solid #d9d9d9;
+              background: #FAFAFA;
+              padding: 20px;
+
+              .supplement-info {
+                display: flex;
+                gap: 15px;
+                &>div {
+                  flex: 1;
+                }
+              }
+            }
+          }          
+        } // section-credit-card
+        &.section-billing-address {
+          .billing-address-content {
+          }
+        }
       } // section
+      .steps {
+        .step {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            width: 200px;
+          }
+        }
+      }
+
     } // main-content
     .main-footer {
       margin-top: 40px;
