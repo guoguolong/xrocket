@@ -13,7 +13,7 @@ function flipCard(image, side) {
 function renderCategoryTitle(catId) {
   var title = '';
   if (catId) {
-    var categories = JSON.parse(localStorage.getItem("categories"));
+    var categories = JSON.parse(localStorage.getItem("categories")) || [];
     for (var i = 0; i < categories.length; i++) {
       var c = categories[i];
       if (c.id == catId) {
@@ -41,7 +41,7 @@ function renderCategoryTitle(catId) {
 function renderProducts(query = {}, pageNo = 1, pageSize = 12) {
   var allProducts = [];
   try {
-    allProducts = JSON.parse(localStorage.getItem("products"));
+    allProducts = JSON.parse(localStorage.getItem("products")) || [];
   } catch (e) {
     console.log(e)
     $id('products').innerHTML = '<div class="empty">病毒入侵，躲进地堡</div>';
