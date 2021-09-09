@@ -1,5 +1,5 @@
 function pageLogin() {
-  function login() {
+  function signin() {
     var email = $('.email').value;
     var password = $('.password').value;
     var users = window.localStorage.getItem('users');
@@ -27,7 +27,7 @@ function pageLogin() {
       $('.errmsg').innerHTML = 'Wrong email or password, try again.'
     }
   }
-  $('.action-login').onclick = login;
+  $('.action-signin').onclick = signin;
 }
 
 pageLogin();

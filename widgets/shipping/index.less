@@ -1,0 +1,63 @@
+.shipping {
+  .round-dialog { 
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+  }
+
+  .section {
+    margin-top: 24px;
+    margin-bottom: 20px;
+    .section-header {
+      margin-bottom: 24px;
+      .section-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .hint {
+        font-size: 13px;
+        padding-top: 8px;
+        color: #666;
+      }
+    }
+    .section-content {
+      .form-item {
+        &.form-item-region, &.form-item-name {
+          display: flex;
+          justify-content: space-between;
+          gap: 15px;
+          &>div {
+            flex: 1;
+          }
+        }
+      }
+      .form-item + .form-item {
+        margin-top: 15px;
+      }
+      .option-wrapper {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .option {
+          label {
+            padding-left: 6px;
+          }
+        }
+      }
+      .option-wrapper + .option-wrapper {
+          border-top: 1px solid #d9d9d9;
+      }
+    }
+  }
+  .steps {
+    .step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        width: 200px;
+      }
+    }
+  }
+}

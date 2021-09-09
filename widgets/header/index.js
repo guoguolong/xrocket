@@ -10,7 +10,7 @@ function updateCartIndicator() {
 function widgetHeader() {
   function renderMenu() {
     var html = '';
-    var categories = JSON.parse(window.localStorage.getItem('categories'));
+    var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
     for (var i = 0; i < categories.length; i++) {
       var c = categories[i];
       html += `<a href="/pages/products/index.html?c=${c.id}"><span>${c.title}</span></a>`;
@@ -20,21 +20,25 @@ function widgetHeader() {
 
   function checkUserLogin() {
     var user = window.sessionStorage.getItem('user');
+    var $privateLinks = $$('.private-link');
     if (user) {
       user = JSON.parse(user);
-      $('.link-login').style.display = 'none';
-      $('.link-userinfo').style.display = 'block';
-      $('.link-logout').style.display = 'block';
-      $('.link-userinfo').innerHTML = 'Welcome ' + user.nickname;
+      $('.link-signin').style.display = 'none';
+      $('.userinfo').innerHTML = user.nickname;
     } else {
-      $('.link-login').style.display = 'block';
-      $('.link-userinfo').style.display = 'none';
-      $('.link-logout').style.display = 'none';
+      for (var i = 0; i < $privateLinks.length; i++) {
+        $privateLinks[i].style.display = 'none';
+      }
+      $('.link-signin').style.display = 'block';
+      $('.userinfo').innerHTML = '';
+    }
+    for (var i = 0; i < $privateLinks.length; i++) {
+      $privateLinks[i].style.display = user ? 'block' : 'none';
     }
 
-    $('.link-logout').onclick = function () {
+    $('.link-signout').onclick = function () {
       window.sessionStorage.removeItem('user');
-      window.location.href = '/pages/login/index.html'
+      window.location.href = '/pages/signin/index.html'
     }
   }
 

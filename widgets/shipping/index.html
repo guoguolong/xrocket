@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+<title>Order Shipping</title>
+<div class="shipping">
+   <section class="section section-shipping-address">
+      <div class="section-header">
+        <div class="section-title">Shipping Address</div>
+      </div>
+      <div class="section-content">
+        <div class="form">
+          <div class="form-item form-item-name">
+            <div><input type="text" name="firstName" placeholder="First Name" maxlength="20" /></div>
+            <div><input type="text" name="lastName" placeholder="Last Name" maxlength="20" /></div>
+          </div>
+          <div class="form-item">
+            <input type="text" name="address" placeholder="Address" maxlength="100" />
+          </div>
+          <div class="form-item">
+            <input type="text" name="apartment" placeholder="Apartment, suite, etc.(optional)" maxlength="100" />
+          </div>
+          <div class="form-item">
+            <input type="text" name="city" placeholder="City" />
+          </div>
+          <div class="form-item form-item-region">
+            <select name="country" placeholder="Country/region"></select>
+            <select name="state" placeholder="State"></select>
+            <input type="text" name="zipcode" placeholder="Zip Code" maxlength="6" />
+          </div>
+          <div class="form-item">
+            <input type="" name="phone" placeholder="Phone" maxlength="11" />
+          </div>
+        </div>
+      </div>
+   </section>
+
+   <section class="section section-shipping-method">
+      <div class="section-header">
+        <div class="section-title">Shipping Method</div>
+      </div>
+      <div class="section-content round-dialog">          
+        <div class="option-wrapper">
+          <div class="option">
+            <input id="ups-method" name="shippingMethod" type="radio"  value="1" checked/>
+            <label for="ups-method">Shipping - UPS Home Delivery®</label>
+          </div>
+          <div class="shipping-price">$38.11</div>
+        </div>
+        <div class="option-wrapper">
+          <div class="option">
+            <input id="fedex-method" name="shippingMethod" type="radio" value="2" />
+            <label for="fedex-method">Shipping - Fedex Home Delivery® (Slow)</label>
+          </div>
+          <div class="shipping-price">$34.11</div>
+        </div>
+      </div>
+   </section>
+
+   <div class="steps">
+     <div class="step step-shipping">
+       <div><a href="/pages/cart/index.html">< Return to cart</a></div>
+       <div>
+         <button class="action-save anim-button"><span>Continue to shipping</span></button>
+       </div>
+     </div>
+   </div>
+</div>
+<script type="text/javascript" src="/assets/js/common.js"></script>
+<script type="text/javascript" src="index.js"></script>

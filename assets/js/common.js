@@ -24,6 +24,35 @@ function queryParse(query) {
   return result;
 }
 
+function initCountryAndStateSelect($country, $state) {
+  var opts = [];
+  for (var code in countryData) {
+    var label = countryData[code];
+    opts.push(`<option value="${code}">${label}</option>`);;
+  }
+  $country.innerHTML = opts.join('');
+
+  function refreshStates($state, countryCode) {
+    var states = stateData[countryCode];
+    if (states) {
+      var stateOpts = [];
+      for (var code in states) {
+        var label = states[code];
+        stateOpts.push(`<option value="${code}">${label}</option>`);
+      }      
+      $state.style.display = 'block';
+      $state.innerHTML = stateOpts.join('');
+    } else {
+      $state.style.display = 'none';
+    }
+  }
+  refreshStates($state, 'US');
+
+  $country.onchange = function (e) {
+    refreshStates($state, e.target.value)
+  }
+}
+
 function linkToProdPage(id) {
   window.location.href = `/pages/product-detail/index.html?id=${id}`;
 }

@@ -30,12 +30,23 @@ body .root {
       }
     }
     .main-content {
-      .round-dialog { 
-        border: 1px solid #e6e6e6;
-        border-radius: 6px;
-      }
-
       .section-order-info {
+        margin-top: 24px;
+        margin-bottom: 20px;
+        
+        .section-header {
+          margin-bottom: 24px;
+          .section-title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        .round-dialog { 
+          border: 1px solid #e6e6e6;
+          border-radius: 6px;
+        }
+
         .info-line {
           display: flex;
           gap: 20px;
@@ -56,104 +67,19 @@ body .root {
           border-top: 1px solid #e6e6e6;
         }
       }
-      .section {
-        margin-top: 24px;
-        margin-bottom: 20px;
-        .section-header {
-          margin-bottom: 24px;
-          .section-title {
-            font-size: 16px;
-            font-weight: bold;
-          }
-          .hint {
-            font-size: 13px;
-            padding-top: 8px;
-            color: #666;
-          }
-        }
-        .section-content {
-          .form-item {
-            &.form-item-region, &.form-item-name {
-              display: flex;
-              justify-content: space-between;
-              gap: 15px;
-              &>div {
-                flex: 1;
-              }
-            }
-          }
-          .form-item + .form-item {
-            margin-top: 15px;
-          }
-          .option-wrapper {
-            padding: 20px;
+
+      .section-pay-now {
+        .steps {
+          .step {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            .option {
-              label {
-                padding-left: 6px;
-              }
+            button {
+              width: 200px;
             }
           }
-          .option-wrapper + .option-wrapper {
-              border-top: 1px solid #d9d9d9;
-          }
-        }
-
-        &.section-credit-card {
-          .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            .title {
-              font-weight: bold;
-            }
-            ul {
-              display: flex;
-              gap: 4px;
-              img {
-                width: 38px;
-              }
-            }
-          }
-          .credit-card-form-wrapper {
-            border: 1px solid #d9d9d9;
-            background: white;
-            border-radius: 6px;
-            .credit-card-form {
-              border-top: 1px solid #d9d9d9;
-              background: #FAFAFA;
-              padding: 20px;
-
-              .supplement-info {
-                display: flex;
-                gap: 15px;
-                &>div {
-                  flex: 1;
-                }
-              }
-            }
-          }          
-        } // section-credit-card
-        &.section-billing-address {
-          .billing-address-content {
-          }
-        }
-      } // section
-      .steps {
-        .step {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          button {
-            width: 200px;
-          }
-        }
+        }        
       }
-
     } // main-content
     .main-footer {
       margin-top: 40px;
