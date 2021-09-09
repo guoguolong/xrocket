@@ -1,9 +1,4 @@
-
-function renderFeaturedProducts(catId, subCatId) {
-  function link(id) {
-    window.location.href = `/pages/product-detail/index.html?id=${id}`;
-  }
-
+function widgetFeatured(catId, subCatId) {
   var products = [];
   try {
     products = JSON.parse(localStorage.getItem("products"));
@@ -16,7 +11,7 @@ function renderFeaturedProducts(catId, subCatId) {
   for (var i = 0; i < products.length; i++) {
     var prd = products[i];
     if (prd.isFeatured) {
-      htmlProducts.push(`<div class="item-wrapper" onclick="link(${prd.id})">
+      htmlProducts.push(`<div class="item-wrapper" onclick="linkToProdPage(${prd.id})">
         <div class="item">
           <div class="media">
             <img src="${prd.baseUrl}/${prd.images[0]}" />
@@ -32,4 +27,4 @@ function renderFeaturedProducts(catId, subCatId) {
   $('.featured-products').innerHTML = htmlProducts.join('');
 }
 
-renderFeaturedProducts();
+widgetFeatured();

@@ -77,9 +77,9 @@
                 <input type="text" name="city" placeholder="City" />
               </div>
               <div class="form-item form-item-region">
-                <div><select name="country" placeholder="Country/region"></select></div>
-                <div><select name="state" placeholder="State"></select></div>       
-                <div><input type="text" name="zipcode" placeholder="Zip Code" maxlength="6" /></div>
+                <select name="country" placeholder="Country/region"></select>
+                <select name="state" placeholder="State"></select>
+                <input type="text" name="zipcode" placeholder="Zip Code" maxlength="6" />
               </div>
               <div class="form-item">
                 <input type="" name="phone" placeholder="Phone" maxlength="11" />
@@ -165,19 +165,19 @@
           <div class="step step-shipping">
             <div><a href="/pages/cart/index.html">< Return to cart</a></div>
             <div>
-              <button class="action-save-shipping-addr anim-button"><span>Continue to shipping</span></button>
+              <button class="action-save-shipping anim-button"><span>Continue to shipping</span></button>
             </div>
           </div>
-          <div class="step step-payment hide">
-            <div><a href="/pages/cart/index.html">< Return to information</a></div>
+          <div class="step step-payment">
+            <div><a class="return-to-shipping">< Return to shipping</a></div>
             <div>
-              <button class="action-save-shipping-addr anim-button"><span>Continue to payment</span></button>
+              <button class="action-save-payment anim-button"><span>Continue to payment</span></button>
             </div>
           </div>
-          <div class="step step-pay-now hide">
-            <div><a href="/pages/cart/index.html">< Return to shipping</a></div>
+          <div class="step step-pay-now">
+            <div><a class="return-to-payment">< Return to payment</a></div>
             <div>
-              <button class="action-save-shipping-addr anim-button"><span>Pay now</span></button>
+              <button class="action-save-pay-now anim-button"><span>Pay now</span></button>
             </div>
           </div>
         </div>

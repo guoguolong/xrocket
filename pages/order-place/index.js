@@ -1,25 +1,81 @@
-function saveShippingAddr() {
-  $('.action-save-shipping-addr').onclick = function() {
-    var shippAddr = {};
-    shippAddr.firstName = $('.shipping-address-form input[name=firstName]').value;
-    shippAddr.lastName = $('.shipping-address-form input[name=lastName]').value;
-    shippAddr.address = $('.shipping-address-form input[name=address]').value;
-    shippAddr.apartment = $('.shipping-address-form input[name=apartment]').value;
-    shippAddr.city = $('.shipping-address-form input[name=city]').value;
-    shippAddr.country = $('.shipping-address-form select[name=country]').value;
-    shippAddr.state = $('.shipping-address-form select[name=state]').value;
-    shippAddr.zipcode = $('.shipping-address-form input[name=zipcode]').value;
-    shippAddr.phone = $('.shipping-address-form input[name=phone]').value;
+var STEPS = ['shipping', 'payment', 'pay-now'];
+currStep = STEPS[0];
 
-    $('.shipping-address-form').style.display = 'none';
-    $('.shipping-address-result').style.display = 'block';
+function initCountryAndStateSelect($country, $state) {
+  var opts = [];
+  for (var code in countryData) {
+    var label = countryData[code];
+    opts.push(`<option value="${code}">${label}</option>`);;
+  }
+  $country.innerHTML = opts.join('');
 
-    console.log(shippAddr);
+  function refreshStates($state, countryCode) {
+    var states = stateData[countryCode];
+    if (states) {
+      var stateOpts = [];
+      for (var code in states) {
+        var label = states[code];
+        stateOpts.push(`<option value="${code}">${label}</option>`);
+      }      
+      $state.style.display = 'block';
+      $state.innerHTML = stateOpts.join('');
+    } else {
+      $state.style.display = 'none';
+    }
+  }
+  refreshStates($state, 'US');
+
+  $country.onchange = function (e) {
+    refreshStates($state, e.target.value)
   }
 }
-saveShippingAddr();
 
-function pageOrderPlace() {
-
+function moveStep(stepCode) {
+  for (var $step of $$(`.step`)) {
+    $step.style.display = 'none';
+  }
+  $(`.step-${stepCode}`).style.display = 'flex';
+  currStep = stepCode;
 }
-pageOrderPlace();
+
+/*******  MAMIN ENTRY ***********/
+initCountryAndStateSelect($('.shipping-address-form select[name=country]'), $('.shipping-address-form select[name=state]'));
+moveStep(currStep);
+
+$('.action-save-shipping').onclick = function() {
+  var shippAddr = {};
+  var $form = $('.shipping-address-form');
+  shippAddr.firstName = $form.querySelector('input[name=firstName]').value;
+  shippAddr.lastName = $form.querySelector('input[name=lastName]').value;
+  shippAddr.address = $form.querySelector('input[name=address]').value;
+  shippAddr.apartment = $form.querySelector('input[name=apartment]').value;
+  shippAddr.city = $form.querySelector('input[name=city]').value;
+  shippAddr.country = $form.querySelector('select[name=country]').value;
+  shippAddr.state = $form.querySelector('select[name=state]').value;
+  shippAddr.zipcode = $form.querySelector('input[name=zipcode]').value;
+  shippAddr.phone = $form.querySelector('input[name=phone]').value;
+
+  $('.section-shipping-address').style.display = 'none';
+  moveStep('payment');
+  console.log(shippAddr);
+}
+
+$('.action-save-payment').onclick = function() {
+  moveStep('pay-now');  
+}
+
+$('.action-save-pay-now').onclick = function() {
+  
+}
+
+$('.return-to-shipping').onclick = function() {
+  moveStep('shipping')
+}
+
+$('.return-to-payment').onclick = function() {
+  moveStep('payment')
+}
+
+// function pageOrderPlace() {
+// }
+// pageOrderPlace();

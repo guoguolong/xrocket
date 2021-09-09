@@ -17,7 +17,7 @@ function pageProductDetail() {
       if (prod) {
         $('.name').innerHTML = prod.name;
         $('.price span').innerHTML = prod.price;
-        widgetMedia(prod);
+        if (typeof widgetMedia !== 'undefined') widgetMedia(prod);
 
         if (prod.specs) {
           for(var i = 0; i < prod.specs.length; i++) {
