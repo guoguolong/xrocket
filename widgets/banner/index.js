@@ -1,4 +1,8 @@
-window.addEventListener('load', function () {
-  var $img = document.querySelector('.banner img');
-  $img.className = 'loaded';
-})
+function widgetBanner() {
+  window.addEventListener('load', function () {
+    var $img = document.querySelector('.banner img');
+    $img.className = 'loaded';
+  })
+}
+
+widgetBanner();
