@@ -63,16 +63,17 @@
   </header>
   <div class="body">
     <fieldset>
-      <legend>Intialize Sample Data</legend>
+      <legend>Installation & Report</legend>
       <ol>
         <li>
           <a href="javascript:void(0)" onclick="initData('run-notice')">Intialize Sample Data</a>
           <div id="run-notice"></div>
         </li>
+        <li><a href="/report.html">Analysis Report</a></li>
       </ol>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="widgets">
       <legend>Widgets</legend>
       <ol>
         <li><a href="/widgets/header/index.html">Page Header</a></li>
@@ -85,7 +86,7 @@
       </ol>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="pages">
       <legend>Pages</legend>
       <ol>
         <li><a href="/pages/home/index.html">Home</a></li>
@@ -98,10 +99,18 @@
         <li><a href="/pages/my-orders/index.html">My Orders</a></li>
       </ol>
     </fieldset>
+
+    <fieldset class="report">
+      <div class="content">
+      </div>
+    </fieldset>    
   </div>
   <script type="text/javascript" src="data/products.js"></script>
   <script type="text/javascript" src="data/users.js"></script>
   <script type="text/javascript" src="data/categories.js"></script>
   <script type="text/javascript" src="data/index.js"></script>
+  <script type="text/javascript">
+var reportData = '@REPORT';
+  </script>
 </body>
 </html>

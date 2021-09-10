@@ -6,8 +6,6 @@ const APP_DIR = `${__dirname}/..`;
 
 function parseCssLines(css, lines) {
     css = beautify(css, {format: 'css'});
-    // console.log(css);
-    // process.exit(0)
     const cssLines = css.split('\n');
     cssLines.forEach(line => {
         if (line.match(/^[ ]{4}.*:.+/)) {
@@ -47,7 +45,6 @@ files.forEach(file => {
 
 const lineArr = Object.entries(lines)
 
-console.log('CSS Properties Used: ', lineArr.length);
 lineArr.sort((curr, next)=> {
     if (curr[1].total > next[1].total) {
         return -1;
@@ -57,6 +54,9 @@ lineArr.sort((curr, next)=> {
         return 0;
     }
 });
-lineArr.forEach(([name, info]) => {
-    console.log(name, ':', info)
-})
+
+const filename = `${APP_DIR}/report.html`;
+let content = fs.readFileSync(filename, 'utf-8');
+content = content.replace(/<script type="text\/javascript" data-type="report">[\s\S]*?<\/script>/, 
+    `<script type="text/javascript" data-type="report">\n var reportData = ${JSON.stringify(lineArr)};\n</script>`);
+fs.writeFileSync(filename, content);
