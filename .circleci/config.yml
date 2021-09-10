@@ -5,7 +5,7 @@ jobs:
   build:
     executor:
       name: node/default
-      tag: '10.4'
+      tag: '14.17'
     steps:
       - checkout
       - run: npm install
