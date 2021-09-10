@@ -1,0 +1,300 @@
+.payment .round-dialog {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+}
+
+.payment .section {
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+
+.payment .section .section-header {
+    margin-bottom: 24px;
+}
+
+.payment .section .section-header .section-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.payment .section .section-header .hint {
+    color: #666;
+    font-size: 13px;
+    padding-top: 8px;
+}
+
+.payment .section .section-content .form-item.form-item-name,.payment .section .section-content .form-item.form-item-region {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.payment .section .section-content .form-item.form-item-name>div,.payment .section .section-content .form-item.form-item-region>div {
+    flex: 1;
+}
+
+.payment .section .section-content .form-item+.form-item {
+    margin-top: 15px;
+}
+
+.payment .section .section-content .option-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.payment .section .section-content .option-wrapper .option label {
+    padding-left: 6px;
+}
+
+.payment .section .section-content .option-wrapper+.option-wrapper {
+    border-top: 1px solid #d9d9d9;
+}
+
+.payment .section.section-credit-card .card-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.payment .section.section-credit-card .card-header .title {
+    font-weight: 700;
+}
+
+.payment .section.section-credit-card .card-header ul {
+    display: flex;
+    gap: 4px;
+}
+
+.payment .section.section-credit-card .card-header ul img {
+    width: 38px;
+}
+
+.payment .section.section-credit-card .credit-card-form-wrapper {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
+
+.payment .section.section-credit-card .credit-card-form-wrapper .credit-card-form {
+    background: #fafafa;
+    border-top: 1px solid #d9d9d9;
+    padding: 20px;
+}
+
+.payment .section.section-credit-card .credit-card-form-wrapper .credit-card-form .supplement-info {
+    display: flex;
+    gap: 15px;
+}
+
+.payment .section.section-credit-card .credit-card-form-wrapper .credit-card-form .supplement-info>div {
+    flex: 1;
+}
+
+.payment .steps .step {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment .steps .step button {
+    width: 200px;
+}
+
+.shipping .round-dialog {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+}
+
+.shipping .section {
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+
+.shipping .section .section-header {
+    margin-bottom: 24px;
+}
+
+.shipping .section .section-header .section-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.shipping .section .section-header .hint {
+    color: #666;
+    font-size: 13px;
+    padding-top: 8px;
+}
+
+.shipping .section .section-content .form-item.form-item-name,.shipping .section .section-content .form-item.form-item-region {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.shipping .section .section-content .form-item.form-item-name>div,.shipping .section .section-content .form-item.form-item-region>div {
+    flex: 1;
+}
+
+.shipping .section .section-content .form-item+.form-item {
+    margin-top: 15px;
+}
+
+.shipping .section .section-content .option-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.shipping .section .section-content .option-wrapper .option label {
+    padding-left: 6px;
+}
+
+.shipping .section .section-content .option-wrapper+.option-wrapper {
+    border-top: 1px solid #d9d9d9;
+}
+
+.shipping .steps .step {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping .steps .step button {
+    width: 200px;
+}
+
+body .root {
+    margin-bottom: 0;
+    margin-top: 0;
+    min-height: 100vh;
+}
+
+.order-place-page {
+    align-items: stretch;
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+    margin: 0 0 0 100px;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.order-place-page .main {
+    flex: 1;
+    padding-top: 4em;
+}
+
+.order-place-page .main .main-header .logo img {
+    width: 200px;
+}
+
+.order-place-page .main .main-header .breadcrumb {
+    font-size: 12px;
+    margin: 35px 0;
+}
+
+.order-place-page .main .main-content .section-order-info {
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+
+.order-place-page .main .main-content .section-order-info .section-header {
+    margin-bottom: 24px;
+}
+
+.order-place-page .main .main-content .section-order-info .section-header .section-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.order-place-page .main .main-content .section-order-info .round-dialog {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+}
+
+.order-place-page .main .main-content .section-order-info .info-line {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.order-place-page .main .main-content .section-order-info .info-line label {
+    color: #737373;
+}
+
+.order-place-page .main .main-content .section-order-info .info-line .value {
+    flex: 1;
+}
+
+.order-place-page .main .main-content .section-order-info .info-line .action {
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.order-place-page .main .main-content .section-order-info .info-line+.info-line {
+    border-top: 1px solid #e6e6e6;
+}
+
+.order-place-page .main .main-content .section-pay-now .steps .step {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-place-page .main .main-content .section-pay-now .steps .step button {
+    width: 200px;
+}
+
+.order-place-page .main .main-footer {
+    border-top: 1px solid #e7e7e7;
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    padding-bottom: 25px;
+    padding-top: 20px;
+}
+
+.order-place-page .main .main-footer a {
+    font-size: 12px;
+}
+
+.order-place-page .sidebar {
+    background: #fafafa;
+    border-left: 1px solid #e0e0e0;
+    padding: 4em;
+    width: 38%;
+}
+
+.order-place-page .sidebar .product-wrapper {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.order-place-page .sidebar .product-wrapper .product-image-wrapper {
+    height: 80px;
+    width: 80px;
+}
+
+.order-place-page .sidebar .product-wrapper .product-image-wrapper img {
+    width: 100%;
+}
+
+.order-place-page .sidebar .subtotal-lines,.order-place-page .sidebar .total {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 24px 0;
+}
+
+.order-place-page .sidebar .subtotal-lines .line {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+}
+
+.order-place-page .sidebar .total {
+    display: flex;
+    justify-content: space-between;
+}

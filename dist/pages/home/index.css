@@ -1,0 +1,240 @@
+.featured h1 {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.featured .featured-products {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    padding: 0 50px;
+}
+
+.featured .featured-products .item-wrapper {
+    cursor: pointer;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    width: 50%;
+}
+
+.featured .featured-products .item-wrapper .item {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    transition: all .5s;
+}
+
+.featured .featured-products .item-wrapper .item .media img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
+
+.featured .featured-products .item-wrapper .item .title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.featured .featured-products .item-wrapper .item .price {
+    margin-top: 8px;
+}
+
+.featured .featured-products .empty {
+    background: #fafafa;
+    flex: 1;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 20PX;
+    padding: 40px;
+    text-align: center;
+}
+
+@media screen and (max-width:640px) {
+    .featured .featured-products {
+        margin-left: -10px;
+        padding: 0 10px;
+    }
+
+    .featured .featured-products .item-wrapper {
+        margin-bottom: 35px;
+        padding-left: 10px;
+        width: 50%;
+    }
+}
+
+.banner {
+    background: #000;
+    overflow: hidden;
+}
+
+.banner img {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 2s;
+    width: 100%;
+}
+
+.banner img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+header {
+    height: 84px;
+}
+
+header .header-inner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .header-inner .nav-bar {
+    align-items: center;
+    background: #000;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+    height: 84px;
+    justify-content: space-between;
+    padding: 18px 60px;
+}
+
+header .header-inner .nav-bar a {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+header .header-inner .nav-bar a:hover {
+    font-weight: 700;
+}
+
+header .header-inner .nav-bar .left-part {
+    align-items: center;
+    display: flex;
+}
+
+header .header-inner .nav-bar .left-part .menu a+a {
+    margin-left: 42px;
+}
+
+header .header-inner .nav-bar .left-part .logo-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 38PX;
+    width: 150px;
+}
+
+header .header-inner .nav-bar .left-part .logo-wrapper img {
+    width: 100%;
+}
+
+header .header-inner .nav-bar .right-part {
+    align-items: center;
+    color: #939393;
+    display: flex;
+    font-size: 13px;
+}
+
+header .header-inner .nav-bar .right-part a {
+    color: inherit;
+}
+
+header .header-inner .nav-bar .right-part a:hover {
+    color: #fff;
+    font-weight: 700;
+}
+
+header .header-inner .nav-bar .right-part .cart-hightlight {
+    color: #fff;
+}
+
+header .header-inner .nav-bar .right-part .userinfo {
+    color: #e6e6e6;
+    text-transform: uppercase;
+}
+
+header .header-inner .nav-bar .right-part>div+div {
+    margin-left: 28px;
+}
+
+header .header-inner .search-bar {
+    align-items: center;
+    background: #fff;
+    display: none;
+    gap: 20px;
+    height: 84px;
+    justify-content: space-between;
+    padding: 0 60PX;
+}
+
+header .header-inner .search-bar .input-icon-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+
+header .header-inner .search-bar .input-icon-wrapper input {
+    border-width: 0;
+    color: #000;
+    font-size: 20px;
+    outline: none;
+}
+
+header .header-inner .search-bar .input-icon-wrapper input::-webkit-input-placeholder,header .header-inner .search-bar .input-icon-wrapper input::placeholder {
+    color: #000;
+    font-weight: 700;
+}
+
+header .header-inner .search-bar .icon,header .header-inner .search-bar .icon-search {
+    width: 26px;
+}
+
+header .header-inner .built {
+    color: #555;
+    cursor: pointer;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 700;
+    position: absolute;
+    right: 60px;
+    top: 60px;
+}
+
+header .header-inner .built:hover {
+    color: #f1f1f1;
+}
+
+#modalbox {
+    background: #000;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#modalbox:target {
+    opacity: .4;
+    pointer-events: auto;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+body .root {
+    margin-top: 0;
+}

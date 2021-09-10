@@ -1,0 +1,127 @@
+header {
+  height: 84px;
+}
+header .header-inner {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+}
+header .header-inner .nav-bar {
+  height: 84px;
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  font-size: 15px;
+}
+header .header-inner .nav-bar a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: #FFF;
+}
+header .header-inner .nav-bar a:hover {
+  font-weight: bold;
+}
+header .header-inner .nav-bar .left-part {
+  display: flex;
+  align-items: center;
+}
+header .header-inner .nav-bar .left-part .menu a + a {
+  margin-left: 42px;
+}
+header .header-inner .nav-bar .left-part .logo-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 150px;
+  margin-right: 38PX;
+}
+header .header-inner .nav-bar .left-part .logo-wrapper img {
+  width: 100%;
+}
+header .header-inner .nav-bar .right-part {
+  display: flex;
+  align-items: center;
+  color: #939393;
+  font-size: 13px;
+}
+header .header-inner .nav-bar .right-part a {
+  color: inherit;
+}
+header .header-inner .nav-bar .right-part a:hover {
+  color: white;
+  font-weight: bold;
+}
+header .header-inner .nav-bar .right-part .cart-hightlight {
+  color: white;
+}
+header .header-inner .nav-bar .right-part .userinfo {
+  color: #e6e6e6;
+  text-transform: uppercase;
+}
+header .header-inner .nav-bar .right-part > div + div {
+  margin-left: 28px;
+}
+header .header-inner .search-bar {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 60PX;
+  height: 84px;
+  background: white;
+}
+header .header-inner .search-bar .input-icon-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+header .header-inner .search-bar .input-icon-wrapper input {
+  font-size: 20px;
+  color: black;
+  outline: none;
+  border-width: 0;
+}
+header .header-inner .search-bar .input-icon-wrapper input::placeholder,
+header .header-inner .search-bar .input-icon-wrapper input::-webkit-input-placeholder {
+  color: black;
+  font-weight: bold;
+}
+header .header-inner .search-bar .icon {
+  width: 26px;
+}
+header .header-inner .search-bar .icon-search {
+  width: 26px;
+}
+header .header-inner .built {
+  cursor: pointer;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  color: #555;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+}
+header .header-inner .built:hover {
+  color: #F1F1F1;
+}
+#modalbox {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+}
+#modalbox:target {
+  opacity: 0.4;
+  pointer-events: auto;
+}

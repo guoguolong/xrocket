@@ -1,0 +1,90 @@
+<html>
+    
+    <head>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Order Payment@15:24:34 09/10</title>
+    </head>
+    
+    <body>
+        <div class="payment">
+            <section class="section section-credit-card">
+                <div class="section-header">
+                    <div class="section-title">Payment</div>
+                    <div class="hint">All transactions are secure and encrypted.</div>
+                </div>
+                <div class="section-content credit-card-form-wrapper">
+                    <div class="card-header">
+                        <div class="title">Credit card</div>
+                        <ul>
+                            <li>
+                                <img src="/assets/images/card-icons/visa.svg">
+                            </li>
+                            <li>
+                                <img src="/assets/images/card-icons/master.svg">
+                            </li>
+                            <li>
+                                <img src="/assets/images/card-icons/american_express.svg">
+                            </li>
+                            <li>
+                                <img src="/assets/images/card-icons/discover.svg">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form credit-card-form">
+                        <div class="form-item">
+                            <input type="text" name="cardNo" placeholder="Card number" maxlength="20">
+                        </div>
+                        <div class="form-item">
+                            <input type="text" name="nameOnCard" placeholder="Name on card" maxlength="20">
+                        </div>
+                        <div class="form-item supplement-info">
+                            <div>
+                                <input type="text" name="expDate" placeholder="Expiration date (MM / YY)"
+                                maxlength="5">
+                            </div>
+                            <div>
+                                <input type="text" name="lastName" placeholder="Security Code" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-billing-address">
+                <div class="section-header">
+                    <div class="section-title">Billing address</div>
+                    <div class="hint">Select the address that matches your card or payment method.</div>
+                </div>
+                <div class="section-content round-dialog billing-address-content">
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <input id="billing-address-type1" name="billingAddressType" type="radio"
+                            value="1" checked="">
+                            <label for="billing-address-type1">Same as shipping address</label>
+                        </div>
+                    </div>
+                    <div class="option-wrapper">
+                        <div class="option">
+                            <input id="billing-address-type2" name="billingAddressType" type="radio"
+                            value="2" disabled="">
+                            <label for="billing-address-type2">Use a different billing address</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="steps">
+                <div class="step step-payment">
+                    <div><a class="return-to-shipping">&lt; Return to shipping</a>
+                    </div>
+                    <div>
+                        <button class="action-save anim-button"><span>Continue to payment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/assets/js/common.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+
+</html>
