@@ -7,6 +7,8 @@ ol {
     &:hover {
       font-weight: bold;
       cursor: default;
+      color: white;
+      background: black;
     }
   }
 }
@@ -64,6 +66,13 @@ header {
         &.tags-top-ten {
           .chart {
             flex: 2;
+          }
+        }
+        &.tags-all {
+          ol {
+            column-count: 4;
+            gap: 40px;
+            background: #efefef;
           }
         }
       }
