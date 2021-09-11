@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>XRocket - My Orders</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <widget name="header"></widget>
+  <div class="root my-orders-page">
+    <h1 class="category-title">ORDER DETAIL</h1>
+    <div class="orders">
+      <div class="product-items"></div>
+      <div class="subtotal-lines">
+        <div class="line">
+          <div>Subtotal</div>
+          <div>
+            <span class="currency">$</span>
+            <span class="subtotal">30.00</span>
+          </div>
+        </div>
+        <div class="line">
+          <div>Shipping + Handling</div>
+          <div>
+            <span class="currency">$</span>
+            <span class="subtotal-and-handling">30.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="total-lines">
+        <div>Total</div>
+        <div>USD 
+          <span class="currency">$</span>
+          <span class="total">68.11</span>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <widget name="footer"></widget>
+  <script type="text/javascript" src="/assets/js/common.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

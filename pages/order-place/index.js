@@ -17,6 +17,10 @@ function setupStep() {
 setupStep();
 window.onhashchange = setupStep;
 
+if (typeof widgetOrderedProducts !== 'undefined') {
+  widgetOrderedProducts(JSON.parse(window.sessionStorage.getItem("cart")) || []);
+}
+
 $('.pay-now-wrapper .action-save').onclick = function() {
   window.location.href = "/pages/order-created/index.html";
 }

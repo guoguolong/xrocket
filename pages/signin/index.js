@@ -21,7 +21,13 @@ function pageLogin() {
         email: userLogined.email,
         nickname: userLogined.nickname,
       }));
-      window.location.href = '/pages/home/index.html';
+      var from = queryParse(window.location.search).f;
+      console.log('from:::', from)
+      if (from && from.match(/^\/pages\//)) {
+        window.location.href = from;
+      } else {
+        window.location.href = '/pages/home/index.html';
+      }
     } else {
       $('.errmsg').className = 'errmsg errmsg-highlight';
       $('.errmsg').innerHTML = 'Wrong email or password, try again.'

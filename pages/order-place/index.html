@@ -6,6 +6,12 @@
   <title>XRocket - Place Order</title>
   <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="index.css">
+  <script type="text/javascript">
+    var user = window.sessionStorage.getItem('user');
+    if (!user) {
+      window.location.href = '/pages/signin/index.html?f=/pages/order-place/index.html';
+    }
+  </script>
 </head>
 
 <body>
@@ -58,7 +64,7 @@
         </section>
 
         <div class="shipping-wrapper">
-            <widget name="shipping"></widget>
+            <widget name="shipping" height="400px"></widget>
         </div>
         <div class="payment-wrapper">
             <widget name="payment"></widget>
@@ -83,38 +89,7 @@
       </div>
     </div>
     <div class="sidebar">
-      <div class="product-wrapper">
-        <table class="product-table">
-          <tr>
-            <td>
-              <div class="product-image-wrapper">
-                <img  src="/assets/images/logo-b.svg" />
-              </div>
-            </td>
-            <td>
-              <div>Women's Occupy Mars T-Shirt</div>
-              <div>Black / S</div>
-            </td>
-            <td>
-              $30.00
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="subtotal-lines">
-        <div class="line">
-          <div>Subtotal</div>
-          <div>$ 30.00</div>
-        </div>
-        <div class="line">
-          <div>Shipping + Handling</div>
-          <div>$ 38.00</div>
-        </div>
-      </div>
-      <div class="total">
-        <div>Total</div>
-        <div><span class="currency">USD</span> $68.11</div>
-      </div>
+      <widget name="ordered-products" height="400px"></widget>
     </div>
 
   </div>
