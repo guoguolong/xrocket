@@ -25,6 +25,8 @@ function parseHtmlFile(htmlFileName) {
     if (tagName !== 'link' && tagName !== 'script') return;
     doc.querySelectorAll(tagName)?.forEach(node => {
       const href = node.getAttribute('href') || node.getAttribute('src');
+      if (!href) return; // 内嵌 script
+
       let content = node;
       let type = 'links';
 

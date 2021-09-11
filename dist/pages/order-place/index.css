@@ -1,3 +1,61 @@
+.ordered-products .product-items {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ordered-products .product-items .product-item {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.ordered-products .product-items .product-item .image-wrapper {
+    align-items: center;
+    border: 1px solid #eee;
+    display: flex;
+    height: 80px;
+    overflow: hidden;
+    width: 80px;
+}
+
+.ordered-products .product-items .product-item .image-wrapper img {
+    width: 100%;
+}
+
+.ordered-products .product-items .product-item .basic-info {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.ordered-products .product-items .product-item .basic-info .name {
+    font-weight: 700;
+}
+
+.ordered-products .product-items .product-item .amount {
+    white-space: nowrap;
+}
+
+.ordered-products .subtotal-lines,.ordered-products .total-lines {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 24px 0;
+}
+
+.ordered-products .subtotal-lines .line,.ordered-products .total-lines .line {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+}
+
+.ordered-products .total-lines {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ordered-products .currency {
+    margin-right: 4px;
+}
+
 .payment .round-dialog {
     border: 1px solid #e6e6e6;
     border-radius: 6px;
@@ -278,33 +336,4 @@ body .root {
     border-left: 1px solid #e0e0e0;
     padding: 4em;
     width: 38%;
-}
-
-.order-place-page .sidebar .product-wrapper {
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.order-place-page .sidebar .product-wrapper .product-image-wrapper {
-    height: 80px;
-    width: 80px;
-}
-
-.order-place-page .sidebar .product-wrapper .product-image-wrapper img {
-    width: 100%;
-}
-
-.order-place-page .sidebar .subtotal-lines,.order-place-page .sidebar .total {
-    border-bottom: 1px solid #e7e7e7;
-    padding: 24px 0;
-}
-
-.order-place-page .sidebar .subtotal-lines .line {
-    display: flex;
-    justify-content: space-between;
-    line-height: 2;
-}
-
-.order-place-page .sidebar .total {
-    display: flex;
-    justify-content: space-between;
 }

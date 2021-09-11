@@ -2,10 +2,11 @@
 <html>
     
     <head>
+        <title>XRocket - My Orders@21:20:37 09/11</title>
         <meta charset="utf-8">
-        <title>XRocket - Sign In@21:20:37 09/11</title>
-        <link rel="stylesheet" type="text/css"
-        href="/assets/styles/reset.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
         <link rel="stylesheet" type="text/css" href="/widgets/footer/index.css">
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
@@ -51,23 +52,34 @@
             <!-- header-inner -->
             <div id="modalbox"></div>
         </header>
-        <div class="root signin-page">
-            <div class="header">
-                 <h1>SIGN IN</h1>
+        <div class="root my-orders-page">
+             <h1 class="category-title">ORDER DETAIL</h1>
 
-                <div class="hint">Please enter your e-mail and password:</div>
-            </div>
-            <div class="signin-form">
-                <div class="form-item">
-                    <input class="email" name="email" placeholder="Email">
-                </div>
-                <div class="form-item">
-                    <input class="password" name="password" type="password" placeholder="Password">
-                </div>
-                <button class="action-signin anim-button"><span>SIGN IN</span>
+            <div class="orders">
+                <div class="product-items"></div>
+                <div class="subtotal-lines">
+                    <div class="line">
+                        <div>Subtotal</div>
+                        <div> <span class="currency">$</span>
+ <span class="subtotal">30.00</span>
 
-                </button>
-                <div class="errmsg"></div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div>Shipping + Handling</div>
+                        <div> <span class="currency">$</span>
+ <span class="subtotal-and-handling">30.00</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="total-lines">
+                    <div>Total</div>
+                    <div>USD <span class="currency">$</span>
+ <span class="total">68.11</span>
+
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer">
