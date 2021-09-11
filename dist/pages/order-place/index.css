@@ -246,13 +246,13 @@ body .root {
     display: flex;
     gap: 70px;
     justify-content: space-between;
-    margin: 0 0 0 100px;
     min-height: 100vh;
     padding: 0;
 }
 
 .order-place-page .main {
     flex: 1;
+    margin-left: 100px;
     padding-top: 4em;
 }
 
@@ -336,4 +336,19 @@ body .root {
     border-left: 1px solid #e0e0e0;
     padding: 4em;
     width: 38%;
+}
+
+.order-place-page .null {
+    background: #fafafa;
+    flex: 1;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.order-place-page .null .action-shops {
+    margin-top: 40px;
+    width: 225px;
 }

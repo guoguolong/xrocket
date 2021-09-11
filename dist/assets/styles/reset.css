@@ -23,7 +23,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 14px;
 }
 html {
   font-family: "Comfortaa", "PingFang SC", "Microsoft YaHei", "Helvetica", "Arial", Heiti SC, sans-serif;
@@ -120,6 +119,10 @@ button,
   margin-left: 20px;
   margin-bottom: 20px;
   font-weight: 300;
+}
+.empty .action-shops {
+  margin-top: 40px;
+  width: 225px;
 }
 .widget {
   display: flex;
