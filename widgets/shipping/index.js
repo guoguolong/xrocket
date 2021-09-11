@@ -20,14 +20,13 @@ function widgetShipping() {
     shippingAddr.country = $form.querySelector('select[name=country]').value;
     shippingAddr.state = $form.querySelector('select[name=state]').value;
     
-    validateFormField($form.querySelector('input[name=zipcode]'), 'Please enter a 6 digit code', /\d{6}/);
+    field = validateFormField($form.querySelector('input[name=zipcode]'), 'Please enter a 6 digit code', /\d{6}/);
     errors += field.isError ? 1 : 0;
     shippingAddr.zipcode = field.value;
 
-    validateFormField($form.querySelector('input[name=phone]'), 'Please enter phone number');
+    field = validateFormField($form.querySelector('input[name=phone]'), 'Please enter phone number');
     errors += field.isError ? 1 : 0;
     shippingAddr.phone = field.value;
-
 
     if (errors === 0) {
       window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {};

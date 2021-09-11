@@ -1,3 +1,5 @@
+window.xrocket = window.xrocket || {};
+
 function $id(id) {
   return document.getElementById(id);
 }
@@ -57,6 +59,42 @@ function linkToProdPage(id) {
   window.location.href = `/pages/product-detail/index.html?id=${id}`;
 }
 
+function createNodeFromHtml(templateHtml, className) {
+  className = className || 'template';
+  var template = `<div class="${className}">${templateHtml}</div>`;
+  var doc = new DOMParser().parseFromString(template, 'text/html');
+  return doc.querySelector('.' + className);
+}
+
+function validateFormField($input, errorMsg, pattern) {
+  var isError = false;
+
+  var value = $input.value.trim();
+  if (!pattern) { // 默认检查空
+    if (!value) {
+      isError = true;
+    }
+  } else if (pattern instanceof RegExp) {
+    if (!pattern.test(value)) {
+      isError = true;
+    }
+  }
+
+  var $error = $input.parentNode.querySelector('.validation-error');
+  if ($error) $error.remove();
+  $input.style['border-color'] = "#d9d9d9";
+  if (isError) {
+    $input.parentNode.appendChild(createNodeFromHtml(errorMsg, 'validation-error'));
+    $input.style['border-color'] = "red";
+  }
+
+  $input.focus();
+
+  return {
+    isError: isError,
+    value: value, 
+  }
+}
 
 // function setCookie(cname,cvalue,exdays) {
 //   var d = new Date();

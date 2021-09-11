@@ -29,10 +29,14 @@ function widgetFeatured(catId, subCatId) {
 
 widgetFeatured();
 
-window.addEventListener('load', function() {
-    var $img = document.querySelector('.banner img');
-    $img.className = 'loaded';
-})
+function widgetBanner() {
+    window.addEventListener('load', function() {
+        var $img = document.querySelector('.banner img');
+        $img.className = 'loaded';
+    })
+}
+
+widgetBanner();
 
 function queryParse(query) {
     var q = query.slice(1);

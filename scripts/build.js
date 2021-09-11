@@ -3,6 +3,7 @@ const badge = require('./build/badge');
 const less2css = require('./build/less2css');
 const tidycss = require('./build/tidycss');
 const widgetMerger = require('./build/widget-merger');
+const analysis = require('./build/analysis');
 
 const APP_DIR = `${__dirname}/..`;
 const DIST_DIR = `${APP_DIR}/dist`;
@@ -23,5 +24,7 @@ function initDist() {
   badge('.built', `${DIST_DIR}/**/*.html`);
   await less2css(`${DIST_DIR}/**/*.less`, `${APP_DIR}\/assets`);
   await widgetMerger(`${DIST_DIR}/pages`, `${DIST_DIR}/widgets`);
-  await tidycss(`${DIST_DIR}/pages/**/*.css`)
+  await tidycss(`${DIST_DIR}/pages/**/*.css`);
+  
+  analysis(`${DIST_DIR}/report.html`, `${DIST_DIR}/**/*.css`);
 })();

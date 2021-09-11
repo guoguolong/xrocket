@@ -51,3 +51,7 @@
 .shipping .steps .step button {
   width: 200px;
 }
+.shipping .validation-error {
+  margin-top: 10px;
+  color: red;
+}

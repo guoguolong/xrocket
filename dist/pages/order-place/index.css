@@ -103,6 +103,11 @@
     width: 200px;
 }
 
+.payment .validation-error {
+    color: red;
+    margin-top: 10px;
+}
+
 .shipping .round-dialog {
     border: 1px solid #e6e6e6;
     border-radius: 6px;
@@ -165,6 +170,11 @@
 
 .shipping .steps .step button {
     width: 200px;
+}
+
+.shipping .validation-error {
+    color: red;
+    margin-top: 10px;
 }
 
 body .root {

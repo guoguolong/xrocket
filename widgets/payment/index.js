@@ -16,7 +16,7 @@ function widgetPayment() {
     errors += field.isError ? 1 : 0;
     creditCard.expDate = field.value;
 
-    validateFormField($form.querySelector('input[name=securityCode]'), 'Please enter a 3 digit code', /^\d{3}$/);
+    field = validateFormField($form.querySelector('input[name=securityCode]'), 'Please enter a 3 digit code', /^\d{3}$/);
     errors += field.isError ? 1 : 0;
     creditCard.securityCode = field.value;
 
@@ -26,10 +26,11 @@ function widgetPayment() {
 
       window.xrocket.purchasedOrder.billingAddressType = $('.section-billing-address input[name=billingAddressType]').value;
 
-      window.location.href="#payment";    
+      window.location.href="#pay-now";    
     }
-
-    window.location.href="#pay-now";    
+  }
+  $('.payment .return-to-shipping').onclick = function() {
+    window.location.href = "#shipping";  
   }
 }
 

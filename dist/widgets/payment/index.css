@@ -84,3 +84,7 @@
 .payment .steps .step button {
   width: 200px;
 }
+.payment .validation-error {
+  margin-top: 10px;
+  color: red;
+}
