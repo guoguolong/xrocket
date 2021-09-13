@@ -108,7 +108,7 @@ button,
   z-index: 1;
 }
 .hide {
-  display: none !important;
+  display: none;
 }
 .empty {
   font-size: 16px;

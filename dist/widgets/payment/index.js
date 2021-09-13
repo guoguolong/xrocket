@@ -24,7 +24,7 @@ function widgetPayment() {
       window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {};
       window.xrocket.purchasedOrder.creditCard = creditCard;
 
-      window.xrocket.purchasedOrder.billingAddressType = $('.section-billing-address input[name=billingAddressType]').value;
+      window.xrocket.purchasedOrder.billingAddressType = parseInt($('.section-billing-address input[name=billingAddressType]').value);
 
       window.location.href="#pay-now";    
     }

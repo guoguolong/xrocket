@@ -285,8 +285,10 @@ body .root {
 }
 
 .order-place-page .main .main-content .section-order-info .info-line {
+    align-items: center;
     display: flex;
     gap: 20px;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -295,7 +297,9 @@ body .root {
 }
 
 .order-place-page .main .main-content .section-order-info .info-line .value {
+    display: flex;
     flex: 1;
+    justify-content: space-between;
 }
 
 .order-place-page .main .main-content .section-order-info .info-line .action {

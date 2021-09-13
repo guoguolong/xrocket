@@ -3,7 +3,7 @@ function pageLogin() {
     var email = $('.email').value;
     var password = $('.password').value;
     var users = window.localStorage.getItem('users');
-    users = JSON.parse(users);
+    users = JSON.parse(users) || [];
 
     var userLogined = false;
     for (var i = 0; i < users.length; i++) {

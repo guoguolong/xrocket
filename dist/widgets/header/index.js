@@ -1,3 +1,19 @@
+function updateMyOrdersIndicator() {
+  var user = JSON.parse(window.sessionStorage.getItem('user'));
+  if (user) {
+    var allOrders = JSON.parse(window.localStorage.getItem('orders')) || [];
+    var user = JSON.parse(window.sessionStorage.getItem('user'));
+    var ordersForCurrUser = allOrders[user.username];
+    if (ordersForCurrUser && ordersForCurrUser.length > 0) {
+      $('header .link-orders a').className = 'cart-hightlight';
+      $('header .link-orders a').innerHTML = `MY ORDERS(${ordersForCurrUser.length})`;
+    } else {
+      $('header .link-orders a').className = '';
+      $('header .link-orders a').innerHTML = `MY ORDERS`;
+    }
+  }
+}
+
 function updateCartIndicator() {
   var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];  
   $('header .qty .value').innerHTML = cart.length;
@@ -5,7 +21,7 @@ function updateCartIndicator() {
     $('header .link-cart a').className = 'cart-hightlight';
   else
     $('header .link-cart a').className = '';        
-}  
+}
 
 function widgetHeader() {
   function renderMenu() {
@@ -80,6 +96,7 @@ function widgetHeader() {
   }
 
   updateCartIndicator();
+  updateMyOrdersIndicator();
   renderMenu();
   checkUserLogin();
   toggleSearchBar();

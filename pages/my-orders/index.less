@@ -1,54 +1,49 @@
 .my-orders-page {
+  width: 70%;
+  margin: 0 auto;
   h1 {
     text-align: center;
     font-size: 24px;
   }
-
-  .product-items {
-    border-bottom: 1px solid #e7e7e7;
-    .product-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 15px;
-      .image-wrapper {
-        width: 80px;
-        height: 80px;
-        overflow: hidden;
-        border: 1px solid #eee;
-        display: flex;
-        align-items: center;
-        img {
-          width: 100%;
-        }
+  .orders {
+    margin-top: 30px;
+    table {
+      width: 100%;
+      tr th {
+        padding: 10px;
+        text-align: center;
+        border: 0;
+        border-bottom: 1px solid #E8E8E8;
       }
-      .basic-info {
-        flex: 1;
-        line-height: 1.4;
-        .name {
-          font-weight: bold;
+      tr.order-item {
+        td {
+          text-align: center;
+          padding: 20px;
         }
-      }
-      .amount {
-        white-space: nowrap;
+        .col-basic-info {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          line-height: 1.4;
+          gap: 10px;
+          .image-wrapper {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            img {
+              width: 100%;
+            }
+          }
+          .name-wrapper {
+            font-weight: bold;
+            line-height: 1.4;
+            text-align: left;
+          }        
+        }
       }
     }
   }
-  .subtotal-lines, .total-lines{
-    border-bottom: 1px solid #e7e7e7;
-    padding: 24px 0;
-    .line {
-      display: flex;
-      justify-content: space-between;
-      line-height: 2;
-    }
-  }
-  .total-lines {
-    display: flex;
-    justify-content: space-between;      
-  }
-  .currency {
-    margin-right: 4px;
-  }  
 }

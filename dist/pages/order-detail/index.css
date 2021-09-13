@@ -208,13 +208,14 @@ header .header-inner .built:hover {
     width: 70%;
 }
 
-.order-detail-page h1 {
+.order-detail-page h1.title {
     font-size: 24px;
+    font-weight: 300;
     text-align: center;
 }
 
 .order-detail-page .order-status {
-    background: #053;
+    background: #222;
     border-radius: 4px;
     color: #fff;
     display: inline-block;
@@ -242,6 +243,7 @@ header .header-inner .built:hover {
 }
 
 .order-detail-page .section-order-info .info-line {
+    align-items: center;
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -249,10 +251,14 @@ header .header-inner .built:hover {
 
 .order-detail-page .section-order-info .info-line label {
     color: #737373;
+    min-width: 150px;
 }
 
 .order-detail-page .section-order-info .info-line .value {
+    align-items: center;
+    display: flex;
     flex: 1;
+    justify-content: space-between;
 }
 
 .order-detail-page .section-order-info .info-line .action {

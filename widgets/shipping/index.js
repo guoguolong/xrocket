@@ -31,7 +31,7 @@ function widgetShipping() {
     if (errors === 0) {
       window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {};
       window.xrocket.purchasedOrder.shippingAddr = shippingAddr;
-      window.xrocket.purchasedOrder.shippingMethod = $('.section-shipping-method input[name=shippingMethod]').value;
+      window.xrocket.purchasedOrder.shippingMethod = parseInt($('.section-shipping-method input[name=shippingMethod]').value);
 
       window.location.href="#payment";    
     }

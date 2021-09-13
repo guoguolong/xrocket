@@ -9,30 +9,31 @@
   <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="index.css">
   <meta name="description" content="8:My Orders">
+  <script type="text/javascript">
+    var user = JSON.parse(window.sessionStorage.getItem('user'));
+    if (!user) {
+      window.location.href = `/pages/signin/index.html?f=${window.location.pathname}${window.location.search}${window.location.hash}`;
+    }    
+  </script>
 </head>
 
 <body>
   <widget name="header"></widget>
   <div class="root my-orders-page">
-    <h1 class="category-title">MY ORDERS</h1>
+    <h1 class="title">MY ORDERS</h1>
     <div class="orders">
-      <div class="product-items"></div>
-      <div class="subtotal-lines">
-        <div class="line">
-          <div>Subtotal</div>
-          <div>
-            <span class="currency">$</span>
-            <span class="subtotal">30.00</span>
-          </div>
-        </div>
-        <div class="line">
-          <div>Shipping + Handling</div>
-          <div>
-            <span class="currency">$</span>
-            <span class="subtotal-and-handling">30.00</span>
-          </div>
-        </div>
-      </div>
+      <table>
+        <thead class="header">
+          <tr>
+            <th>Order No</th>
+            <th>Item Titles</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody class="body">
+        </tbody>
+      </table>
     </div>
   </div>
   <widget name="footer"></widget>

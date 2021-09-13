@@ -1,7 +1,9 @@
-function widgetOrderedProducts(productsInCart) {
+function widgetOrderedProducts(orderedProducts, handling = 0) {
     var productHtmls = [];
-    for (var i = 0; i < productsInCart.length; i++) {
-        var prd = productsInCart[i];
+    var subtotal = 0;
+    for (var i = 0; i < orderedProducts.length; i++) {
+        var prd = orderedProducts[i];
+        subtotal += prd.qty * prd.price;
         productHtmls.push(`<div class="product-item">
           <div class="image-wrapper">
             <img src="${prd.baseUrl}/${prd.image}" />
@@ -12,17 +14,23 @@ function widgetOrderedProducts(productsInCart) {
             <div>$ ${prd.price} x ${prd.qty}</div>
           </div>
           <div class="amount">
-            $ ${prd.qty * prd.price}
+            <span class="currency">$</span> ${prd.qty * prd.price}
         </div>
       </div>
     `);
     }
 
+    var total = subtotal + handling;
+
     if (productHtmls.length > 0) {
         $('.product-items').innerHTML = productHtmls.join('');
-        $('.subtotal').innerHTML = 49;
-        $('.subtotal-and-handling').innerHTML = 89;
-        $('.total').innerHTML = 89;
+        $('.subtotal').innerHTML = subtotal;
+        if (handling) {
+            $('.subtotal-and-handling').innerHTML = `${subtotal} + ${handling}`;
+        } else {
+            $('.handling-line').style.display = 'none'
+        }
+        $('.total').innerHTML = total;
     } else {
         $('.sidebar').innerHTML = '<div class="empty">Cart is empty</div>';
     }
@@ -81,7 +89,7 @@ function widgetPayment() {
             window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {};
             window.xrocket.purchasedOrder.creditCard = creditCard;
 
-            window.xrocket.purchasedOrder.billingAddressType = $('.section-billing-address input[name=billingAddressType]').value;
+            window.xrocket.purchasedOrder.billingAddressType = parseInt($('.section-billing-address input[name=billingAddressType]').value);
 
             window.location.href = "#pay-now";
         }
@@ -126,7 +134,7 @@ function widgetShipping() {
         if (errors === 0) {
             window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {};
             window.xrocket.purchasedOrder.shippingAddr = shippingAddr;
-            window.xrocket.purchasedOrder.shippingMethod = $('.section-shipping-method input[name=shippingMethod]').value;
+            window.xrocket.purchasedOrder.shippingMethod = parseInt($('.section-shipping-method input[name=shippingMethod]').value);
 
             window.location.href = "#payment";
         }
@@ -139,7 +147,7 @@ function randomFrom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function setupStep() {
+function onStepChange() {
     if (window.location.hash === '#shipping' || !window.location.hash) {
         $('.shipping-wrapper').style.display = 'block';
         $('.payment-wrapper').style.display = 'none';
@@ -153,16 +161,76 @@ function setupStep() {
         $('.payment-wrapper').style.display = 'none';
         $('.pay-now-wrapper').style.display = 'block';
     }
+    renderOrderInfo();
+}
+
+function renderOrderInfo() {
+    var user = JSON.parse(window.sessionStorage.getItem('user'));
+    window.xrocket.purchasedOrder = window.xrocket.purchasedOrder || {
+        contact: user.email
+    }
+    var purchasedOrder = window.xrocket.purchasedOrder;
+    if (purchasedOrder) {
+        $('.section-order-info .contact').innerHTML = purchasedOrder.contact;
+
+        var addr = purchasedOrder.shippingAddr;
+
+        if (addr) {
+            $('.section-order-info .shipping-address').innerHTML = `${addr.address}, ${stateData[addr.country][addr.state]}, ${countryData[addr.country]}, ${addr.zipcode}`
+            $('.section-order-info .shipping-address-line').style.display = 'flex';
+        } else {
+            $('.section-order-info .shipping-address-line').style.display = 'none';
+        }
+
+        var cc = purchasedOrder.creditCard;
+        if (cc) {
+            $('.section-order-info .credit-card').innerHTML = `Card No: ${cc.cardNo}, Name on Card: ${cc.nameOnCard}`;
+            $('.section-order-info .credit-card-line').style.display = 'flex';
+        } else {
+            $('.section-order-info .credit-card-line').style.display = 'none';
+        }
+
+        if (purchasedOrder.shippingMethod) {
+            $('.section-order-info .shipping-method').innerHTML = `${ORDER_ENUM.shippingMethod[purchasedOrder.shippingMethod].label}`;
+            $('.section-order-info .shipping-method-fee').innerHTML = `${ORDER_ENUM.shippingMethod[purchasedOrder.shippingMethod].amount}`;
+
+            $('.section-order-info .shipping-method-line').style.display = 'flex';
+        } else {
+            $('.section-order-info .shipping-method-line').style.display = 'none';
+        }
+
+        if (purchasedOrder.billingAddressType) {
+            $('.section-order-info .billing-address').innerHTML = `${ORDER_ENUM.billingAddressType[purchasedOrder.billingAddressType]}`;
+            $('.section-order-info .billing-address-line').style.display = 'flex';
+        } else {
+            $('.section-order-info .billing-address-line').style.display = 'none';
+        }
+    }
 }
 
 var cart = JSON.parse(window.sessionStorage.getItem('cart'));
+
+// 测试数据
+// window.xrocket = {
+//   purchasedOrder: {"contact":"allen@gmail.com","shippingAddr":{"firstName":"Allen","lastName":"Guo","address":"Nanjign Yya","apartment":"aprat","city":"Nanjing","country":"US","state":"AL","zipcode":"234213","phone":"18551710938"},"shippingMethod":1,"creditCard":{"cardNo":"CA-02354235","nameOnCard":"3","expDate":"09/11","securityCode":"887"},"billingAddressType":1}
+// };
+
+window.sessionStorage.getItem('cart')
 if (cart) {
     $('.order-place-page .main').style.display = 'initial';
     $('.order-place-page .sidebar').style.display = 'initial';
     $('.order-place-page .empty').style.display = 'none';
 
-    setupStep();
-    window.onhashchange = setupStep;
+    $('.section-order-info .action-shipping-step').onclick = function() {
+        window.location.href = "#shipping";
+    }
+
+    $('.section-order-info .action-payment-step').onclick = function() {
+        window.location.href = "#payment";
+    }
+
+    onStepChange();
+    window.onhashchange = onStepChange;
 
     if (typeof widgetOrderedProducts !== 'undefined') widgetOrderedProducts(cart);
 
@@ -174,6 +242,13 @@ if (cart) {
         order.status = 2; // 1 - 待支付, 2 - 已支付
         order.contact = user.email;
         order.products = JSON.parse(window.sessionStorage.getItem('cart'));
+        order.total = 0;
+        for (var i = 0; i < order.products.length; i++) {
+            var prd = order.products[i];
+            order.total += prd.qty * prd.price;
+        }
+        order.total += ORDER_ENUM.shippingMethod[order.shippingMethod].amount;
+
 
         var allOrders = JSON.parse(window.localStorage.getItem('orders')) || {};
         allOrders[user.username] = allOrders[user.username] || [];

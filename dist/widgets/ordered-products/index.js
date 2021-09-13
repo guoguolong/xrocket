@@ -1,7 +1,9 @@
-function widgetOrderedProducts(productsInCart) {
+function widgetOrderedProducts(orderedProducts, handling = 0) {
   var productHtmls = [];
-  for (var i = 0; i < productsInCart.length; i++) {
-    var prd = productsInCart[i];
+  var subtotal = 0;
+  for (var i = 0; i < orderedProducts.length; i++) {
+    var prd = orderedProducts[i];
+    subtotal += prd.qty * prd.price;
     productHtmls.push(`<div class="product-item">
           <div class="image-wrapper">
             <img src="${prd.baseUrl}/${prd.image}" />
@@ -12,17 +14,23 @@ function widgetOrderedProducts(productsInCart) {
             <div>$ ${prd.price} x ${prd.qty}</div>
           </div>
           <div class="amount">
-            $ ${prd.qty * prd.price}
+            <span class="currency">$</span> ${prd.qty * prd.price}
         </div>
       </div>
     `);
   }
 
+  var total = subtotal + handling;
+
   if (productHtmls.length > 0) {
     $('.product-items').innerHTML = productHtmls.join('');
-    $('.subtotal').innerHTML = 49;
-    $('.subtotal-and-handling').innerHTML = 89;
-    $('.total').innerHTML = 89;
+    $('.subtotal').innerHTML = subtotal;
+    if (handling) {
+      $('.subtotal-and-handling').innerHTML = `${subtotal} + ${handling}`;
+    } else {
+      $('.handling-line').style.display = 'none'
+    }
+    $('.total').innerHTML = total;
   } else {
     $('.sidebar').innerHTML = '<div class="empty">Cart is empty</div>';
   }

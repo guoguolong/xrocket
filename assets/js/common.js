@@ -96,6 +96,27 @@ function validateFormField($input, errorMsg, pattern) {
   }
 }
 
+var ORDER_ENUM = {
+  status: {
+    1: '待支付',
+    2: '已支付',
+  },
+  shippingMethod: {
+    1: {
+      label: 'Shipping - UPS Home Delivery®',
+      amount: 38.00
+    },
+    2: {
+      label: 'Shipping - Fedex Home Delivery® (Slow)',
+      amount: 47.00
+    },
+  },
+  billingAddressType: {
+    1: 'Same as shipping address',
+    2: 'Use a different billing address',
+  }
+};
+
 // function setCookie(cname,cvalue,exdays) {
 //   var d = new Date();
 //   d.setTime(d.getTime()+(exdays*24*60*60*1000));

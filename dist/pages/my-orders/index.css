@@ -145,24 +145,45 @@ header .header-inner .built:hover {
     pointer-events: auto;
 }
 
+.my-orders-page {
+    margin: 0 auto;
+    width: 70%;
+}
+
 .my-orders-page h1 {
     font-size: 24px;
     text-align: center;
 }
 
-.my-orders-page .product-items {
-    border-bottom: 1px solid #e7e7e7;
+.my-orders-page .orders {
+    margin-top: 30px;
 }
 
-.my-orders-page .product-items .product-item {
+.my-orders-page .orders table {
+    width: 100%;
+}
+
+.my-orders-page .orders table tr th {
+    border: 0;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px;
+    text-align: center;
+}
+
+.my-orders-page .orders table tr.order-item td {
+    padding: 20px;
+    text-align: center;
+}
+
+.my-orders-page .orders table tr.order-item .col-basic-info {
     align-items: center;
     display: flex;
+    flex: 1;
     gap: 10px;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
-.my-orders-page .product-items .product-item .image-wrapper {
+.my-orders-page .orders table tr.order-item .col-basic-info .image-wrapper {
     align-items: center;
     border: 1px solid #eee;
     display: flex;
@@ -171,39 +192,12 @@ header .header-inner .built:hover {
     width: 80px;
 }
 
-.my-orders-page .product-items .product-item .image-wrapper img {
+.my-orders-page .orders table tr.order-item .col-basic-info .image-wrapper img {
     width: 100%;
 }
 
-.my-orders-page .product-items .product-item .basic-info {
-    flex: 1;
-    line-height: 1.4;
-}
-
-.my-orders-page .product-items .product-item .basic-info .name {
+.my-orders-page .orders table tr.order-item .col-basic-info .name-wrapper {
     font-weight: 700;
-}
-
-.my-orders-page .product-items .product-item .amount {
-    white-space: nowrap;
-}
-
-.my-orders-page .subtotal-lines,.my-orders-page .total-lines {
-    border-bottom: 1px solid #e7e7e7;
-    padding: 24px 0;
-}
-
-.my-orders-page .subtotal-lines .line,.my-orders-page .total-lines .line {
-    display: flex;
-    justify-content: space-between;
-    line-height: 2;
-}
-
-.my-orders-page .total-lines {
-    display: flex;
-    justify-content: space-between;
-}
-
-.my-orders-page .currency {
-    margin-right: 4px;
+    line-height: 1.4;
+    text-align: left;
 }
