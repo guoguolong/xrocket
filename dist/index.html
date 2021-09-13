@@ -3,11 +3,10 @@
     
     <head>
         <meta charset="utf-8">
-        <title>XRocket Catalog@21:10:50 09/12</title>
-        <link rel="stylesheet" type="text/css"
+        <title>XRocket Catalogue@11:26:16 09/13</title>
+        <link rel="stylesheet" i="" type="text/css"
         href="/assets/styles/reset.css">
-        <script type="text/javascript">
-</script>
+        <script type="text/javascript"></script>
         <style type="text/css">
             header {
               height: 84px;
@@ -48,15 +47,25 @@
               line-height: 1.5;
             }
         
-            #run-notice {
+            .sample-data-result {
               color: green;
-              padding: 0 10px;
               font-size: 12px;
             }
         
-            #run-notice .quantity {
-              font-size: 1.2em;
+            .data .quantity, .sample-data-result .quantity {
+              padding: 0 5px 0 0;
+              font-size: 1.5em;
               font-weight: bold;
+            }
+            .data {
+              display: none;
+              color: #666;
+              font-style: italic;
+              font-size: 1.1rem;
+              height: 200px;
+              line-height: 1.8;
+              margin-top: 100px;
+              text-align: center;
             }
         </style>
     </head>
@@ -65,18 +74,24 @@
         <header>
              <h1>XRocket Catalog</h1>
 
-            <div class="built">built@21:10:50 09/12</div>
+            <div class="built">built@11:26:16 09/13</div>
         </header>
         <div class="body">
+            <div class="data">This is your first running it, please be waiting for initialization...
+                <div
+                class="result"></div>
+        </div>
+        <div class="main">
             <fieldset>
                 <legend>Installation &amp; Report</legend>
                 <ol>
-                    <li> <a href="javascript:void(0)" onclick="initData('run-notice')">Intialize Sample Data</a>
+                    <li><a href="javascript:void(0)" onclick="initData('.sample-data-result')">Re-intialize Sample Data</a>
 
                         <div
-                        id="run-notice"></div>
+                        class="sample-data-result"></div>
         </li>
         <li><a href="/report.html">Analysis Report</a>
+
         </li>
         </ol>
         </fieldset>
@@ -84,20 +99,28 @@
             <legend>Widgets</legend>
             <ol>
                 <li><a href="/widgets/header/index.html">Page Header</a>
+
                 </li>
                 <li><a href="/widgets/footer/index.html">Page Footer</a>
+
                 </li>
                 <li><a href="/widgets/banner/index.html">Banner</a>
+
                 </li>
-                <li><a href="/widgets/featured/index.html">Feature Products</a>
+                <li><a href="/widgets/featured/index.html">Featured Products</a>
+
                 </li>
                 <li><a href="/widgets/media/index.html">Product Media</a>
+
                 </li>
-                <li><a href="/widgets/shipping/index.html">Shpping</a>
+                <li><a href="/widgets/shipping/index.html">Order Shipping</a>
+
                 </li>
-                <li><a href="/widgets/payment/index.html">Payment</a>
+                <li><a href="/widgets/payment/index.html">Order Payment</a>
+
                 </li>
                 <li><a href="/widgets/ordered-products/index.html">Ordered Products</a>
+
                 </li>
             </ol>
         </fieldset>
@@ -105,20 +128,31 @@
             <legend>Pages</legend>
             <ol>
                 <li><a href="/pages/home/index.html">Home</a>
+
                 </li>
                 <li><a href="/pages/signin/index.html">Sign In</a>
+
                 </li>
                 <li><a href="/pages/products/index.html">Product List</a>
+
                 </li>
-                <li><a href="/pages/product-detail/index.html?id=1">Product Detail</a>
+                <li><a href="/pages/product-detail/index.html">Product Detail</a>
+
                 </li>
-                <li><a href="/pages/cart/index.html">Shoppint Cart</a>
+                <li><a href="/pages/cart/index.html">Shopping Cart</a>
+
                 </li>
                 <li><a href="/pages/order-place/index.html">Order Place</a>
+
                 </li>
                 <li><a href="/pages/order-created/index.html">Order Created</a>
+
                 </li>
                 <li><a href="/pages/my-orders/index.html">My Orders</a>
+
+                </li>
+                <li><a href="/pages/order-detail/index.html">Order Detail</a>
+
                 </li>
             </ol>
         </fieldset>
@@ -126,10 +160,28 @@
             <div class="content"></div>
         </fieldset>
         </div>
+        </div>
+        <script type="text/javascript" src="assets/js/common.js"></script>
         <script type="text/javascript" src="data/products.js"></script>
         <script type="text/javascript" src="data/users.js"></script>
         <script type="text/javascript" src="data/categories.js"></script>
         <script type="text/javascript" src="data/index.js"></script>
+        <script type="text/javascript">
+            if(!checkInit()) {
+                $('.data').style.display = 'block';
+                $('.main').style.display = 'none';
+                setTimeout(()=> {
+                  initData('.result');
+                  setTimeout(()=> {
+                    $('.data').style.display = 'none';
+                    $('.main').style.display = 'block';
+                  }, 3000)
+                }, 2000);
+              } else {
+                $('.data').style.display = 'none';
+                $('.main').style.display = 'block';
+              }
+        </script>
     </body>
 
 </html>
