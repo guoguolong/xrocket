@@ -4,6 +4,7 @@ const less2css = require('./build/less2css');
 const tidycss = require('./build/tidycss');
 const widgetMerger = require('./build/widget-merger');
 const analysis = require('./build/analysis');
+const catalogue = require('./catalogue');
 
 const APP_DIR = `${__dirname}/..`;
 const DIST_DIR = `${APP_DIR}/dist`;

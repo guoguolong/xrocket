@@ -3,7 +3,6 @@ const fs = require("fs");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-
 module.exports = (pathPattern, basePath = '/') => {
   const pages = [];
   const htmlFiles = glob.sync(pathPattern, {});
@@ -45,6 +44,5 @@ module.exports = (pathPattern, basePath = '/') => {
     const [key, title, seq] = page;
     return `<li><a href="${basePath}/${key}/index.html">${title}</a></li>`;
   })
-
   return pageHtml;
 }
