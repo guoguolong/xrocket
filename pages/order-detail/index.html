@@ -8,38 +8,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="index.css">
-  <meta name="description" content="9:Order Detail">
+  <meta name="description" content="9:Order Detail:?orderId=ON-10000-100">
+  <script type="text/javascript">
+    var user = JSON.parse(window.sessionStorage.getItem('user'));
+    if (!user) {
+      window.location.href = `/pages/signin/index.html?f=${window.location.pathname}${window.location.search}${window.location.hash}`;
+    }    
+  </script>
 </head>
 
 <body>
   <widget name="header"></widget>
-  <div class="root my-orders-page">
-    <h1 class="category-title">ORDER DETAIL</h1>
-    <div class="orders">
-      <div class="product-items"></div>
-      <div class="subtotal-lines">
-        <div class="line">
-          <div>Subtotal</div>
-          <div>
-            <span class="currency">$</span>
-            <span class="subtotal">30.00</span>
+  <div class="ttt"></div>
+  <div class="root order-detail-page">
+    <h1 class="category-title">ORDER NO: <span class="order-no"></span></h1>
+    <div class="orders-info">
+      <section class="section section-order-info">
+        <div class="section-header">
+          <div class="section-title">Order Infomation</div>            
+        </div>
+        <div class="section-content round-dialog">
+          <div class="info-line">
+            <label>Contact</label>
+            <div class="value">elon.guo@gmail.com</div>
+          </div>
+          <div class="info-line">
+            <label>Ship to</label>
+            <div class="value shipping-address"></div>
+          </div>
+          <div class="info-line">
+            <label>Shipping Method</label>
+            <div>
+              <span class="value shipping-method">Shipping - UPS HOME Delivery</span>
+              <span class="value shipping-method-fee">$ 38.11</span>
+            </div>
+          </div>
+          <div class="info-line">
+            <label>Payment Info</label>
+            <div>
+              <span class="value credit-card"></span>
+            </div>
+          </div>
+          <div class="info-line">
+            <label>Bill to</label>
+            <div>
+              <span class="value billing-address"></span>
+            </div>
           </div>
         </div>
-        <div class="line">
-          <div>Shipping + Handling</div>
-          <div>
-            <span class="currency">$</span>
-            <span class="subtotal-and-handling">30.00</span>
-          </div>
-        </div>
-      </div>
-      <div class="total-lines">
-        <div>Total</div>
-        <div>USD 
-          <span class="currency">$</span>
-          <span class="total">68.11</span>
-        </div>
-      </div>      
+      </section>      
+    </div>
+    <div class="ordered-products-wrapper">
+      <widget name="ordered-products" height="400px"></widget>      
     </div>
   </div>
   <widget name="footer"></widget>

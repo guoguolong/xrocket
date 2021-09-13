@@ -3,8 +3,14 @@
     
     <head>
         <meta charset="utf-8">
-        <title>XRocket - Place Order@11:30:23 09/13</title>
+        <title>XRocket - Place Order@13:17:35 09/13</title>
         <meta name="description" content="6:Order Place">
+        <script type="text/javascript">
+            var user = window.sessionStorage.getItem('user');
+            if (!user) {
+              window.location.href = '/pages/signin/index.html?f=/pages/order-place/index.html';
+            }
+        </script>
         <link rel="stylesheet" type="text/css" href="/assets/styles/reset.css">
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>

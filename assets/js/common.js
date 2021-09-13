@@ -14,14 +14,14 @@ function $$(className) {
 
 function queryParse(query) {
   if (!query) return {};
-  var q = query.split('?')[1];
-  if (!q) return {};
-
-  var qArr = q.split('&');
+  query = query.slice(1);
   var result = {};
-  for (var i = 0; i < qArr.length; i++) {
-    var pair = qArr[i].split('=');
-    result[pair[0]] = pair[1];
+
+  var params = query.split('&');
+  for (var i = 0; i < params.length; i++) {
+    var param = params[i];
+    var idxOfEqual = params[i].indexOf('=');
+    result[param.slice(0, idxOfEqual)] = param.slice(idxOfEqual + 1);
   }
   return result;
 }

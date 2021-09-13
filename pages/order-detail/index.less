@@ -1,7 +1,55 @@
-.my-orders-page {
+.order-detail-page {
+  width: 70%;
+  margin: 0 auto;
+
   h1 {
     text-align: center;
     font-size: 24px;
+  }
+  .order-status {
+    display: inline-block;
+    background: #053;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .section-order-info {
+    margin-top: 24px;
+    margin-bottom: 20px;
+
+    .section-header {
+      margin-bottom: 24px;
+      .section-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    .round-dialog { 
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
+    }
+
+    .info-line {
+      display: flex;
+      gap: 20px;
+      padding: 20px 20px;
+      label {
+        color: #737373;
+      }
+      .value {
+        flex: 1;
+      }
+      .action {
+        cursor: pointer;
+        text-decoration: underline;
+        letter-spacing: 1px;
+      }
+    }
+    .info-line + .info-line {
+      border-top: 1px solid #e6e6e6;
+    }
   }
 
   .product-items {

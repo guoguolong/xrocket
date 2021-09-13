@@ -79,10 +79,12 @@ module.exports = (_htmlFileName, isNormalized = false) => {
     const scriptEles = dom.window.document.querySelectorAll('script');
 
     linkEles.forEach(ele => {
-        ele.parentNode.removeChild(ele);
+      if (ele.getAttribute('href')) ele.remove();
+      // ele.parentNode.removeChild(ele);
     });
     scriptEles.forEach(ele => {
-        ele.parentNode.removeChild(ele);
+      if (ele.getAttribute('src')) ele.remove();
+      // ele.parentNode.removeChild(ele);
     });
     return dom;
   }

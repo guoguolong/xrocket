@@ -30,21 +30,26 @@ if (cart) {
   if (typeof widgetOrderedProducts !== 'undefined') widgetOrderedProducts(cart);
     
   $('.pay-now-wrapper .action-save').onclick = function() {
-    var order = JSON.parse(window.sessionStorage.getItem('cart'));
-    order.id = `ON-${(new Date()).getTime()}`;
-
-    var orders = JSON.parse(window.localStorage.getItem('orders')) || {};
     var user = JSON.parse(window.sessionStorage.getItem('user'));
-    orders[user.username] = orders[user.username] || [];
-    orders[user.username].push[order];
+
+    var order = window.xrocket.purchasedOrder;
+    order.id = `ON-${(new Date()).getTime()}-${randomFrom(100, 999)}`;
+    order.status = 2; // 1 - 待支付, 2 - 已支付
+    order.contact = user.email;
+    order.products = JSON.parse(window.sessionStorage.getItem('cart'));
+
+    var allOrders = JSON.parse(window.localStorage.getItem('orders')) || {};
+    allOrders[user.username] = allOrders[user.username] || [];
+    allOrders[user.username].push(order);
 
     // 持久化到 localStorage
-    window.localStorage.setItem('orders', JSON.stringify(orders));
+    window.localStorage.setItem('orders', JSON.stringify(allOrders));
 
     // 清空购物车
     window.sessionStorage.removeItem("cart");
-
-    window.location.href = "/pages/order-created/index.html";
+    // 清空暂存的订单数据
+    window.xrocket.purchasedOrder = null;
+    window.location.href = `/pages/order-detail/index.html?orderId=${order.id}`;
   }
 
   $('.pay-now-wrapper .return-to-payment').onclick = function() {

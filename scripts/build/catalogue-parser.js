@@ -13,9 +13,9 @@ module.exports = (pathPattern, basePath = '/') => {
 
     const $meta = doc.querySelector('meta[name="description"]');
     if ($meta) {
-      const [seq, title] = $meta.getAttribute('content').split(':')
+      const [seq, title, search] = $meta.getAttribute('content').split(':')
       if (title) {
-        pages.push([key, title.trim(), seq]);
+        pages.push([key, title.trim(), seq, search]);
       }
     } else {
       const $title = doc.querySelector('title');
@@ -41,8 +41,8 @@ module.exports = (pathPattern, basePath = '/') => {
   });
 
   const pageHtml = pages.map(page => {
-    const [key, title, seq] = page;
-    return `<li><a href="${basePath}/${key}/index.html">${title}</a></li>`;
+    const [key, title, seq, search] = page;
+    return `<li><a href="${basePath}/${key}/index.html${search || ''}">${title}</a></li>`;
   })
   return pageHtml;
 }

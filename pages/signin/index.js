@@ -19,10 +19,10 @@ function pageLogin() {
 
       window.sessionStorage.setItem('user', JSON.stringify({
         email: userLogined.email,
+        username: userLogined.username,
         nickname: userLogined.nickname,
       }));
       var from = queryParse(window.location.search).f;
-      console.log('from:::', from)
       if (from && from.match(/^\/pages\//)) {
         window.location.href = from;
       } else {

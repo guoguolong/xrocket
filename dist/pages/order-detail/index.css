@@ -1,3 +1,61 @@
+.ordered-products .product-items {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ordered-products .product-items .product-item {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.ordered-products .product-items .product-item .image-wrapper {
+    align-items: center;
+    border: 1px solid #eee;
+    display: flex;
+    height: 80px;
+    overflow: hidden;
+    width: 80px;
+}
+
+.ordered-products .product-items .product-item .image-wrapper img {
+    width: 100%;
+}
+
+.ordered-products .product-items .product-item .basic-info {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.ordered-products .product-items .product-item .basic-info .name {
+    font-weight: 700;
+}
+
+.ordered-products .product-items .product-item .amount {
+    white-space: nowrap;
+}
+
+.ordered-products .subtotal-lines,.ordered-products .total-lines {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 24px 0;
+}
+
+.ordered-products .subtotal-lines .line,.ordered-products .total-lines .line {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+}
+
+.ordered-products .total-lines {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ordered-products .currency {
+    margin-right: 4px;
+}
+
 header {
     height: 84px;
 }
@@ -145,16 +203,73 @@ header .header-inner .built:hover {
     pointer-events: auto;
 }
 
-.my-orders-page h1 {
+.order-detail-page {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.order-detail-page h1 {
     font-size: 24px;
     text-align: center;
 }
 
-.my-orders-page .product-items {
+.order-detail-page .order-status {
+    background: #053;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    padding: 8px 15px;
+}
+
+.order-detail-page .section-order-info {
+    margin-bottom: 20px;
+    margin-top: 24px;
+}
+
+.order-detail-page .section-order-info .section-header {
+    margin-bottom: 24px;
+}
+
+.order-detail-page .section-order-info .section-header .section-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.order-detail-page .section-order-info .round-dialog {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+}
+
+.order-detail-page .section-order-info .info-line {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.order-detail-page .section-order-info .info-line label {
+    color: #737373;
+}
+
+.order-detail-page .section-order-info .info-line .value {
+    flex: 1;
+}
+
+.order-detail-page .section-order-info .info-line .action {
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.order-detail-page .section-order-info .info-line+.info-line {
+    border-top: 1px solid #e6e6e6;
+}
+
+.order-detail-page .product-items {
     border-bottom: 1px solid #e7e7e7;
 }
 
-.my-orders-page .product-items .product-item {
+.order-detail-page .product-items .product-item {
     align-items: center;
     display: flex;
     gap: 10px;
@@ -162,7 +277,7 @@ header .header-inner .built:hover {
     margin-bottom: 15px;
 }
 
-.my-orders-page .product-items .product-item .image-wrapper {
+.order-detail-page .product-items .product-item .image-wrapper {
     align-items: center;
     border: 1px solid #eee;
     display: flex;
@@ -171,39 +286,39 @@ header .header-inner .built:hover {
     width: 80px;
 }
 
-.my-orders-page .product-items .product-item .image-wrapper img {
+.order-detail-page .product-items .product-item .image-wrapper img {
     width: 100%;
 }
 
-.my-orders-page .product-items .product-item .basic-info {
+.order-detail-page .product-items .product-item .basic-info {
     flex: 1;
     line-height: 1.4;
 }
 
-.my-orders-page .product-items .product-item .basic-info .name {
+.order-detail-page .product-items .product-item .basic-info .name {
     font-weight: 700;
 }
 
-.my-orders-page .product-items .product-item .amount {
+.order-detail-page .product-items .product-item .amount {
     white-space: nowrap;
 }
 
-.my-orders-page .subtotal-lines,.my-orders-page .total-lines {
+.order-detail-page .subtotal-lines,.order-detail-page .total-lines {
     border-bottom: 1px solid #e7e7e7;
     padding: 24px 0;
 }
 
-.my-orders-page .subtotal-lines .line,.my-orders-page .total-lines .line {
+.order-detail-page .subtotal-lines .line,.order-detail-page .total-lines .line {
     display: flex;
     justify-content: space-between;
     line-height: 2;
 }
 
-.my-orders-page .total-lines {
+.order-detail-page .total-lines {
     display: flex;
     justify-content: space-between;
 }
 
-.my-orders-page .currency {
+.order-detail-page .currency {
     margin-right: 4px;
 }
