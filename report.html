@@ -14,15 +14,14 @@
     <div class="built"></div>
   </header>
   <div class="body">
-    <div class="row">
-      <div class="col">
-        <fieldset class="tag-detail">
-          <legend class="name">Tag Detail</legend>
-          <div class="content">
-            <ol class="values"></ol>
-          </div>
-        </fieldset>
-      </div>
+    <div id="overlay" onclick="off('dialog')"></div>    
+    <div id="dialog">
+      <fieldset class="tag-detail">
+        <legend class="name">Tag Detail</legend>
+        <div class="content">
+          <ol class="values"></ol>
+        </div>
+      </fieldset>
     </div>
     <div class="row">
       <div class="col">
@@ -40,7 +39,34 @@
     <div class="row">
       <div class="col">
         <fieldset class="tags-groupby-layout">
-          <legend>CSS Tags: Layout</legend>
+          <legend>Layout Group</legend>
+          <div class="content">
+            <ol class="rank">
+            </ol>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="tags-groupby-size">
+          <legend>Size Group</legend>
+          <div class="content">
+            <ol class="rank">
+            </ol>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="tags-groupby-animation">
+          <legend>Animation Group</legend>
+          <div class="content">
+            <ol class="rank">
+            </ol>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="tags-groupby-position">
+          <legend>Position Group</legend>
           <div class="content">
             <ol class="rank">
             </ol>
@@ -65,103 +91,142 @@
  var reportData = [["display",{"values":{"flex":98,"block":1,"none !important":1,"inline-block":9,"none":8,"inline-flex":2},"total":119}],["color",{"values":{"white":6,"#F1F1F1":2,"#222":1,"#000":17,"#fff":29,"#939393":8,"inherit":8,"#e6e6e6":8,"#555":8,"#f1f1f1":7,"#666":5,"#737373":2,"red":7,"#8c8c8c":1,"#5c5c5c":1,"#F0F0F0":1,"#FFF":1,"black":2},"total":114}],["width",{"values":{"70%":2,"95%":1,"100%":39,"auto":1,"px":39,"50%":5,"38%":1,"60%":1,"17%":1,"25%":1,"33.333%":1},"total":92}],["align-items",{"values":{"stretch":2,"center":69,"flex-start":12},"total":83}],["font-size",{"values":{"px":71,".rem":1},"total":72}],["font-weight",{"values":{"200":3,"300":7,"400":2,"700":43,"bold":11},"total":66}],["justify-content",{"values":{"space-between":53,"center":6,"flex-start":2},"total":61}],["padding",{"values":{"0":2," px":20,"px px":14,"px":15,"24px 0":5,"em":1,"20px 0":2,"75px 0 42px 0":1},"total":60}],["background",{"values":{"black":4,"#efefef":1,"#FFF":2,"url(/assets/images/down-arrow.svg) no-repeat scroll right center transparent":1,"#FAFAFA":3,"#000":18,"#fff":11,"#fafafa":5,"#007174":1,"white":2},"total":48}],["margin-bottom",{"values":{"0":1,"px":37},"total":38}],["height",{"values":{"px":32,"initial":1,"auto":1,"100%":3},"total":37}],["margin-top",{"values":{"0":2,"px":35},"total":37}],["position",{"values":{"relative":7,"absolute":12,"fixed":16},"total":35}],["flex",{"values":{"1":29,"2":1,"0 0 30%":2,"0 0 auto":1},"total":33}],["margin-left",{"values":{"0":1,"px":24,"-px":7},"total":32}],["gap",{"values":{"px":31},"total":31}],["cursor",{"values":{"default":1,"pointer":27},"total":28}],["top",{"values":{"0":17,"px":9},"total":26}],["text-align",{"values":{"center":21,"right":2,"left":2},"total":25}],["z-index",{"values":{"1":12,"2":7,"99":1,"100":1},"total":21}],["opacity",{"values":{"0":11,"1":2,".4":7,"0.4":1},"total":21}],["border",{"values":{"1px solid #D9D9D9":1,"1px solid #d9d9d9":3,"1px solid black":1,"1px dashed #A0A0A0":1,"1px solid #eee":5,"1px solid #e6e6e6":6,"1px solid #ddd":1,"1px solid #DDD":1},"total":19}],["right",{"values":{"0":9,"px":9},"total":18}],["line-height",{"values":{"2":7,"1.8":2,"px":2,"1.4":5},"total":16}],["pointer-events",{"values":{"none":8,"auto":8},"total":16}],["text-decoration",{"values":{"none":11,"underline":3},"total":14}],["margin-right",{"values":{"px":14},"total":14}],["flex-direction",{"values":{"column":13},"total":13}],["border-bottom",{"values":{"1px solid #e7e7e7":13},"total":13}],["font-style",{"values":{"italic":11,"normal":1},"total":12}],["transition",{"values":{"color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86)":2,"transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86)":1,"all 1s":3,"all .5s":2,"all 2s":2,"opacity .3s ease-in-out":1,"all 0.5s":1},"total":12}],["bottom",{"values":{"0":10,"px":1},"total":11}],["margin",{"values":{"0":1,"50px auto 0":1," px px":1,"0 auto":4,"50px 0":2,"35px 0":1,"px  px":1},"total":11}],["border-radius",{"values":{"0":1,"px":10},"total":11}],["padding-left",{"values":{"px":11},"total":11}],["overflow",{"values":{"hidden":9,"auto":2},"total":11}],["outline",{"values":{"none":10},"total":10}],["left",{"values":{"0":10},"total":10}],["text-transform",{"values":{"uppercase":10},"total":10}],["border-top",{"values":{"1px solid #e7e7e7":2,"1px solid #e6e6e6":2,"1px solid #d9d9d9":6},"total":10}],["padding-top",{"values":{"px":8,"em":1},"total":9}],["border-width",{"values":{"0":8},"total":8}],["min-height",{"values":{"vh":4,"px":2},"total":6}],["transform",{"values":{"scale(0, 1)":1,"scale(1.2)":2,"scale(1)":2},"total":5}],["object-fit",{"values":{"cover":5},"total":5}],["white-space",{"values":{"nowrap":5},"total":5}],["font-family",{"values":{"'Comfortaa'":3,"\"Comfortaa\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica\", \"Arial\", Heiti SC, sans-serif":1},"total":4}],["background-color",{"values":{"transparent":1,"#000":1,"#E0E0E0":1},"total":3}],["padding-bottom",{"values":{"px":3},"total":3}],["letter-spacing",{"values":{"px":3},"total":3}],["flex-wrap",{"values":{"wrap":3},"total":3}],["-o-object-fit",{"values":{"cover":3},"total":3}],["max-width",{"values":{"px":2},"total":2}],["column-count",{"values":{"4":1},"total":1}],["font-display",{"values":{"swap":1},"total":1}],["src",{"values":{"url(https":1},"total":1}],["box-sizing",{"values":{"border-box":1},"total":1}],["list-style-type",{"values":{"none":1},"total":1}],["appearance",{"values":{"none":1},"total":1}],["background-size",{"values":{"px px":1},"total":1}],["content",{"values":{"''":1},"total":1}],["transform-origin",{"values":{"right center":1},"total":1}],["min-width",{"values":{"px":1},"total":1}],["border-left",{"values":{"1px solid #e0e0e0":1},"total":1}],["vertical-align",{"values":{"middle":1},"total":1}]];
 </script>
 <script type="text/javascript">
-  const features = {
-    layout: ['justify-content', 'display','flex', 'gap', 'flex-direction', 'flex-wrap'],
-  }
-  const tags = {
-    layout: [],
-    topTen: [],
-    all: []
-  } 
-
-  function genHtmlForTags(tagList) {
-    const genHtmlForTag = (tagName, tagInfo) => {
-      return `<li class="tag-line" data-tag="${tagName}">
-        <div data-tag="${tagName}">${tagName}</div
-        <div data-tag="${tagName}">${tagInfo.total}</div
-        </li>`;
-    }
-    return tagList.map((it, idx) => genHtmlForTag(it[0], it[1]));
+  function on(dialogId) {
+      $id("overlay").style.display = "block";
+      $id(dialogId).style.display = "block";
   }
 
-  reportData.forEach((it, idx) => {
-    const tagName = it[0];
-    if (tags.topTen.length < 10) tags.topTen.push(it);
+  function off(dialogId) {
+      $id("overlay").style.display = "none";
+      $id(dialogId).style.display = "none";
+  }
 
-    // 分组 tag
-    for (var group in features){
-      if (group === 'topTen' || (group === 'all')) continue;
-      if (features[group].indexOf(tagName) > -1) {
-        tags[group].push(it)
-      }
+  function initTags(reportData) {
+    const features = {
+      layout: ['justify-content', 'display','flex', 'gap', 'flex-direction', 'flex-wrap', 'gap', 'box-sizing'],
+      size: ['width', 'height','line-height', 'min-width', 'max-width', 'min-height', 'max-height', 
+      'margin', 'margin-left', 'margin-right', 'margin-top', 'margin-bottom',
+      'padding', 'padding-left', 'padding-right', 'padding-top', 'padding-bottom'
+      ],
+      position: ['position', 'top', 'left', 'right', 'bottom'],
+      colorBackground: ['color', 'background', 'background-color'],
+      animation: ['transform', 'transition', 'transform-origin']
     }
-    tags.all.push(it);
-  })
+    const tags = {
+      layout: [],
+      size: [],
+      topTen: [],
+      all: []
+    } 
 
-  $('.tags-top-ten .content .rank').innerHTML = genHtmlForTags(tags.topTen).join('');
-  $('.tags-all .content .rank').innerHTML = genHtmlForTags(tags.all).join('');
-  $('.tags-groupby-layout .content .rank').innerHTML = genHtmlForTags(tags['layout']).join('');
+    reportData.forEach((it, idx) => {
+      const tagName = it[0];
+      if (tags.topTen.length < 10) tags.topTen.push(it);
 
-  const chartDom = $('.tags-top-ten .content .chart');
-  const myChart = echarts.init(chartDom);
-  const options = {
-    color: ['#2f4554'],
-    xAxis: {
-      type: 'category',
-      axisLabel: {  
-         interval:0,  
-         rotate:40  
-      }  
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [{
-        data: [],
-        type: 'bar',
-        label: {
-          show: true,
-          position: 'top',
-        },
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
+      // 分组 tag
+      for (var group in features){
+        if (group === 'topTen' || (group === 'all')) continue;
+        if (features[group].indexOf(tagName) > -1) {
+          tags[group] = tags[group] || [];
+          tags[group].push(it)
         }
-    }]
-  }
-  options.xAxis.data = tags.topTen.map(tag => tag[0])
-  options.series[0].data = tags.topTen.map(tag => tag[1].total);
-
-  myChart.setOption(options);
-
-  $('.body').addEventListener('click', (e) => {
-    const  ele = e.target;
-    if (!ele.dataset.tag) return;
-
-    const [tagInfo] =  tags.all.filter(it => it[0] === ele.dataset.tag);
-   
-    const values = Object.entries(tagInfo[1].values);
-    values.sort((curr, next)=> {
-      if (curr[1] > next[1]) {
-          return -1;
-      } else if(curr[1] < next[1]){
-          return 1;
-      } else {
-          return 0;
       }
-    });
-    values.unshift(['VALUE', 'TIMES'])
-
-    const tagInfoHtml = values.map(it => {
-      return `<li data-tag-for="${ele.dataset.tag}">
-        <div>${it[0]}</div>
-        <div>${it[1]}</div>
-      </li>`;
+      tags.all.push(it);
     })
-    $('.tag-detail .name').innerHTML = `TAG DETAIL : ${ele.dataset.tag}`;
-    $('.tag-detail .values').innerHTML = tagInfoHtml.join('');
-  });
+    return tags;
+  }
 
+  function genTopTenChart(topTenTags) {
+    const chartDom = $('.tags-top-ten .content .chart');
+    const myChart = echarts.init(chartDom);
+    const options = {
+      color: ['#2f4554'],
+      xAxis: {
+        type: 'category',
+        axisLabel: {  
+           interval:0,  
+           rotate:40  
+        }  
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [{
+          data: [],
+          type: 'bar',
+          label: {
+            show: true,
+            position: 'top',
+          },
+          showBackground: true,
+          backgroundStyle: {
+              color: 'rgba(180, 180, 180, 0.2)'
+          }
+      }]
+    }
+    options.xAxis.data = topTenTags.map(tag => tag[0])
+    options.series[0].data = topTenTags.map(tag => tag[1].total);
+
+    myChart.setOption(options);        
+  }
+
+  function genTags(tags) {
+    function genHtmlForTags(tagList) {
+      const genHtmlForTag = (tagName, tagInfo) => {
+        return `<li class="tag-line" data-tag="${tagName}">
+          <div data-tag="${tagName}">${tagName}</div
+          <div data-tag="${tagName}">${tagInfo.total}</div
+          </li>`;
+      }
+      return tagList.map((it, idx) => genHtmlForTag(it[0], it[1]));
+    }
+
+    $('.tags-top-ten .content .rank').innerHTML = genHtmlForTags(tags.topTen).join('');
+    $('.tags-all .content .rank').innerHTML = genHtmlForTags(tags.all).join('');
+    $('.tags-groupby-layout .content .rank').innerHTML = genHtmlForTags(tags['layout']).join('');  
+    $('.tags-groupby-size .content .rank').innerHTML = genHtmlForTags(tags['size']).join('');  
+    $('.tags-groupby-animation .content .rank').innerHTML = genHtmlForTags(tags['animation']).join('');  
+    $('.tags-groupby-position .content .rank').innerHTML = genHtmlForTags(tags['position']).join('');  
+  }
+
+  function initEventListeners(tags) {
+    $('.body').addEventListener('click', (e) => {
+      const  ele = e.target;
+      if (!ele.dataset.tag) return;
+
+      const [tagInfo] =  tags.all.filter(it => it[0] === ele.dataset.tag);
+     
+      const values = Object.entries(tagInfo[1].values);
+      values.sort((curr, next)=> {
+        if (curr[1] > next[1]) {
+            return -1;
+        } else if(curr[1] < next[1]){
+            return 1;
+        } else {
+            return 0;
+        }
+      });
+      values.unshift(['VALUE', 'TIMES'])
+
+      const tagInfoHtml = values.map((it, key) => {
+        return `<li data-tag-for="${ele.dataset.tag}" class="${key === 0? 'li-header':''}">
+          <div>${it[0]}</div>
+          <div>${it[1]}</div>
+        </li>`;
+      })
+      
+      $id("overlay").style.display = "block";
+      $id('dialog').style.display = "block";
+
+      $('.tag-detail .name').innerHTML = `${ele.dataset.tag}`;
+      $('.tag-detail .values').innerHTML = tagInfoHtml.join('');
+    });
+  }
+
+  const tags = initTags(reportData);
+  genTags(tags);
+  genTopTenChart(tags.topTen);
+  initEventListeners(tags);
 </script>
 </body>
 </html>
