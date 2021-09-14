@@ -1,15 +1,3 @@
-function link(id) {
-  window.location.href = `/pages/product-detail/index.html?id=${id}`;
-}
-
-function flipCard(image, side) {
-  if (side == 'b') 
-    image.setAttribute('src', image.dataset.cardB)
-  else 
-    image.setAttribute('src', image.dataset.cardA)
-  image.className = 'fadeIn2';
-}
-
 function renderCategoryTitle(catId) {
   var title = '';
   if (catId) {
@@ -69,7 +57,7 @@ function renderProducts(query = {}, pageNo = 1, pageSize = 12) {
       if (query.keyword) {
         if (!prd.name.match(new RegExp(decodeURI(query.keyword)))) continue;
       }
-      productHtmls.push(`<div data-id="${prd.id}" class="item-wrapper" onclick="link(${prd.id})" >
+      productHtmls.push(`<div data-id="${prd.id}" class="item-wrapper" onclick="linkToProdPage(${prd.id})" >
         <div class="item">
           <div class="media">
             <img class="down" src="${prd.baseUrl}/${prd.images[1] || prd.images[0]}" />
