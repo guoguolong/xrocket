@@ -1,7 +1,5 @@
 function pageProductDetail() {
-  var prodId = parseInt(queryParse(window.location.search).id);
-  
-  function getProductById(prodId) {
+    function getProductById(prodId) {
     var prod;
     var products = JSON.parse(localStorage.getItem("products")) || [];
 
@@ -47,80 +45,80 @@ function pageProductDetail() {
         }
       }
       $('.size-chart').innerHTML = `<div class="size-chart-title">Size Chart</div><table class="size-chart">${lines.join('')}</table>`;
-    } if (prod.description) {
+    } 
+    if (prod.description) {
       $('.row-description').innerHTML = `${prod.description.replace(/\n/g, '<br/>')}`;
     }
   }
 
+  var prodId = parseInt(queryParse(window.location.search).id);
   var currProd = getProductById(prodId);
   renderProduct(currProd);
+  if (!currProd) return;
 
-  $cart = $('.add-to-cart');
-  if ($cart && currProd) {
-    $cart.onclick = function () {
-        // 1. 校验数量为合法的数字
-        var qty = parseInt($('.qty input').value || 0)
-        if (isNaN(qty)) qty = 0;
-        if (!qty || qty > currProd.stock) {
-          $('.errmsg').className = 'errmsg errmsg-highlight';
-          if (!qty)
-            $('.errmsg').innerHTML = 'Please input valid numeric to buy';
-          else 
-            $('.errmsg').innerHTML = `The stock is insufficient, please input a number less than ${currProd.stock}`;
-          return;        
-        } else {
-          $('.errmsg').className = 'errmsg';
-          $('.errmsg').innerHTML = ''; 
-        }
-
-        // 2. 校验购物车里是否有该产品，有则更新数量
-        var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
-        var hasThisProductInCart = false;
-        for (var i = 0; i < cart.length; i++) {
-          if (cart[i].id === currProd.id) {
-            var sku = currProd.id;
-            if (currProd.specs) {
-              for(var j = 0; j < currProd.specs.length; j++) {
-                sku += $(`.spec-${currProd.specs[j]} select`).value;
-              }
-            } 
-            if (sku === cart[i].sku) {
-              hasThisProductInCart = true;
-              cart[i].qty += qty;
-              break;
-            }
-          }
-        }
-
-        // 3. 购物车里是否有该产品，添加一条新的记录到购物车
-        if (!hasThisProductInCart) {
-          var prod = {
-            id: currProd.id,
-            sku: currProd.id,
-            name: currProd.name,
-            price: currProd.price,
-            image: currProd.images[0],
-            baseUrl: currProd.baseUrl,
-            qty: qty,
-            specs: currProd.specs || [],
-          }
-          if (currProd.specs) {
-            for(var i = 0; i < currProd.specs.length; i++) {
-              var specName = currProd.specs[i];
-              prod[specName] = $(`.spec-${specName} select`).value;
-              prod.sku += prod[specName];
-            }
-          }
-          cart.push(prod);
-        }
-
-        // 4. 减去原来库存 TODO
-
-        // 5. 存储数据到购物车
-        window.sessionStorage.setItem("cart", JSON.stringify(cart));
-        // 6. 进入购车页面
-        window.location.href = '/pages/cart/index.html'
+  $('.add-to-cart').onclick = function () {
+    // 1. 校验数量为合法的数字
+    var qty = parseInt($('.qty input').value || 0)
+    if (isNaN(qty)) qty = 0;
+    if (!qty || qty > currProd.stock) {
+      $('.errmsg').className = 'errmsg errmsg-highlight';
+      if (!qty)
+        $('.errmsg').innerHTML = 'Please input valid numeric to buy';
+      else 
+        $('.errmsg').innerHTML = `The stock is insufficient, please input a number less than ${currProd.stock}`;
+      return;        
+    } else {
+      $('.errmsg').className = 'errmsg';
+      $('.errmsg').innerHTML = ''; 
     }
+
+    // 2. 校验购物车里是否有该产品，有，则更新数量
+    var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
+    var hasThisProductInCart = false;
+    for (var i = 0; i < cart.length; i++) {
+      if (cart[i].id === currProd.id) {
+        var sku = currProd.id;
+        if (currProd.specs) {
+          for(var j = 0; j < currProd.specs.length; j++) {
+            sku += $(`.spec-${currProd.specs[j]} select`).value;
+          }
+        } 
+        if (sku === cart[i].sku) {
+          hasThisProductInCart = true;
+          cart[i].qty += qty;
+          break;
+        }
+      }
+    }
+
+    // 3. 购物车里是否有该产品，没有，则添加一条新的记录到购物车
+    if (!hasThisProductInCart) {
+      var prod = {
+        id: currProd.id,
+        sku: currProd.id,
+        name: currProd.name,
+        price: currProd.price,
+        image: currProd.images[0],
+        baseUrl: currProd.baseUrl,
+        qty: qty,
+        specs: currProd.specs || [],
+      }
+      if (currProd.specs) {
+        for(var i = 0; i < currProd.specs.length; i++) {
+          var specName = currProd.specs[i];
+          prod[specName] = $(`.spec-${specName} select`).value;
+          prod.sku += prod[specName];
+        }
+      }
+      cart.push(prod);
+    }
+
+    // 4. 减去原来库存 TODO
+
+    // 5. 存储数据到购物车
+    window.sessionStorage.setItem("cart", JSON.stringify(cart));
+    // 6. 进入购车页面
+    window.location.href = '/pages/cart/index.html';
   }
 }
 
