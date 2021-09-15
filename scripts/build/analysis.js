@@ -63,5 +63,3 @@ module.exports = (reportFilename, cssPathPattern) => {
       `<script type="text/javascript" data-type="report">\n var reportData = ${JSON.stringify(data)};\n</script>`);
   fs.writeFileSync(reportFilename, content);
 }
-
-
