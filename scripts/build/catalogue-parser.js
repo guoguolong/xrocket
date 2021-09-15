@@ -13,8 +13,8 @@ module.exports = (pathPattern, basePath = '/') => {
 
     const $meta = doc.querySelector('meta[name="description"]');
     if ($meta) {
-      const [seq, title, search] = $meta.getAttribute('content').split(':')
-      if (title) {
+      const [seq, title, search, deprecated] = $meta.getAttribute('content').split(':')
+      if (title && deprecated !== 'deprecated') {
         pages.push([key, title.trim(), seq, search]);
       }
     } else {

@@ -1,0 +1,32 @@
+@media-width: 100%;
+
+.media {
+  width: @media-width;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }  
+  
+  .big-pic-wrapper {
+    img {
+      transition: all 1s;    
+    }
+  }
+
+  .small-pics {
+    width: 100%;
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: flex-start;
+    overflow: auto;
+    gap: 20px;
+    .small-pic-wrapper {
+      cursor: pointer;
+      flex: 0 0 30%;
+      overflow: hidden;
+      &:hover {
+        border: 1px solid #DDD;
+      }
+    }
+  }
+}
