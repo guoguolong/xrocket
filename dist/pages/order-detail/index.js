@@ -1,4 +1,4 @@
-function widgetOrderedProducts(orderedProducts, handling = 0) {
+function widgetOrderedProducts(orderedProducts, handling = 0, style) {
     var productHtmls = [];
     var subtotal = 0;
     for (var i = 0; i < orderedProducts.length; i++) {
@@ -34,6 +34,8 @@ function widgetOrderedProducts(orderedProducts, handling = 0) {
     } else {
         $('.sidebar').innerHTML = '<div class="empty">Cart is empty</div>';
     }
+
+    applyStyle(style, '.ordered-products');
 }
 
 if (window.location.pathname.match(/^\/widgets/)) {
@@ -60,10 +62,13 @@ if (window.location.pathname.match(/^\/widgets/)) {
         "colors": "blue",
         "sizes": "S"
     }];
-    widgetOrderedProducts(orderedGoods);
+    widgetOrderedProducts(orderedGoods, 23, true);
 }
+(function() {
+    // 设置测试数据 
+    // window.localStorage.setItem('orders', '{"allen":[{"total": 453.2, "contact":"allen@gmail.com", "status":2, "shippingAddr":{"firstName":"Allen","lastName":"Guo","address":"月牙湖花园69号","apartment":"","city":"南京","country":"US","state":"AL","zipcode":"200000","phone":"18551710938"},"shippingMethod":1,"creditCard":{"cardNo":"CN-234235","nameOnCard":"ALLEN","expDate":"10/11","securityCode":"123"},"billingAddressType":1,"id":"ON-10000-100","products":[{"id":3,"sku":"3grayS","name":"F9 T SHIRT BLACK 2X","price":35,"image":"1.png","baseUrl":"/data/catalog/mens/t-shirts/f9-t-shirt-black-2x","qty":4,"specs":["colors","sizes"],"colors":"gray","sizes":"S"},{"id":10,"sku":"10blackS","name":"MENS DEMO 2 ASTRONAUT T SHIRT","price":30,"image":"1.png","baseUrl":"/data/catalog/mens/t-shirts/mens-demo-2-astronaut-t-shirt","qty":4,"specs":["colors","sizes"],"colors":"black","sizes":"S"}]}]}');
+    var orderId = queryParse(window.location.search).orderId;
 
-function pageOrderDetail(orderId) {
     var currOrder = null;
     var allOrders = JSON.parse(window.localStorage.getItem('orders')) || [];
     var user = JSON.parse(window.sessionStorage.getItem('user'));
@@ -95,10 +100,4 @@ function pageOrderDetail(orderId) {
     } else {
         $('.order-detail-page').innerHTML = '<div class="empty">The order you visisted is not existed.</div>';
     }
-}
-
-// 设置测试数据 
-// window.localStorage.setItem('orders', '{"allen":[{"total": 453.2, "contact":"allen@gmail.com", "status":2, "shippingAddr":{"firstName":"Allen","lastName":"Guo","address":"月牙湖花园69号","apartment":"","city":"南京","country":"US","state":"AL","zipcode":"200000","phone":"18551710938"},"shippingMethod":1,"creditCard":{"cardNo":"CN-234235","nameOnCard":"ALLEN","expDate":"10/11","securityCode":"123"},"billingAddressType":1,"id":"ON-10000-100","products":[{"id":3,"sku":"3grayS","name":"F9 T SHIRT BLACK 2X","price":35,"image":"1.png","baseUrl":"/data/catalog/mens/t-shirts/f9-t-shirt-black-2x","qty":4,"specs":["colors","sizes"],"colors":"gray","sizes":"S"},{"id":10,"sku":"10blackS","name":"MENS DEMO 2 ASTRONAUT T SHIRT","price":30,"image":"1.png","baseUrl":"/data/catalog/mens/t-shirts/mens-demo-2-astronaut-t-shirt","qty":4,"specs":["colors","sizes"],"colors":"black","sizes":"S"}]}]}');
-
-var orderId = queryParse(window.location.search).orderId;
-pageOrderDetail(orderId);
+})();

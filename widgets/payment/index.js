@@ -1,4 +1,4 @@
-function widgetPayment() {
+function widgetPayment(style) {
   $('.payment .action-save').onclick = function() {
     var errors = 0;
     var creditCard = {};
@@ -32,6 +32,8 @@ function widgetPayment() {
   $('.payment .return-to-shipping').onclick = function() {
     window.location.href = "#shipping";  
   }
+
+  applyStyle(style, '.payment');
 }
 
 widgetPayment();

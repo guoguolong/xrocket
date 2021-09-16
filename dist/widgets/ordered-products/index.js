@@ -1,4 +1,4 @@
-function widgetOrderedProducts(orderedProducts, handling = 0) {
+function widgetOrderedProducts(orderedProducts, handling = 0, style) {
   var productHtmls = [];
   var subtotal = 0;
   for (var i = 0; i < orderedProducts.length; i++) {
@@ -34,9 +34,11 @@ function widgetOrderedProducts(orderedProducts, handling = 0) {
   } else {
     $('.sidebar').innerHTML = '<div class="empty">Cart is empty</div>';
   }
+
+  applyStyle(style, '.ordered-products');
 }
 
 if (window.location.pathname.match(/^\/widgets/)) {
   var orderedGoods = [{"id":2,"sku":"2blackS","name":"F9 LONG SLEEVE T SHIRT","price":30,"image":"1.png","baseUrl":"/data/catalog/mens/t-shirts/f9-long-sleeve-t-shirt","qty":1,"specs":["colors","sizes"],"colors":"black","sizes":"S"},{"id":45,"sku":"45blueS","name":"SPACEX STARSHIP CREW SWEATSHIRT","price":55,"image":"1.png","baseUrl":"/data/catalog/womens/outerwear/spacex-starship-crew-sweatshirt","qty":1,"specs":["colors","sizes"],"colors":"blue","sizes":"S"}];
-  widgetOrderedProducts(orderedGoods);
+  widgetOrderedProducts(orderedGoods, 23, true);
 }
