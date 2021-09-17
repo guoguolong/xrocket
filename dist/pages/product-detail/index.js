@@ -1,4 +1,4 @@
-function widgetMedia(product, mediaWidth) {
+function widgetMedia(product, style) {
     var images = product.images || [];
     var imagesHtml = [];
     for (var i = 0; i < images.length; i++) {
@@ -18,16 +18,15 @@ function widgetMedia(product, mediaWidth) {
             }
         }
     }
-    if (mediaWidth) {
-        $('.media').style.width = mediaWidth;
-    }
+
+    applyStyle(style, '.media');
 }
 
 if (window.location.pathname.match(/^\/widgets/)) {
     widgetMedia({
         images: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
         baseUrl: '/data/catalog/mens/t-shirts/f9-t-shirt-black-2x'
-    }, 600);
+    }, true);
 }
 
 function pageProductDetail() {

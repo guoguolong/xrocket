@@ -245,35 +245,35 @@ header .header-inner .built:hover {
 }
 
 @media screen and (max-width:1240px) {
-    .products {
+    .products-page .products {
         margin-left: -24px;
         padding: 0 24px;
     }
 
-    .products .item-wrapper {
+    .products-page .products .item-wrapper {
         margin-bottom: 50px;
         padding-left: 24px;
         width: 33.333%;
     }
 
-    .empty {
+    .products-page .empty {
         margin-left: 24px;
     }
 }
 
 @media screen and (max-width:640px) {
-    .products {
+    .products-page .products {
         margin-left: -10px;
         padding: 0 10px;
     }
 
-    .products .item-wrapper {
+    .products-page .products .item-wrapper {
         margin-bottom: 35px;
         padding-left: 10px;
         width: 50%;
     }
 
-    .empty {
+    .products-page .empty {
         margin-left: 24px;
     }
 }
