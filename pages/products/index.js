@@ -1,41 +1,39 @@
 function pageProducts() {
+  function renderKeyword(keyword) {
+    if (keyword) {    
+      $('.keyword').innerHTML = 'Searched Result By [<span class="value">' + decodeURI(keyword) + '</span>]';
+      $('.keyword').className = 'keyword-highlight';
+    }
+  }
   function renderCategoryTitle(catId) {
+    if (!catId) return;
     var title = '';
-    if (catId) {
-      var categories = JSON.parse(localStorage.getItem("categories")) || [];
-      for (var i = 0; i < categories.length; i++) {
-        var c = categories[i];
-        if (c.id == catId) {
-          title = c.title;
-          break;
-        }
-        if (c.children) {
-          for (var j = 0; j < c.children.length; j++) {
-            var subC = c.children[j];
-            if (subC.id == catId) {
-              title = subC.title;
-            }
+    var categories = JSON.parse(localStorage.getItem("categories")) || [];
+    for (var i = 0; i < categories.length; i++) {
+      var c = categories[i];
+      if (c.id == catId) {
+        title = c.title;
+        break;
+      }
+      if (c.children) {
+        for (var j = 0; j < c.children.length; j++) {
+          var subC = c.children[j];
+          if (subC.id == catId) {
+            title = subC.title;
           }
         }
-        if (title) break;
       }
-      if (title) {
-        $('.category-title').innerHTML = title;
-      } else {
-        $('.category-title').innerHTML = 'Sold Out';
-      }
+      if (title) break;
+    }
+    if (title) {
+      $('.category-title').innerHTML = title;
+    } else {
+      $('.category-title').innerHTML = 'Sold Out';
     }
   }
 
   function renderProducts(query = {}, pageNo = 1, pageSize = 12) {
-    var allProducts = [];
-    try {
-      allProducts = JSON.parse(localStorage.getItem("products")) || [];
-    } catch (e) {
-      console.log(e)
-      $id('products').innerHTML = '<div class="empty">病毒入侵，躲进地堡</div>';
-    }
-
+    var allProducts = JSON.parse(localStorage.getItem("products")) || [];
     var products = [];
     for (var i = 0; i < allProducts.length; i++) {
       var prd = allProducts[i];
@@ -48,10 +46,9 @@ function pageProducts() {
       products.push(prd);
     }
 
-    var productHtmls = [];
     var limit = pageNo * pageSize;
     if (limit > products.length) limit = products.length;
-
+    var productHtmls = [];
     for (var i = 0; i < limit; i++) {
       var prd = products[i];
       if (!query.c|| (query.c == prd.categoryId || query.c == prd.subCategoryId)) {
@@ -75,23 +72,19 @@ function pageProducts() {
     if (products.length <= pageSize || limit >= products.length) $('.more-action').style.display = 'none';
 
     if (productHtmls.length > 0) {
-      $id('products').innerHTML = productHtmls.join('');
+      $('.products').innerHTML = productHtmls.join('');
     } else {
-      $id('products').innerHTML = '<div class="empty">Our stock of this category is currently depleted due to a flood in the warehouse!</div>';
+      $('.products').innerHTML = '<div class="empty">Our stock of this category is currently depleted due to a flood in the warehouse!</div>';
     }
   }
 
-  var pageNo = 1;
-  var pageSize = 12;
-
   var query = queryParse(window.location.search);
-  renderCategoryTitle(query.c);
-  renderProducts(query);
+  var pageNo = query.pageNo || 1;
+  var pageSize = query.pageSize || 12;
 
-  if (query.keyword) {
-    $('.keyword').innerHTML = 'Searched Result By [<span class="value">' + decodeURI(query.keyword) + '</span>]';
-    $('.keyword').className = 'keyword-highlight';
-  }
+  renderCategoryTitle(query.c);
+  renderKeyword(query.keyword);
+  renderProducts(query);
 
   $('.more-action').onclick = function() {
     renderProducts(query, ++pageNo);

@@ -53,10 +53,7 @@ function pageCart() {
   $('.cart-items').onclick =  function(e) {
     var sku = e.target.dataset.sku;
     if (sku) {
-      var cart = [];
-      try {
-        cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
-      } catch (e) {}
+      var cart = JSON.parse(window.sessionStorage.getItem("cart")) || [];
       var updatedCart = [];
       for (var i = 0; i < cart.length; i++) {
         if (cart[i].sku != sku) {
