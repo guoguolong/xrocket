@@ -1,31 +1,41 @@
-@media-width: 100%;
+@nav-btn-width: 50px;
+@nav-btn-height: 50px;
 
-.media {
-  width: @media-width;
-  img {
-    width: 100%;
-    object-fit: cover;
-  }  
-  
-  .big-pic-wrapper {
+.image-gallery {
+  position: relative;
+  overflow: hidden;
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: all 0.5s;
     img {
-      transition: all 1s;    
+      width: @nav-btn-width;
+      height: @nav-btn-height;
+    }
+    opacity: .1;
+    &:hover {
+      opacity: .5;
     }
   }
+  .prev-btn {
+    left: 0;
+    display: none;
+  }
+  .next-btn {
+    right: 0;
+  }
+  .images {
+    position: relative;
+    display: flex;
+    transition: all .5s;
 
-  .small-pics {
-    width: 100%;
-    margin-top: 20px;
-    display: inline-flex;
-    justify-content: flex-start;
-    overflow: auto;
-    gap: 20px;
-    .small-pic-wrapper {
-      cursor: pointer;
-      flex: 0 0 30%;
-      overflow: hidden;
-      &:hover {
-        border: 1px solid #DDD;
+    .image-wrapper {
+      flex: 0 0 100%;
+      img {
+        width: 100%;
+        transition: all 1s;
       }
     }
   }

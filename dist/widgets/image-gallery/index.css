@@ -1,26 +1,38 @@
-.media {
-  width: 100%;
-}
-.media img {
-  width: 100%;
-  object-fit: cover;
-}
-.media .big-pic-wrapper img {
-  transition: all 1s;
-}
-.media .small-pics {
-  width: 100%;
-  margin-top: 20px;
-  display: inline-flex;
-  justify-content: flex-start;
-  overflow: auto;
-  gap: 20px;
-}
-.media .small-pics .small-pic-wrapper {
-  cursor: pointer;
-  flex: 0 0 30%;
+.image-gallery {
+  position: relative;
   overflow: hidden;
 }
-.media .small-pics .small-pic-wrapper:hover {
-  border: 1px solid #DDD;
+.image-gallery .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: all 0.5s;
+  opacity: 0.1;
+}
+.image-gallery .nav-btn img {
+  width: 50px;
+  height: 50px;
+}
+.image-gallery .nav-btn:hover {
+  opacity: 0.5;
+}
+.image-gallery .prev-btn {
+  left: 0;
+  display: none;
+}
+.image-gallery .next-btn {
+  right: 0;
+}
+.image-gallery .images {
+  position: relative;
+  display: flex;
+  transition: all 0.5s;
+}
+.image-gallery .images .image-wrapper {
+  flex: 0 0 100%;
+}
+.image-gallery .images .image-wrapper img {
+  width: 100%;
+  transition: all 1s;
 }
