@@ -1,34 +1,48 @@
-.media {
-    width: 100%;
-}
-
-.media img {
-    -o-object-fit: cover;
-    object-fit: cover;
-    width: 100%;
-}
-
-.media .big-pic-wrapper img {
-    transition: all 1s;
-}
-
-.media .small-pics {
-    display: inline-flex;
-    gap: 20px;
-    justify-content: flex-start;
-    margin-top: 20px;
-    overflow: auto;
-    width: 100%;
-}
-
-.media .small-pics .small-pic-wrapper {
-    cursor: pointer;
-    flex: 0 0 30%;
+.image-gallery {
     overflow: hidden;
+    position: relative;
 }
 
-.media .small-pics .small-pic-wrapper:hover {
-    border: 1px solid #ddd;
+.image-gallery .nav-btn {
+    opacity: .1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .5s;
+    z-index: 1;
+}
+
+.image-gallery .nav-btn img {
+    height: 50px;
+    width: 50px;
+}
+
+.image-gallery .nav-btn:hover {
+    opacity: .5;
+}
+
+.image-gallery .prev-btn {
+    display: none;
+    left: 0;
+}
+
+.image-gallery .next-btn {
+    right: 0;
+}
+
+.image-gallery .images {
+    display: flex;
+    position: relative;
+    transition: all .5s;
+}
+
+.image-gallery .images .image-wrapper {
+    flex: 0 0 100%;
+}
+
+.image-gallery .images .image-wrapper img {
+    transition: all 1s;
+    width: 100%;
 }
 
 header {
@@ -39,7 +53,7 @@ header .header-inner {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 header .header-inner .nav-bar {
@@ -170,7 +184,7 @@ header .header-inner .built:hover {
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 #modalbox:target {

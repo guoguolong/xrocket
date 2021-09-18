@@ -1,5 +1,5 @@
 function widgetImageGallery(product, mainPicIndex, style) {
-  var pos = mainPicIndex;
+  var pos = mainPicIndex || 0;
   var images = product.images || [];
   var MAX_COUNT = images.length;
 
@@ -29,7 +29,6 @@ function widgetImageGallery(product, mainPicIndex, style) {
       
       $('.prev-btn').style.display = 'block';
       pos--;
-      console.log('next pos::', pos)
       $('.image-gallery .images').style.left = pos * width + 'px';
     }
   }

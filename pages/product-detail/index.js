@@ -20,7 +20,7 @@ function pageProductDetail() {
 
     $('.name').innerHTML = prod.name;
     $('.price span').innerHTML = prod.price;
-    if (typeof widgetMedia !== 'undefined') widgetMedia(prod);
+    if (typeof widgetImageGallery !== 'undefined') widgetImageGallery(prod);
 
     if (prod.specs) {
       for(var i = 0; i < prod.specs.length; i++) {
