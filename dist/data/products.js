@@ -37,7 +37,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 1
+    "id": 1,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/dragon-long-sleeve-t-shirt"
   },
   {
     "key": "f9-long-sleeve-t-shirt",
@@ -77,7 +78,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 2
+    "id": 2,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/f9-long-sleeve-t-shirt"
   },
   {
     "key": "f9-t-shirt-black-2x",
@@ -125,7 +127,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 3
+    "id": 3,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/f9-t-shirt-black-2x"
   },
   {
     "key": "fh-long-sleeve-t-shirt",
@@ -165,7 +168,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 4
+    "id": 4,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/fh-long-sleeve-t-shirt"
   },
   {
     "key": "fh-t-shirt-black-2x",
@@ -210,7 +214,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 5
+    "id": 5,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/fh-t-shirt-black-2x"
   },
   {
     "key": "men-s-falcon-1-t-shirt",
@@ -252,7 +257,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 6
+    "id": 6,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/men-s-falcon-1-t-shirt"
   },
   {
     "key": "men-s-spacex-dragon-t-shirt",
@@ -294,7 +300,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 7
+    "id": 7,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/men-s-spacex-dragon-t-shirt"
   },
   {
     "key": "men-s-starman-t-shirt",
@@ -336,7 +343,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 8
+    "id": 8,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/men-s-starman-t-shirt"
   },
   {
     "key": "mens-crew-1-mission-patch-t-shirt",
@@ -378,7 +386,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 9
+    "id": 9,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/mens-crew-1-mission-patch-t-shirt"
   },
   {
     "key": "mens-demo-2-astronaut-t-shirt",
@@ -420,7 +429,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 10
+    "id": 10,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/mens-demo-2-astronaut-t-shirt"
   },
   {
     "key": "mens-demo-2-mission-patch-t-shirt",
@@ -462,7 +472,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 11
+    "id": 11,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/mens-demo-2-mission-patch-t-shirt"
   },
   {
     "key": "nuke-mars-t-shirt",
@@ -504,7 +515,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 12
+    "id": 12,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/nuke-mars-t-shirt"
   },
   {
     "key": "occupy-mars-t-shirt",
@@ -547,7 +559,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 13
+    "id": 13,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/occupy-mars-t-shirt"
   },
   {
     "key": "spacex-t-shirt-black-2x",
@@ -592,7 +605,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 14
+    "id": 14,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/spacex-t-shirt-black-2x"
   },
   {
     "key": "spacex-tshirt-mens-dragon-schematic",
@@ -637,7 +651,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 15
+    "id": 15,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/t-shirts/spacex-tshirt-mens-dragon-schematic"
   },
   {
     "key": "dragpn-hoodie",
@@ -679,7 +694,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 38
+    "id": 38,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/dragpn-hoodie"
   },
   {
     "key": "f9-hoodie",
@@ -721,7 +737,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 39
+    "id": 39,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/f9-hoodie"
   },
   {
     "key": "fh-hoodie",
@@ -763,7 +780,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 40
+    "id": 40,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/fh-hoodie"
   },
   {
     "key": "mens-bomber-jacket",
@@ -806,7 +824,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 19
+    "id": 19,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/mens/outerwear/mens-bomber-jacket"
   },
   {
     "key": "occupy-mars-hoodie",
@@ -848,7 +867,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 41
+    "id": 41,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/occupy-mars-hoodie"
   },
   {
     "key": "spacex-black-hoodie-2x",
@@ -893,7 +913,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 42
+    "id": 42,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/spacex-black-hoodie-2x"
   },
   {
     "key": "spacex-black-zipper-hoodie-2x",
@@ -937,7 +958,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 43
+    "id": 43,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/spacex-black-zipper-hoodie-2x"
   },
   {
     "key": "spacex-moto-jacket",
@@ -984,7 +1006,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 44
+    "id": 44,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/spacex-moto-jacket"
   },
   {
     "key": "spacex-starship-crew-sweatshirt",
@@ -1028,7 +1051,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 45
+    "id": 45,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/spacex-starship-crew-sweatshirt"
   },
   {
     "key": "spacex-sweatshirt",
@@ -1073,7 +1097,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 46
+    "id": 46,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/spacex-sweatshirt"
   },
   {
     "key": "starman-pullover-hoodie",
@@ -1115,7 +1140,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 47
+    "id": 47,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/starman-pullover-hoodie"
   },
   {
     "key": "spacex-front-logo-t-shirt-1",
@@ -1157,7 +1183,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 27
+    "id": 27,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/spacex-front-logo-t-shirt-1"
   },
   {
     "key": "spacex-women-s-f9-t-shirt",
@@ -1196,7 +1223,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 28
+    "id": 28,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/spacex-women-s-f9-t-shirt"
   },
   {
     "key": "women-s-dragon-ii-schematic-t-shirt",
@@ -1238,7 +1266,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 29
+    "id": 29,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-dragon-ii-schematic-t-shirt"
   },
   {
     "key": "women-s-dragon-t-shirt",
@@ -1277,7 +1306,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 30
+    "id": 30,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-dragon-t-shirt"
   },
   {
     "key": "women-s-falcon-1-t-shirt-5xl",
@@ -1316,7 +1346,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 31
+    "id": 31,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-falcon-1-t-shirt-5xl"
   },
   {
     "key": "women-s-fh-t-shirt",
@@ -1355,7 +1386,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 32
+    "id": 32,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-fh-t-shirt"
   },
   {
     "key": "women-s-occupy-mars-t-shirt-1",
@@ -1394,7 +1426,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 33
+    "id": 33,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-occupy-mars-t-shirt-1"
   },
   {
     "key": "women-s-starman-t-shirt",
@@ -1433,7 +1466,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 34
+    "id": 34,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/women-s-starman-t-shirt"
   },
   {
     "key": "womens-crew-1-mission-patch-t-shirt",
@@ -1472,7 +1506,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 35
+    "id": 35,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/womens-crew-1-mission-patch-t-shirt"
   },
   {
     "key": "womens-demo-2-astronaut-t-shirt",
@@ -1511,7 +1546,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 36
+    "id": 36,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/womens-demo-2-astronaut-t-shirt"
   },
   {
     "key": "womens-demo-2-mission-patch-t-shirt",
@@ -1550,7 +1586,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 37
+    "id": 37,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/t-shirts/womens-demo-2-mission-patch-t-shirt"
   },
   {
     "key": "womens-bomber-jacket",
@@ -1601,7 +1638,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 48
+    "id": 48,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/womens/outerwear/womens-bomber-jacket"
   },
   {
     "key": "children-s-occupy-mars-shirts-black-large",
@@ -1638,7 +1676,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 49
+    "id": 49,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/children-s-occupy-mars-shirts-black-large"
   },
   {
     "key": "children-s-spacex-t-shirt-aa-white-large-1",
@@ -1685,7 +1724,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 50
+    "id": 50,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/children-s-spacex-t-shirt-aa-white-large-1"
   },
   {
     "key": "kid-s-dragon-t-shirt",
@@ -1722,7 +1762,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 51
+    "id": 51,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kid-s-dragon-t-shirt"
   },
   {
     "key": "kid-s-f9-t-shirt",
@@ -1762,7 +1803,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 52
+    "id": 52,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kid-s-f9-t-shirt"
   },
   {
     "key": "kid-s-falcon-1-t-shirt",
@@ -1799,7 +1841,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 53
+    "id": 53,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kid-s-falcon-1-t-shirt"
   },
   {
     "key": "kid-s-fh-t-shirt-black-large",
@@ -1839,7 +1882,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 54
+    "id": 54,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kid-s-fh-t-shirt-black-large"
   },
   {
     "key": "kid-s-starman-t-shirt",
@@ -1876,7 +1920,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 55
+    "id": 55,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kid-s-starman-t-shirt"
   },
   {
     "key": "kids-demo-2-astronaut-t-shirt",
@@ -1913,7 +1958,8 @@ var products = [
     "colors": [
       "black"
     ],
-    "id": 56
+    "id": 56,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/kids-demo-2-astronaut-t-shirt"
   },
   {
     "key": "spacex-onesie-black-12m",
@@ -1949,7 +1995,8 @@ var products = [
         "Width": "15.5\",17\",18.5\""
       }
     ],
-    "id": 57
+    "id": 57,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/spacex-onesie-black-12m"
   },
   {
     "key": "spacex-spacesuit-onesie",
@@ -1999,7 +2046,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 61
+    "id": 61,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/outerwear/spacex-spacesuit-onesie"
   },
   {
     "key": "spacex-tshirt-youth-dragon-schematic",
@@ -2036,7 +2084,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 59
+    "id": 59,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/t-shirts/spacex-tshirt-youth-dragon-schematic"
   },
   {
     "key": "kid-s-starman-hoodie",
@@ -2073,7 +2122,8 @@ var products = [
     "colors": [
       "black"
     ],
-    "id": 60
+    "id": 60,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/outerwear/kid-s-starman-hoodie"
   },
   {
     "key": "spacex-youth-hoodie",
@@ -2114,7 +2164,8 @@ var products = [
     "colors": [
       "charcoal"
     ],
-    "id": 62
+    "id": 62,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/outerwear/spacex-youth-hoodie"
   },
   {
     "key": "spacex-youth-zipper-hoodie",
@@ -2151,7 +2202,8 @@ var products = [
     "colors": [
       "black"
     ],
-    "id": 63
+    "id": 63,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/kids/outerwear/spacex-youth-zipper-hoodie"
   },
   {
     "key": "dragon-cap",
@@ -2176,7 +2228,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 64
+    "id": 64,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/dragon-cap"
   },
   {
     "key": "drone-ship-luggage-tags",
@@ -2191,7 +2244,8 @@ var products = [
     "name": "DRONE SHIP LUGGAGE TAGS",
     "description": "Luggage tags come in a (2) pack.\n\n(2) pack includes: Of Course I Still Love You and Just Read the Instructions",
     "price": 20,
-    "id": 65
+    "id": 65,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/drone-ship-luggage-tags"
   },
   {
     "key": "falcon-9-baseball-cap",
@@ -2216,7 +2270,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 66
+    "id": 66,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/falcon-9-baseball-cap"
   },
   {
     "key": "mission-patch-collection-2",
@@ -2229,7 +2284,8 @@ var products = [
     "name": "MISSION PATCH COLLECTION 2",
     "description": "Mission Patch Collection 2 contains:\n\n- Thaicom\n- CRS-3\n- Orbcomm\n- AsiaSat8\n- AsiaSat6\n- CRS-4",
     "price": 121,
-    "id": 67
+    "id": 67,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/mission-patch-collection-2"
   },
   {
     "key": "mission-patch-collection-3",
@@ -2242,7 +2298,8 @@ var products = [
     "name": "MISSION PATCH COLLECTION 3",
     "description": "Mission Patch Collection 3 contains:\n\n- CRS-5\n- DSCOVR\n- ABS/Eutelsat-1\n- CRS-6\n- Thales",
     "price": 45,
-    "id": 68
+    "id": 68,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/mission-patch-collection-3"
   },
   {
     "key": "mission-patch-collection-4",
@@ -2255,7 +2312,8 @@ var products = [
     "name": "MISSION PATCH COLLECTION 4",
     "description": "Mission Patch Collection 4 contains:\n\n- Orbcomm-2\n- Jason-3\n- SES-9\n- CRS-8\n- JCSAT-14\n- Thaicom-8\n- ABS/Eutelsat-2\n- CRS-9\n- JCSAT-16\n- F9 Landing Patch",
     "price": 70,
-    "id": 69
+    "id": 69,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/mission-patch-collection-4"
   },
   {
     "key": "mission-patch-collection-5",
@@ -2268,7 +2326,8 @@ var products = [
     "name": "MISSION PATCH COLLECTION 5",
     "description": "Mission Patch Collection 5 contains:\n\n- Iridium-1\n- CRS-10\n- EchoStar 23\n- SES-10\n- NROL-76\n- Inmarsat-5 F4\n- CRS-11\n- BulgariaSat-1\n- Iridium-2\n- Intelsat-35\n- CRS-12\n- Formosat-5\n- OTV-5",
     "price": 85,
-    "id": 70
+    "id": 70,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/mission-patch-collection-5"
   },
   {
     "key": "occupy-mars-heat-sensitive-terraforming-mug-new",
@@ -2283,7 +2342,8 @@ var products = [
     "name": "OCCUPY MARS \"HEAT SENSITIVE\" TERRAFORMING MUG",
     "description": "<strong>SIZE</strong>: 15 oz.\n\nNot microwave safe\nNot dishwasher safe",
     "price": 20,
-    "id": 71
+    "id": 71,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/occupy-mars-heat-sensitive-terraforming-mug-new"
   },
   {
     "key": "remove-before-flight-key-chains",
@@ -2306,7 +2366,8 @@ var products = [
     "specs": [
       "vehicle"
     ],
-    "id": 72
+    "id": 72,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/remove-before-flight-key-chains"
   },
   {
     "key": "remove-before-flight-key-chains-1",
@@ -2320,7 +2381,8 @@ var products = [
     "name": "REMOVE BEFORE FLIGHT KEY CHAINS",
     "description": "Key chains come in a (2) pack.\n\n(2) pack includes: \n\n(1) Front: Starship Vehicle, Back: Remove Before Flight\n\n(1) Front: SpaceX logo, Back: Remove Before Flight",
     "price": 15,
-    "id": 73
+    "id": 73,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/remove-before-flight-key-chains-1"
   },
   {
     "key": "spacex-back-pack",
@@ -2340,7 +2402,8 @@ var products = [
     "description": "- Nylon canvas with matte canvas contrast\n- Interior padded storage compartment for a 15\" laptop\n- Two-way water resistant zippers\n- Interior zipped pockets\n- Briefcase handle\n- Stash pockets on each side of the bag\n- 12\" W x 18\" H x 6\" D",
     "name": "SPACEX BACK PACK",
     "price": 75,
-    "id": 74
+    "id": 74,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-back-pack"
   },
   {
     "key": "spacex-baseball-cap",
@@ -2366,7 +2429,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 75
+    "id": 75,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-baseball-cap"
   },
   {
     "key": "spacex-crew-1-mission-patch",
@@ -2379,7 +2443,8 @@ var products = [
     "name": "SPACEX CREW-1 MISSION PATCH",
     "description": "SpaceX Crew-1 Mission Patch",
     "price": 15,
-    "id": 76
+    "id": 76,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-crew-1-mission-patch"
   },
   {
     "key": "spacex-duffel",
@@ -2400,7 +2465,8 @@ var products = [
     "name": "SPACEX DUFFEL",
     "description": "- Nylon canvas with matte canvas contrast\n- Water resistant zippers with faux leather pullers\n- Removable padded shoulder strap\n- Self carrying handle with matte black snaps\n- Exterior zipped pocket with trolley sleeve\n- Stash pockets on each side of the bag\n- 22\" L x 14\" H x 9\" W",
     "price": 100,
-    "id": 77
+    "id": 77,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-duffel"
   },
   {
     "key": "spacex-schematic-sticker-pack",
@@ -2414,7 +2480,8 @@ var products = [
     "name": "SPACEX SCHEMATIC STICKER PACK",
     "description": "SpaceX Schematic Sticker Pack",
     "price": 15,
-    "id": 78
+    "id": 78,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-schematic-sticker-pack"
   },
   {
     "key": "spacex-x-baseball-cap-l-xl-black",
@@ -2440,7 +2507,8 @@ var products = [
       "colors",
       "sizes"
     ],
-    "id": 79
+    "id": 79,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/spacex-x-baseball-cap-l-xl-black"
   },
   {
     "key": "starship-poster-pack",
@@ -2457,7 +2525,8 @@ var products = [
     "name": "STARSHIP POSTER PACK",
     "description": "Posters come in a (3) pack\n\n18\" x 24\"\n\nGloss finish\n",
     "price": 30,
-    "id": 80
+    "id": 80,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/starship-poster-pack"
   },
   {
     "key": "x-adjustable-cap",
@@ -2472,6 +2541,7 @@ var products = [
     "name": "X ADJUSTABLE CAP",
     "description": "One size fits most",
     "price": 25,
-    "id": 81
+    "id": 81,
+    "baseThumbnailsUrl": "/data/catalog-thumbnails/accessories/x-adjustable-cap"
   }
 ]

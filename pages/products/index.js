@@ -58,8 +58,8 @@ function pageProducts() {
         productHtmls.push(`<div data-id="${prd.id}" class="item-wrapper" onclick="linkToProdPage(${prd.id})" >
           <div class="item">
             <div class="media">
-              <img class="down" src="${prd.baseUrl}/${prd.images[1] || prd.images[0]}" />
-              <img class="top" src="${prd.baseUrl}/${prd.images[0]}" />
+              <img class="down" src="${prd.baseThumbnailsUrl}/${prd.images[1] || prd.images[0]}" />
+              <img class="top" src="${prd.baseThumbnailsUrl}/${prd.images[0]}" />
             </div>
             <div class="title">${prd.name}</div>
             <div class="price">$${prd.price}</div>

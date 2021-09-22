@@ -98,6 +98,7 @@ function fillProducts(prodFiles, products, c, subC) {
       subP += `/${subC.name.toLowerCase()}`;
     }
     products[prdKey].baseUrl = `/data/catalog/${c.name.toLowerCase()}${subP}/${prdKey}`;
+    products[prdKey].baseThumbnailsUrl = `/data/catalog-thumbnails/${c.name.toLowerCase()}${subP}/${prdKey}`;
   })
 }
 
